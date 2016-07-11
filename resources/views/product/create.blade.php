@@ -7,15 +7,16 @@
 @endsection
 
 @section('content')
+    {!! HTML::style('/packages/dropzone/dropzone.css') !!}
 
         <ol class='breadcrumb'><li><a href='/'>Home</a></li><li><a href='/product'>Products</a></li><li class='active'>Create</li></ol>
 
         <h2>Create a New Product</h2>
 
         <hr/>
-                {!! Form::open(['url' => route('upload-post'), 'class' => 'dropzone', 'files'=>true, 'id'=>'real-dropzone']) !!}
+         {{--        {!! Form::open(['url' => route('upload-post'), 'class' => 'dropzone', 'files'=>true, 'id'=>'real-dropzone']) !!} --}}
 
-        <form class="form" role="form" method="POST" action="{{ url('/product') }}" enctype="multipart/form-data">
+        <form class="form" role="form" method="POST" action="{{ url('/product') }}" enctype="multipart/form-data" files="true" multiple>
 
         {!! csrf_field() !!}
 
@@ -33,17 +34,6 @@
 
             </div>
 
-            <div class="form-group{{ $errors->has('images') ? ' has-error' : '' }}">
-                <label class="control-label">images</label>
-
-                    <input type="file" class="form-control" name="images" value="{{ old('images') }}" multiple>
-
-                    @if ($errors->has('images'))
-                        <span class="help-block"> <strong>{{ $errors->first('images') }}</strong>  </span>
-                    @endif
-
-            </div>
-
 
             <div class="form-group">
                     <button type="submit" class="btn btn-primary btn-lg">
@@ -53,4 +43,26 @@
 
         </form>
 
+
+
+        {!! Form::open(['url' => route('upload-post'), 'class' => 'dropzone', 'files'=>true, 'id'=>'real-dropzone']) !!}
+
+                <div class="dz-message">
+
+                </div>
+
+                <div class="fallback">
+                    <input name="file" type="file" multiple />
+                </div>
+
+                <div class="dropzone-previews" id="dropzonePreview"></div>
+
+                <h4 style="text-align: center;color:#428bca;">Drop images in this area  <span class="glyphicon glyphicon-hand-down"></span></h4>
+
+        {!! Form::close() !!}
+
+
+
+    {!! HTML::script('/packages/dropzone/dropzone.js') !!}
+    {!! HTML::script('/assets/js/dropzone-config.js') !!}
 @endsection

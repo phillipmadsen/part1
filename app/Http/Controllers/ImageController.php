@@ -6,6 +6,8 @@ use App\Logic\Image\ImageRepository;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Input;
 use App\Models\Image;
+use App\Product;
+
 
 class ImageController extends Controller
 {

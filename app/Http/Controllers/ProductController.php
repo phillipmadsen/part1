@@ -3,13 +3,31 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Logic\Image\ImageRepository;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Input;
 use App\Http\Requests;
 use App\Product;
 use Illuminate\Support\Facades\Redirect;
 
 class ProductController extends Controller
 {
+
+
+
+    protected $image;
+
+    public function __construct(ImageRepository $imageRepository)
+    {
+        $this->image = $imageRepository;
+    }
+
+
+
+
+
+
+
     /**
      * Display a listing of the resource.
      *
@@ -31,6 +49,8 @@ class ProductController extends Controller
         return view('product.create');
     }
 
+
+
     /**
      * Store a newly created resource in storage.
      *
@@ -39,11 +59,17 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
+        $formData = Input::All();
+        //dd($formData);
+       //dd($request->input('product_name'));
 
         $this->validate($request, [
             'product_name' => 'required|unique:products|string|max:30',
 
         ]);
+
+        $product = $this->image->upload($formData);
+
 
         $product = Product::create(['product_name' => $request->product_name]);
         $product->save();

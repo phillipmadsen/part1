@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\File;
 use Intervention\Image\ImageManager;
 use App\Models\Image;
-
+use App\Product;
 
 class ImageRepository
 {
