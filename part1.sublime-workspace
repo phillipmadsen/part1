@@ -1,0 +1,451 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 378.0,
+		"last_filter": "format",
+		"selected_items":
+		[
+			[
+				"format",
+				"CodeFormatter: Format Code"
+			],
+			[
+				"fold",
+				"Fold Comments"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"editro",
+				"Snippet: editor-base"
+			],
+			[
+				"scope",
+				"Scope Hunter: Toggle Instant Scoper"
+			],
+			[
+				"tog",
+				"Toggle ScopeAlways"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Remove Package"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"Package Control: remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"markd",
+				"MarkdownTOC:Insert TOC"
+			],
+			[
+				"foramt",
+				"CodeFormatter: Format Code"
+			],
+			[
+				"markdown",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"Package Control: install",
+				"Package Control: Install Package"
+			],
+			[
+				"PHPLOC: ",
+				"PHP Class browser: (Re)Create Database"
+			],
+			[
+				"toggle sc",
+				"Toggle ScopeAlways"
+			],
+			[
+				"Package Control: insta",
+				"Package Control: Install Package"
+			],
+			[
+				"logg",
+				"Logging: Enable logging"
+			],
+			[
+				"toggle",
+				"SublimeLog: Toggle logger (on/off)"
+			],
+			[
+				"logging",
+				"Logging: Enable logging"
+			],
+			[
+				"new",
+				"Tasks: New document"
+			],
+			[
+				"orgmo",
+				"Preferences: orgmode Settings – Default"
+			],
+			[
+				"tree",
+				"ProjectTreeTemplater: Run"
+			]
+		],
+		"width": 904.0
+	},
+	"console":
+	{
+		"height": 153.0,
+		"history":
+		[
+			"sublime.log_commands(True)",
+			"sublime.log_input(True)",
+			"sublime.log_commands(True)",
+			"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+	],
+	"file_history":
+	[
+		"/G/A_LOCAL/bbb/staged.grace/app/Http/Controllers/Admin/UserController.php",
+		"/G/A_LOCAL/bbb/staged.grace/app/Http/Controllers/Product2Controller.php",
+		"/G/A_LOCAL/bbb/staged.grace/app/Http/Controllers/ProductController.php",
+		"/G/[grace]/stage.repo/app/Models/FormPost.php",
+		"/G/[My]/laravel-hackathon-starter/app/Http/Controllers/AccountController.php",
+		"/G/[My]/laravel-hackathon-starter/database/migrations/2014_10_12_000000_create_users_table.php",
+		"/G/[My]/laravel-hackathon-starter/app/Providers/AppServiceProvider.php",
+		"/G/[My]/laravel-hackathon-starter/app/Providers/RouteServiceProvider.php",
+		"/G/[My]/laravel-hackathon-starter/composer.json",
+		"/G/A_LOCAL/bbb/staged.grace/app/Models/Image.php",
+		"/G/A_LOCAL/bbb/staged.grace/resources/views/backend/products/create.blade.php",
+		"/G/A_LOCAL/bbb/staged.grace/resources/views/backend/products/create-sections/image-fields.blade.php",
+		"/G/A_LOCAL/bbb/staged.grace/app/Repositories/ProductRepository.php",
+		"/G/A_LOCAL/bbb/staged.grace/resources/views/backend/products/create-sections/overview-fields.blade.php",
+		"/G/A_LOCAL/bbb/staged.grace/resources/views/backend/products/table.blade.php",
+		"/G/A_LOCAL/bbb/staged.grace/storage/logs/laravel-2016-07-08.log",
+		"/G/A_LOCAL/bbb/staged.grace/products-request.json",
+		"/G/Desktop/requst.product.json",
+		"/G/[grace]/stage.repo/.env",
+		"/G/A_LOCAL/bbb/staged.grace/resources/views/backend/products/fields.blade.php",
+		"/G/A_LOCAL/bbb/part1/.gitignore",
+		"/C/Users/sandbox/.homestead/Homestead.yaml",
+		"/G/[grace]/stage.repo/.gitignore",
+		"/C/Windows/System32/drivers/etc/hosts",
+		"/G/A_LOCAL/bbb/staged.grace/app/Logic/Image/ImageRepository.php",
+		"/G/A_LOCAL/bbb/staged.grace/app/Models/Product-forhelp.php",
+		"/G/A_LOCAL/bbb/staged.grace/app/Models/ProductImage-for-help.php",
+		"/G/A_LOCAL/bbb/staged.grace/database/migrations/2016_07_08_121710_create_product_images_table.php",
+		"/G/A_LOCAL/bbb/staged.grace/storage/logs/laravel-2016-07-07.log",
+		"/G/A_LOCAL/bbb/staged.grace/app/.tempsave/-oldProductController.php",
+		"/G/A_LOCAL/bbb/staged.grace/config/app.php",
+		"/G/A_LOCAL/bbb/staged.grace/app/.tempsave/ProductRepository.php",
+		"/G/A_LOCAL/bbb/staged.grace/app/.tempsave/ProductController.php",
+		"/G/A_LOCAL/bbb/staged.grace/app/.tempsave/ProductController2.php",
+		"/G/A_LOCAL/bbb/staged.grace/app/Models/ProductVariant.php",
+		"/G/A_LOCAL/bbb/staged.grace/app/Models/ProductFeature.php",
+		"/G/A_LOCAL/bbb/upload/database/migrations/2016_06_02_231228_create_products_table.php",
+		"/G/A_LOCAL/bbb/staged.grace/database/migrations/2016_06_02_231228_create_products_table.php",
+		"/G/A_LOCAL/bbb/staged.grace/resources/model_schemas/Product.json",
+		"/G/A_LOCAL/bbb/uploader/.env",
+		"/G/A_LOCAL/bbb/uploader/app/Http/Controllers/FormPostController.php",
+		"/G/A_LOCAL/bbb/uploader/replace",
+		"/G/[My]/projspec/replace.sh",
+		"/G/A_LOCAL/bbb/uploader/app/Http/Controllers/LanguageController.php",
+		"/c/users/sandbox/appdata/local/temp/rsub-ajl377/.bashrc",
+		"/G/A_LOCAL/bbb/uploader/app/Http/Controllers/TagController.php",
+		"/G/A_LOCAL/bbb/uploader/app/Http/Controllers/CategoryController.php",
+		"/G/[My]/projspec/name.sh",
+		"/G/[grace]/stage.repo/app/Http/routes.php",
+		"/G/A_LOCAL/bbb/uploader/replace.sh",
+		"/G/A_LOCAL/bbb/uploader/hello",
+		"/G/A_LOCAL/bbb/uploader/app/Models/Video.php",
+		"/G/A_LOCAL/bbb/uploader/app/Models/Category.php",
+		"/G/A_LOCAL/bbb/uploader/app/Models/Role.php",
+		"/G/A_LOCAL/bbb/uploader/app/Http/Controllers/PageController.php",
+		"/G/A_LOCAL/bbb/uploader/app/Exceptions/Handler.php",
+		"/G/A_LOCAL/bbb/uploader/app/Console/Kernel.php",
+		"/G/A_LOCAL/bbb/staged.grace/app/Http/Controllers/RssController.php",
+		"/G/[grace]/pages/GraceResources/hand-quilting/accessories22.blade.php",
+		"/G/[grace]/stage.repo/app/Product.php",
+		"/G/A_LOCAL/bbb/staged.grace/resources/views/backend/layout/menu.blade.php",
+		"/G/A_LOCAL/bbb/staged.grace/composer.json",
+		"/G/A_LOCAL/bbb/staged.grace/app/Http/new_routes.php",
+		"/C/Users/sandbox/Documents/ProductController.php",
+		"/G/[grace]/pages/GraceCss/.gitattributes",
+		"/G/A_LOCAL/bbb/staged.grace/app/Models/Product.php",
+		"/G/A_LOCAL/bbb/staged.grace/app/Http/live_custom_routes.php",
+		"/G/[grace]/stage.repo/app/Http/Controllers/Admin/ProductsController.php",
+		"/G/[grace]/pages/GraceResources/routes.txt",
+		"/c/users/sandbox/appdata/local/temp/rsub-_o_24d/.bashrc",
+		"/C/Users/sandbox/.bashrc",
+		"/G/[affordable]/[code]/[Content]/[WEBCONTENTBROKER]/7-7-16/Needs REV-The GQ Machine Quilting Frame.html",
+		"/G/[affordable]/[code]/[Content]/[WEBCONTENTBROKER]/7-7-16/wood lap hoop.html",
+		"/G/[affordable]/[code]/[Content]/[WEBCONTENTBROKER]/7-7-16/Gracie Bee Quilting for all of your Creative Needs.html",
+		"/G/[grace]/OurContent/newpages/qnique-quilting-machine-features-and-functions.html",
+		"/G/[grace]/OurContent/newpages/quilting-industry-news-and-topics.html",
+		"/G/[grace]/OurContent/newpages/about-qnique.html",
+		"/G/[grace]/OurContent/newpages/the-block-rockit-sewing-machine.html",
+		"/G/[affordable]/[code]/[Content]/[HITTAIL]/About Qnique Quilter.html",
+		"/G/[grace]/OurContent/newpages/qnique-quilting-machine.html",
+		"/G/[affordable]/[code]/[Content]/[WEBCONTENTBROKER]/Grace Company Quilting Supplies.html",
+		"/G/[affordable]/[code]/[Content]/[WEBCONTENTBROKER]/7-7-16/need to make 2 product descriptions from this article.html",
+		"/G/[grace]/OurContent/proddesc/grace-company-quilting-supplies.html",
+		"/G/[affordable]/[code]/[Content]/[WEBCONTENTBROKER]/7-7-16/grace-company-quilting-supplies.html",
+		"/G/[affordable]/[code]/[Content]/[WEBCONTENTBROKER]/7-7-16/start-right-2-with-innovative-design.html",
+		"/G/[affordable]/[code]/[Content]/[WEBCONTENTBROKER]/7-7-16/the-great-graciebee-quilting-frame.html",
+		"/G/[grace]/OurContent/revdesc/Review- QniqueQuilter.rtf",
+		"/G/A_LOCAL/bbb/staged.grace/storage/logs/laravel-2016-07-06.log",
+		"/G/[grace]/pages/GraceCss/.gitignore",
+		"/G/A_LOCAL/bbb/staged.grace/storage/logs/laravel-2016-06-30.log",
+		"/G/A_LOCAL/bbb/staged.grace/database/migrations/2016_06_22_011452_create_images_table.php",
+		"/G/A_LOCAL/bbb/upload/database/migrations/2016_07_01_171341_create_product_images_table.php",
+		"/G/A_LOCAL/bbb/staged.grace/app/Models/User.php",
+		"/G/A_LOCAL/bbb/staged.grace/app/Transformers/UserPresenterTransformer.php",
+		"/G/Downloads/vue.js",
+		"/G/A_LOCAL/bbb/staged.grace/database/migrations/2013_10_24_111453_create_pages_table.php",
+		"/G/A_LOCAL/bbb/staged.grace/database/migrations/2013_11_29_083232_create_news_table.php",
+		"/G/A_LOCAL/bbb/staged.grace/database/migrations/2013_10_24_070153_create_articles_table.php",
+		"/G/A_LOCAL/bbb/staged.grace/database/migrations/2014_07_23_190645_create_projects_table.php",
+		"/G/A_LOCAL/bbb/staged.grace/database/migrations/2016_02_23_170042_create_profiles_table.php",
+		"/G/A_LOCAL/bbb/staged.grace/app/Http/Controllers/Admin/UploadController.php",
+		"/G/A_LOCAL/bbb/staged.grace/resources/views/admin/upload/index.blade.php",
+		"/G/A_LOCAL/bbb/staged.grace/app/Services/UploadsManager.php",
+		"/C/Program Files/Sublime Text 3/staged.sublime-project",
+		"/G/A_LOCAL/bbb/flow/.editorconfig",
+		"/G/A_LOCAL/bbb/uploadmanager/app/Http/Controllers/admin/UploadController.php",
+		"/G/A_LOCAL/bbb/uploadmanager/app/Http/routes.php",
+		"/G/Desktop/TEMPLATES/temprar/Rar$DRa0.706/Laravel Blade Highlighter/Comments.tmPreferences",
+		"/G/Desktop/TEMPLATES/temprar/Rar$DRa0.561/Laravel Blade Highlighter/laravel-blade.tmLanguage",
+		"/C/Users/sandbox/AppData/Roaming/Sublime Text 3/Packages/Comments.tmPreferences",
+		"/G/A_LOCAL/bbb/uploadmanager/resources/views/admin/upload/index.balde.php",
+		"/C/Users/sandbox/AppData/Roaming/Sublime Text 3/Packages/User/LegalMarkdown.sublime-settings",
+		"/C/Users/sandbox/AppData/Roaming/Sublime Text 3/Packages/Legal Markdown/LegalMarkdown.sublime-settings",
+		"/G/Desktop/TEMPLATES/temprar/Rar$DRa0.583/Laravel Blade Highlighter/Comments.tmPreferences.cache",
+		"/G/A_LOCAL/bbb/uploadmanager/resources/views/admin/upload",
+		"/G/A_LOCAL/bbb/uploadmanager/resources/views/admin/upload/_modals.blade.php",
+		"/C/Users/sandbox/AppData/Roaming/Sublime Text 3/Packages/PHP Completions Kit/README.md",
+		"/G/A_LOCAL/bbb/easysite/config/markdown.php",
+		"/G/A_LOCAL/bbb/easysite/composer.json",
+		"/G/A_LOCAL/bbb/uploadmanager/config/app.php",
+		"/G/A_LOCAL/bbb/easysite/config/app.php",
+		"/G/A_LOCAL/bbb/easysite/resources/views/admin/upload/_modals.blade.php",
+		"/G/A_LOCAL/bbb/uploadmanager/app/Services/UploadsManager.php",
+		"/G/A_LOCAL/bbb/uploadmanager/app/User.php",
+		"/C/Users/sandbox/AppData/Roaming/Sublime Text 3/Packages/User/Xdebug.sublime-settings",
+		"/G/A_LOCAL/bbb/uploadmanager/uploadmanager.sublime-project",
+		"/C/Users/sandbox/AppData/Roaming/Sublime Text 3/Packages/Markdown Preview/MarkdownPreview.sublime-settings",
+		"/C/Users/sandbox/AppData/Roaming/Sublime Text 3/Packages/MarkdownTOC/MarkdownTOC.sublime-settings"
+	],
+	"find":
+	{
+		"height": 41.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"1",
+			"dropzone",
+			"    /**\n     * @var array\n     */",
+			"Fully",
+			"    /**\n     * @return mixed\n     */",
+			"App",
+			"3",
+			"2",
+			"$1",
+			"$startdirectory",
+			"$searchterm",
+			"Phillip",
+			"old-word",
+			"subdomainA",
+			"homestead",
+			"KW",
+			"HD",
+			"s3",
+			"{\n",
+			"$newsItem",
+			"2",
+			"App",
+			"admin/",
+			"-noprofile",
+			"powershell",
+			"upload",
+			"drop",
+			"picture",
+			"forceFallback",
+			"article",
+			"Article",
+			"article",
+			"Article",
+			"article",
+			"dropColumn",
+			"integer",
+			"homestead",
+			"staged.grace",
+			"- map: staged.grace",
+			"\\\\",
+			"strong",
+			"@started(16-06-28 12:37)",
+			"”",
+			"“"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 26.0
+	},
+	"input":
+	{
+		"height": 35.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 116.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.loghighlight":
+	{
+		"height": 452.0
+	},
+	"output.scopehunter.results":
+	{
+		"height": 80.0
+	},
+	"pinned_build_system": "Packages/User/PHP.sublime-build",
+	"project": "part1.sublime-project",
+	"replace":
+	{
+		"height": 48.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"G:\\A_LOCAL\\bbb\\upload\\upload.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+		"xdebug":
+		{
+			"hide_conflict": false
+		}
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 405.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
