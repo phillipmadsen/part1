@@ -1,5 +1,29 @@
 <?php
-
+Route::get('/r', function ()
+{
+    function philsroutes()
+    {
+        $routeCollection = Route::getRoutes();
+        echo '<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">';
+        echo "<div class='container'><div class='col-md-12'><table class='table table-striped' style='width:100%'>";
+        echo '<tr>';
+        echo "<td width='10%'><h4>HTTP Method</h4></td>";
+        echo "<td width='45%'><h4>Route</h4></td>";
+        echo "<td width='45%'><h4>Corresponding Action</h4></td>";
+        echo '</tr>';
+        foreach ($routeCollection as $value)
+        {
+            echo '<tr>';
+            echo '<td>' . $value->getMethods()[0] . '</td>';
+            echo "<td><a href='" . $value->getPath() . "' target='_blank'>" . $value->getPath() . '</a> </td>';
+            echo '<td>' . $value->getActionName() . '</td>';
+            echo '</tr>';
+        }
+        echo '</table></div></div>';
+        echo '<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>';
+    }
+    return philsroutes();
+});
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -21,3 +45,12 @@ Route::post('upload/delete', ['as' => 'upload-remove', 'uses' =>'ImageController
  */
 Route::get('example-2', ['as' => 'upload-2', 'uses' => 'ImageController@getServerImagesPage']);
 Route::get('server-images', ['as' => 'server-images', 'uses' => 'ImageController@getServerImages']);
+
+// Begin Product Routes
+
+Route::any('api/product', 'ApiController@productData');
+Route::any('api/product-vue', 'ApiController@productVueData');
+
+Route::resource('product', 'ProductController');
+
+// End Product Routes

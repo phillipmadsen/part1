@@ -146,6 +146,7 @@ return [
 
         Intervention\Image\ImageServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
+        Evercode1\ViewMaker\ViewMakerServiceProvider::class,
 
     ],
 

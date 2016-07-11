@@ -19,3 +19,15 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
         'remember_token' => str_random(10),
     ];
 });
+
+
+// Begin Product Factory
+
+$factory->define(App\Product::class, function (Faker\Generator $faker) {
+    return [
+        'product_name' => $faker->unique()->word,
+
+    ];
+});
+
+// End Product Factory
