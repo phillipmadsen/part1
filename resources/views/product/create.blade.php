@@ -1,6 +1,8 @@
 @extends('layouts.app')
+
 @section('css')
 	{!! HTML::style('/packages/dropzone/dropzone.css') !!}
+@endsection
 
 @section('title')
 	<title>Create a Product</title>
@@ -15,6 +17,7 @@
 	<hr/>
 	<form class="form" role="form" method="POST" action="{{ url('/product') }}" enctype="multipart/form-data">
 		{!! csrf_field() !!}
+
 		@if(!empty($errors))
 			@if($errors->any())
 				<ul class="alert alert-danger" style="list-style-type: none">
@@ -28,17 +31,18 @@
 			<!-- Price Field -->
 			<div class="form-group col-sm-2">
 				{!! Form::label('price', 'Price:') !!}
-				{!! Form::number('price', null, ['class' => 'form-control', 'required'=>'required']) !!}
+				{!! Form::number('price', 2501235, ['class' => 'form-control' ]) !!}
 			</div>
 			<!-- Upc Field -->
 			<div class="form-group col-sm-2">
 				{!! Form::label('upc', 'Upc:') !!}
-				{!! Form::text('upc', null, ['class' => 'form-control']) !!}
+				{!! Form::text('upc', 145897591235, ['class' => 'form-control']) !!}
 			</div>
 			<!-- Sku Field -->
 			<div class="form-group col-sm-2">
+			<?php $sku = generateSku(); ?>
 				{!! Form::label('sku', 'Sku:') !!}
-				{!! Form::text('sku', null, ['class' => 'form-control']) !!}
+				{!! Form::text('sku', $sku, ['class' => 'form-control']) !!}
 			</div>
 		</div>
 		<div class="row">
@@ -78,10 +82,12 @@
 	</form>
 <hr style="clear:both" />
 
-<form action="/product/upload/images" method="post" class="dropzone" enctype="multipart/form-data" files="true">
-{{  csrf_field() }}
 
-</form>
+
+{!! Form::open(['url' => route('productimage/upload'), 'method' => 'post', 'class' => 'dropzone', 'files'=>true, 'id'=>'addProductImagesForm']) !!}
+
+
+{!! Form::close() !!}
 
 	<br style="clear:both" />
 
@@ -90,4 +96,13 @@
 @section('scripts')
 	{!! HTML::script('/packages/dropzone/dropzone.js') !!}
 	{!! HTML::script('/assets/js/dropzone-config.js') !!}
+
+	<script type="text/javascript">
+		Dropzone.options.addProductImagesForm = {
+		{{-- 	paramName: 'image',
+			maxFileSize: 3,
+			acceptedFiles: '.jpg, .jpeg, .png, .bmp' --}}
+
+		}
+	</script>
 @endsection

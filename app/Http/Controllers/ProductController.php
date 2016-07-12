@@ -2,12 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use Str;
 use App\Http\Requests;
+use App\Http\Requests\ProductCreateRequest;
 use App\Models\ProductImage;
 use App\Product;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Response;
+use Str;
+
 
 class ProductController extends Controller
 {
@@ -40,38 +45,30 @@ class ProductController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ProductCreateRequest $request)
     {
+		Product::create($request->all());
 
-
-        $this->validate($request, [
-            'product_name' => 'required|unique:products|string|max:30',
-        ]);
-
-        $product = Product::create($request->all());
-
-	    flash('Success!', 'Your product has been created');
-
-        $product->save();
-
-        // $imagesname = $request->file('path')->getClientOriginalExtension();
-        // $request->file('path')->move(base_path() . '/public/uploads/products/', $imageName);
+	    flash()->success('Success!', 'Your product has been created');
 
         return Redirect::route('product.index');
 
     }
 
 	//flash()->success('Successful Upload', 'your product images are saved');
-	public function addImage($id, Request $request)
+	public function addImage(Request $request)
 	{
-		//dd($request->file('file'));
+
+        // dd($request->file('file'));
 
 		$file = $request->file('file');
 		$name = time() . $file->getClientOriginalName();
 		$file->move('uploads/products/', $name);
 
-		$product = Product::findOrFail($id)->first();
-		$product->images()->create(['path' => '/uploads/products/{$name}']);
+		$product = $request->findOrFail($id)->first();
+
+		$product->images = ProductImage::create(['path' => '/uploads/products/{$name}']);
+        //$product->images()->create(['path' => '/uploads/products/{$name}']);
 		//$product->images()->create(['image' => 'mightbeWorking.jpg']);
 
 		return 'done';
@@ -96,10 +93,12 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($id, Request $request)
     {
         $product = Product::findOrFail($id);
         //$slug = Str::slug($product->name);
+
+        $product = $request->all();
 
 
         return view('product.edit', compact('product'));
@@ -115,18 +114,16 @@ class ProductController extends Controller
     public function update(Request $request, $id)
     {
 
-        // if (empty($product))
-        // {
-        //     flash()->error('Product not found', 'try creating it first');
 
-        //     return redirect(route('product.index'));
-        // }
 
         $this->validate($request, [
             'product_name' => 'required|string|max:40|unique:products,product_name,' .$id
 
         ]);
         $product = Product::findOrFail($id);
+
+
+
 
         flash()->success('Success!!', 'you successfully updated the product');
 

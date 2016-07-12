@@ -4,9 +4,52 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "bf6504a3c546e6c5e023acff0158caeb",
-    "content-hash": "13ceeb8b67e177958fca2ba53944b6b7",
+    "hash": "810d1e97d26077ff627f48012881272e",
+    "content-hash": "733d1fad4424bbff7107d6f1ec61abf0",
     "packages": [
+        {
+            "name": "beaudierman/ups",
+            "version": "v1.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/beaudierman/ups.git",
+                "reference": "33b21a169f5ad7a7ca43ea148227cc32426f8b68"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/beaudierman/ups/zipball/33b21a169f5ad7a7ca43ea148227cc32426f8b68",
+                "reference": "33b21a169f5ad7a7ca43ea148227cc32426f8b68",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "5.*",
+                "php": ">=5.5.9"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Beaudierman\\Ups\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Beau Dierman",
+                    "email": "beaudierman@gmail.com"
+                }
+            ],
+            "description": "A simple tool to return UPS shipping rates.",
+            "homepage": "https://github.com/beaudierman/ups",
+            "keywords": [
+                "laravel",
+                "shipping",
+                "ups"
+            ],
+            "time": "2016-01-19 14:37:46"
+        },
         {
             "name": "classpreloader/classpreloader",
             "version": "3.0.0",
@@ -2002,6 +2045,45 @@
                 "dump"
             ],
             "time": "2016-06-29 05:40:00"
+        },
+        {
+            "name": "tsawler/laravel-filemanager",
+            "version": "0.6.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/tsawler/laravel-filemanager.git",
+                "reference": "c92aefe790a0648db885c830204502b919ff15f0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/tsawler/laravel-filemanager/zipball/c92aefe790a0648db885c830204502b919ff15f0",
+                "reference": "c92aefe790a0648db885c830204502b919ff15f0",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": ">=5.0.0",
+                "intervention/image": "2.*",
+                "laravelcollective/html": ">=5.1.0",
+                "php": ">=5.5.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Tsawler\\Laravelfilemanager\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Trevor Sawler",
+                    "email": "trevor.sawler@gmail.com"
+                }
+            ],
+            "description": "A file upload/editor intended for use with Laravel 5 and CKEditor",
+            "time": "2016-05-31 14:01:26"
         },
         {
             "name": "vlucas/phpdotenv",

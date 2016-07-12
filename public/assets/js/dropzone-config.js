@@ -13,7 +13,11 @@ Dropzone.options.realDropzone = {
 
     // The setting up of the dropzone
     init:function() {
-     
+    	this.on("success", function(file, responseText) {
+	      // Handle the responseText here. For example, add the text to the preview element:
+	      file.previewTemplate.appendChild(document.createTextNode(responseText));
+	});
+
         this.on("removedfile", function(file) {
 
             $.ajax({

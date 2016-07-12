@@ -148,6 +148,10 @@ return [
         Collective\Html\HtmlServiceProvider::class,
         Evercode1\ViewMaker\ViewMakerServiceProvider::class,
 
+
+        Tsawler\Laravelfilemanager\LaravelFilemanagerServiceProvider::class,
+        Beaudierman\Ups\UpsServiceProvider::class,
+
     ],
 
     /*
@@ -197,8 +201,11 @@ return [
         'View'      => Illuminate\Support\Facades\View::class,
         'Form'      => Collective\Html\FormFacade::class,
         'HTML'      => Collective\Html\HtmlFacade::class,
+        'Html'      => Collective\Html\HtmlFacade::class,
         'Image'     => Intervention\Image\Facades\Image::class,
         'Str' => Illuminate\Support\Str::class,
+
+        'Ups'             => Beaudierman\Ups\Facades\Ups::class,
     ],
 
 ];

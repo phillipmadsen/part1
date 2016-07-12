@@ -8,9 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model
 {
     protected $guarded  = ['id'];
-    protected $fillable = ['product_name', 'upc', 'sku', 'description', 'price'];
-
-
+	public $timestamps = true;
+	protected $fillable = array('product_name', 'price', 'sku', 'upc', 'description');
+	protected $visible = array('product_name', 'price', 'sku', 'upc', 'description');
 
 	/**
 	 * Relationship with the image model.
@@ -27,6 +27,15 @@ class Product extends Model
 	public function getPriceAttribute($price)
 	{
 		return '$'. number_format($price, 2, '.', '');
+	}
+
+
+
+
+	public function scopePreUploadImagesBeforeProductCreation($query, $id )
+	{
+
+		return $query->where(compact('id'))->first();
 	}
 
 }

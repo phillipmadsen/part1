@@ -24,7 +24,8 @@ class ProductCreateRequest extends Request
     public function rules()
     {
         return [
-            
+            'product_name' => 'required'
         ];
     }
 }
+

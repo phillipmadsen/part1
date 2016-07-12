@@ -12,6 +12,18 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 {
     use Authenticatable, CanResetPassword;
 
+	/**
+	 * User constructor.
+	 *
+	 * @param string $table
+	 */
+	public function __construct()
+	{
+		$this->user = Auth::user();
+		view()->share('singedIn', Auth::check());
+		view()->share('user', $this->user);
+	}
+
     /**
      * The database table used by the model.
      *
@@ -33,6 +45,25 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
      */
     protected $hidden = ['password', 'remember_token'];
 
+	public function owns($relation)
+	{
+		return $relation->user_id == $this->id;
+	}
+
+	/**
+	 * Relationship with the product model.
+	 *
+	 * @author	Phillip Madsen
+	 * @return	\Illuminate\Database\Eloquent\Relations\HasMany
+	 */
+	public function products()
+	{
+		return $this->hasMany(Product::class);
+	}
 
 
+	public function publish(Product $product)
+	{
+		$this->products()->save($product);
+	}
 }

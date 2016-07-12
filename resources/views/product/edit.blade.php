@@ -1,4 +1,9 @@
 @extends('layouts.app')
+
+@section('css')
+    {!! HTML::style('/packages/dropzone/dropzone.css') !!}
+@endsection
+
 @section('title')
 <title>Edit Product</title>
 @endsection
@@ -64,4 +69,31 @@
      {!! Form::submit('Save', ['class' => 'btn btn-primary']) !!}
 </div>
 </form>
+
+
+<hr style="clear:both" />
+
+<h2>yo</h2>
+
+
+{!! Form::open(['url' => route('productimage/upload'), 'method' => 'post', 'class' => 'dropzone', 'files'=>true, 'id'=>'addProductImagesForm']) !!}
+
+
+{!! Form::close() !!}
+
+    <br style="clear:both" />
+@endsection
+
+@section('scripts')
+    {!! HTML::script('/packages/dropzone/dropzone.js') !!}
+    {!! HTML::script('/assets/js/dropzone-config.js') !!}
+
+    <script type="text/javascript">
+        Dropzone.options.addProductImagesForm = {
+            paramName: 'image',
+            maxFileSize: 3,
+            acceptedFiles: '.jpg, .jpeg, .png, .bmp'
+
+        }
+    </script>
 @endsection

@@ -24,6 +24,10 @@ Route::get('/r', function ()
     }
     return philsroutes();
 });
+
+// Route::bind('product',function($product){
+//     return App\Product::where('product_name','=', $product)->first();
+// });
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -59,7 +63,8 @@ Route::any('api/product-vue', 'ApiController@productVueData');
 
 // Route::get('/product/{product}', 'ProductController@show');
 Route::resource('product', 'ProductController');
-	Route::post('product/upload/images', 'ProductController@addImage');
+// Route::post('product/upload/images', 'ProductController@addImage');
+
+Route::post('productimage/upload',['as' => 'productimage/upload', 'uses' => 'ProductController@addImage']);
 
 
-// End Product Routes
