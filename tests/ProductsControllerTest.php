@@ -4,16 +4,13 @@ use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 
-class ExampleTest extends TestCase
+class ProductsControllerTest extends TestCase
 {
     /**
-     * A basic functional test example.
-     *
-     * @return void
+     * @test
      */
-    public function testBasicExample()
+    public function it_shows_the_form_to_create_a_new_product()
     {
-        $this->visit('/')
-             ->see('Laravel 5');
+        $this->visit('product/create');
     }
 }

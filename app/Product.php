@@ -3,15 +3,30 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+// use App\Models\ProductImage;
 
 class Product extends Model
 {
-    protected $fillable = ['product_name', 'images'];
+    protected $guarded  = ['id'];
+    protected $fillable = ['product_name', 'upc', 'sku', 'description', 'price'];
 
 
-public function images()
-{
-    return $this->morphMany(App\Models\Image::class, 'imageable');
-}
+
+	/**
+	 * Relationship with the image model.
+	 *
+	 * @author	Phillip Madsen
+	 * @return	\Illuminate\Database\Eloquent\Relations\HasMany
+	 */
+	public function images()
+	{
+		return $this->hasMany(\App\Models\ProductImage::class);
+	}
+
+
+	public function getPriceAttribute($price)
+	{
+		return '$'. number_format($price, 2, '.', '');
+	}
 
 }

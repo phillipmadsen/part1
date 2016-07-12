@@ -14,8 +14,10 @@ class AddToProducts extends Migration
     {
         Schema::table('products', function (Blueprint $table)
         {
-            $table->integer('category_id')->unsigned();
-            $table->string('images')->nullable();
+            $table->integer('price')->nullable();
+            $table->string('upc')->nullable();
+            $table->string('sku')->nullable();
+            $table->text('description')->nullable();
         });
     }
 
@@ -26,8 +28,9 @@ class AddToProducts extends Migration
      */
     public function down()
     {
-        Schema::table('products', function (Blueprint $table) {
-            //
+        Schema::table('products', function (Blueprint $table)
+        {
+	        $table->dropColumn(array('price', 'upc', 'sku', 'description'));
         });
     }
 }

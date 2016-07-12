@@ -16,6 +16,7 @@
 
 <body role="document">
 
+
     @include('layouts.nav')
 
     <div class="container theme-showcase" role="main">
@@ -29,6 +30,8 @@
     @include('layouts.scripts')
 
     @yield('scripts')
+
+    @include('flash')
 
 </body>
 </html>

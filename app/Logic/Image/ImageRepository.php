@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\File;
 use Intervention\Image\ImageManager;
 use App\Models\Image;
-
+use App\Product;
 
 class ImageRepository
 {
@@ -53,6 +53,7 @@ class ImageRepository
         $sessionImage = new Image;
         $sessionImage->filename      = $allowed_filename;
         $sessionImage->original_name = $originalName;
+       // $sessionImage->article_id = 3;
         $sessionImage->save();
 
         return Response::json([

@@ -7,6 +7,8 @@
 
 <link href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-social/4.10.1/bootstrap-social.min.css" rel="stylesheet">
 
+<link rel="stylesheet" type="text/css" href="/assets/css/sweetalert.css">
+
 <!-- Move style to a permanent home in your main .css file -->
 <style>
 

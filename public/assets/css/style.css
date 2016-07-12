@@ -6,3 +6,5 @@ body {
 div.btn-group{
     float:right;
 }
+
+img {max-width:100%;}

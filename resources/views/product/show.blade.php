@@ -17,6 +17,25 @@
         <h1>Product Details</h1>
 
         <hr/>
+<div class="row">
+<!-- /.row -->
+<div class="col-md-3">
+<!-- /.col-md-3 -->
+	<div class="id">{!! $product->id !!}</div>
+	<!-- /.id -->
+<div class="description">{!! nl2br($product->description) !!}</div>
+<h2 class="price">{!! $product->price !!}</h2>
+</div>
+
+<div class="col-md-9">
+	@foreach($product->images as $image)
+	<img src="{!! $image->path !!}" alt="product-image">
+	@endforeach
+
+</div>
+<!-- /.col-md-9 -->
+</div>
+        <hr />
 
         <div class="panel panel-default">
 
@@ -31,7 +50,6 @@
                         <th>Delete</th>
 
                     </tr>
-
 
                     <tr>
                         <td>{{ $product->id }} </td>

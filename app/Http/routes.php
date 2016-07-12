@@ -34,23 +34,32 @@ Route::get('/r', function ()
 | and give it the controller to call when that URI is requested.
 |
 */
+	//Route::model('product', 'App\Product');
+	//Route::model('productimage', 'App\Models\ProductImage');
+
+ Route::get('/', ['as' => 'upload', 'uses' => 'ImageController@getUpload']);
+ Route::post('upload', ['as' => 'upload-post', 'uses' =>'ImageController@postUpload']);
+ Route::post('upload/delete', ['as' => 'upload-remove', 'uses' =>'ImageController@deleteUpload']);
 
 
-Route::get('/', ['as' => 'upload', 'uses' => 'ImageController@getUpload']);
-Route::post('upload', ['as' => 'upload-post', 'uses' =>'ImageController@postUpload']);
-Route::post('upload/delete', ['as' => 'upload-remove', 'uses' =>'ImageController@deleteUpload']);
 
 /**
  * Part 2 - Display already uploaded images in Dropzone
  */
-Route::get('example-2', ['as' => 'upload-2', 'uses' => 'ImageController@getServerImagesPage']);
-Route::get('server-images', ['as' => 'server-images', 'uses' => 'ImageController@getServerImages']);
+ Route::get('example-2', ['as' => 'upload-2', 'uses' => 'ImageController@getServerImagesPage']);
+ Route::get('server-images', ['as' => 'server-images', 'uses' => 'ImageController@getServerImages']);
 
 // Begin Product Routes
+
+	//Route::model('product', 'App\Product');
+//	Route::pattern('slug', '[a-z0-9- _]+');
 
 Route::any('api/product', 'ApiController@productData');
 Route::any('api/product-vue', 'ApiController@productVueData');
 
+// Route::get('/product/{product}', 'ProductController@show');
 Route::resource('product', 'ProductController');
+	Route::post('product/upload/images', 'ProductController@addImage');
+
 
 // End Product Routes

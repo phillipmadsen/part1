@@ -15,7 +15,7 @@
                 { "data": "Id"},
                 { "data": "Name",
                     "render": function(data,type,row,meta) {
-                        return '<a href="/product/'+row.Id+'">'+data+'</a>';
+                        return '<a href="/product/'+row.Id+'/edit">'+data+'</a>';
                     }
                 },
                 { "data": "Created",
@@ -28,7 +28,7 @@
                     }
                 },
                 {"defaultContent": "null", "render": function(data,type,row,meta) {
-                    return '<a href="/product/'+row.Id+'/edit">'+ '<button>Edit</button>' + '</a>';
+                    return '<a href="/product/'+row.Id+'/edit">'+ '<button>Edit</button>' + '</a><a href="/product/'+row.Id+'">'+ '<button>View</button>' + '</a>';
                 }
                 }
             ]

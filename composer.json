@@ -9,7 +9,7 @@
         "laravel/framework": "5.2.*",
         "laravelcollective/html": "5.2.*",
         "intervention/image": "^2.3",
-         "evercode1/view-maker": "^3.5"
+	    "evercode1/view-maker": "^3.5"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
@@ -31,7 +31,10 @@
     "autoload-dev": {
         "classmap": [
             "tests/TestCase.php"
-        ]
+        ],
+	    "files":[
+		    "app/helpers.php"
+	    ]
     },
     "scripts": {
         "post-install-cmd": [

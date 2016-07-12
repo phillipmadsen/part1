@@ -1,8 +1,9 @@
 var photo_counter = 0;
 Dropzone.options.realDropzone = {
-
-    uploadMultiple: false,
+    autoProcessQueue: false,
+    uploadMultiple: true,
     parallelUploads: 100,
+    maxFiles: 100,
     maxFilesize: 8,
     previewsContainer: '#dropzonePreview',
     previewTemplate: document.querySelector('#preview-template').innerHTML,
@@ -12,7 +13,7 @@ Dropzone.options.realDropzone = {
 
     // The setting up of the dropzone
     init:function() {
-
+     
         this.on("removedfile", function(file) {
 
             $.ajax({
