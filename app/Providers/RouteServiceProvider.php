@@ -24,9 +24,17 @@ class RouteServiceProvider extends ServiceProvider
      */
     public function boot(Router $router)
     {
-        //
+        $router->pattern('id', '[0-9]+');
+        $router->pattern('product_name', '[a-z]+');
+
+
 
         parent::boot($router);
+
+        $router->model('user', 'App\User');
+        $router->model('product', 'App\Product');
+        $router->model('ProductImage', 'App\Models\ProductImage');
+        $router->model('productimage', 'App\Models\ProductImage');
     }
 
     /**
@@ -39,6 +47,10 @@ class RouteServiceProvider extends ServiceProvider
     {
         $router->group(['namespace' => $this->namespace], function ($router) {
             require app_path('Http/routes.php');
+        });
+
+        $router->bind('product', function($value) {
+            return App\Product::where('id', $value)->first();
         });
     }
 }

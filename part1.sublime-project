@@ -7,5 +7,8 @@
 	],
     "settings":[{
     "indent_style" : "tab",
+    "tab_size": 4,
+    "font_face": "Encode Sans Compressed SemiBold",
+    "delete_empty_lines":true,
     }]
 }
