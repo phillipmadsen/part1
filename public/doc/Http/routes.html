@@ -1,0 +1,58 @@
+<!DOCTYPE html><html lang="en"><head><title>Http/routes</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../"><meta name="groc-document-path" content="Http/routes"><meta name="groc-project-path" content="app/Http/routes.php"><meta name="groc-github-url" content="https://github.com/phillipmadsen/part1"><link rel="stylesheet" type="text/css" media="all" href="../assets/style.css"><script type="text/javascript" src="../assets/behavior.js"></script><body><div id="meta"><div class="file-path"><a href="https://github.com/phillipmadsen/part1/blob/master/app/Http/routes.php">app/Http/routes.php</a></div></div><div id="document"><div class="segment"><div class="code"><div class="wrapper"><span class="hljs-preprocessor">&lt;?php</span>
+Route::get(<span class="hljs-string">'/r'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">philsroutes</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-variable">$routeCollection</span> = Route::getRoutes();
+        <span class="hljs-keyword">echo</span> <span class="hljs-string">'&lt;link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"&gt;'</span>;
+        <span class="hljs-keyword">echo</span> <span class="hljs-string">"&lt;div class='container'&gt;&lt;div class='col-md-12'&gt;&lt;table class='table table-striped' style='width:100%'&gt;"</span>;
+        <span class="hljs-keyword">echo</span> <span class="hljs-string">'&lt;tr&gt;'</span>;
+        <span class="hljs-keyword">echo</span> <span class="hljs-string">"&lt;td width='10%'&gt;&lt;h4&gt;HTTP Method&lt;/h4&gt;&lt;/td&gt;"</span>;
+        <span class="hljs-keyword">echo</span> <span class="hljs-string">"&lt;td width='45%'&gt;&lt;h4&gt;Route&lt;/h4&gt;&lt;/td&gt;"</span>;
+        <span class="hljs-keyword">echo</span> <span class="hljs-string">"&lt;td width='45%'&gt;&lt;h4&gt;Corresponding Action&lt;/h4&gt;&lt;/td&gt;"</span>;
+        <span class="hljs-keyword">echo</span> <span class="hljs-string">'&lt;/tr&gt;'</span>;
+        <span class="hljs-keyword">foreach</span> (<span class="hljs-variable">$routeCollection</span> <span class="hljs-keyword">as</span> <span class="hljs-variable">$value</span>)
+        {
+            <span class="hljs-keyword">echo</span> <span class="hljs-string">'&lt;tr&gt;'</span>;
+            <span class="hljs-keyword">echo</span> <span class="hljs-string">'&lt;td&gt;'</span> . <span class="hljs-variable">$value</span>-&gt;getMethods()[<span class="hljs-number">0</span>] . <span class="hljs-string">'&lt;/td&gt;'</span>;
+            <span class="hljs-keyword">echo</span> <span class="hljs-string">"&lt;td&gt;&lt;a href='"</span> . <span class="hljs-variable">$value</span>-&gt;getPath() . <span class="hljs-string">"' target='_blank'&gt;"</span> . <span class="hljs-variable">$value</span>-&gt;getPath() . <span class="hljs-string">'&lt;/a&gt; &lt;/td&gt;'</span>;
+            <span class="hljs-keyword">echo</span> <span class="hljs-string">'&lt;td&gt;'</span> . <span class="hljs-variable">$value</span>-&gt;getActionName() . <span class="hljs-string">'&lt;/td&gt;'</span>;
+            <span class="hljs-keyword">echo</span> <span class="hljs-string">'&lt;/tr&gt;'</span>;
+        }
+        <span class="hljs-keyword">echo</span> <span class="hljs-string">'&lt;/table&gt;&lt;/div&gt;&lt;/div&gt;'</span>;
+        <span class="hljs-keyword">echo</span> <span class="hljs-string">'&lt;script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"&gt;&lt;/script&gt;'</span>;
+    }
+    <span class="hljs-keyword">return</span> philsroutes();
+});
+
+
+<span class="hljs-comment">//Route::group(array('before' =&gt; 'auth'), function ()</span>
+<span class="hljs-comment">//{</span>
+    Route::get(<span class="hljs-string">'/laravel-filemanager'</span>, <span class="hljs-string">'\Tsawler\Laravelfilemanager\controllers\LfmController@show'</span>);
+    Route::post(<span class="hljs-string">'/laravel-filemanager/upload'</span>, <span class="hljs-string">'\Tsawler\Laravelfilemanager\controllers\LfmController@upload'</span>);</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>list all lfm routes here...</p></div></div><div class="code"><div class="wrapper"><span class="hljs-comment">//});</span></div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>Route::bind(&#39;product&#39;,function($product){
+    return App\Product::where(&#39;product_name&#39;,&#39;=&#39;, $product)-&gt;first();</p></div></div><div class="code"><div class="wrapper"><span class="hljs-comment">// );</span>
+<span class="hljs-comment">/*
+|--------------------------------------------------------------------------
+| Application Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register all of the routes for an application.
+| It's a breeze. Simply tell Laravel the URIs it should respond to
+| and give it the controller to call when that URI is requested.
+|
+*/</span>
+	<span class="hljs-comment">//Route::model('product', 'App\Product');</span>
+	<span class="hljs-comment">//Route::model('productimage', 'App\Models\ProductImage');</span>
+
+ Route::get(<span class="hljs-string">'/'</span>, [<span class="hljs-string">'as'</span> =&gt; <span class="hljs-string">'upload'</span>, <span class="hljs-string">'uses'</span> =&gt; <span class="hljs-string">'ImageController@getUpload'</span>]);
+ Route::post(<span class="hljs-string">'upload'</span>, [<span class="hljs-string">'as'</span> =&gt; <span class="hljs-string">'upload-post'</span>, <span class="hljs-string">'uses'</span> =&gt;<span class="hljs-string">'ImageController@postUpload'</span>]);
+ Route::post(<span class="hljs-string">'upload/delete'</span>, [<span class="hljs-string">'as'</span> =&gt; <span class="hljs-string">'upload-remove'</span>, <span class="hljs-string">'uses'</span> =&gt;<span class="hljs-string">'ImageController@deleteUpload'</span>]);
+
+
+
+<span class="hljs-comment">/**
+ * Part 2 - Display already uploaded images in Dropzone
+ */</span>
+ Route::get(<span class="hljs-string">'example-2'</span>, [<span class="hljs-string">'as'</span> =&gt; <span class="hljs-string">'upload-2'</span>, <span class="hljs-string">'uses'</span> =&gt; <span class="hljs-string">'ImageController@getServerImagesPage'</span>]);
+ Route::get(<span class="hljs-string">'server-images'</span>, [<span class="hljs-string">'as'</span> =&gt; <span class="hljs-string">'server-images'</span>, <span class="hljs-string">'uses'</span> =&gt; <span class="hljs-string">'ImageController@getServerImages'</span>]);</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>Begin Product Routes</p></div></div><div class="code"><div class="wrapper">	<span class="hljs-comment">//Route::model('product', 'App\Product');</span></div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>Route::pattern(&#39;slug&#39;, &#39;[a-z0-9- _]+&#39;);</p></div></div><div class="code"><div class="wrapper">Route::any(<span class="hljs-string">'api/product'</span>, <span class="hljs-string">'ApiController@productData'</span>);
+Route::any(<span class="hljs-string">'api/product-vue'</span>, <span class="hljs-string">'ApiController@productVueData'</span>);</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>Route::get(&#39;/product/{product}&#39;, &#39;ProductController@show&#39;);</p></div></div><div class="code"><div class="wrapper">Route::resource(<span class="hljs-string">'product'</span>, <span class="hljs-string">'ProductController'</span>);</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>Route::post(&#39;product/upload/images&#39;, &#39;ProductController@addImage&#39;);</p></div></div><div class="code"><div class="wrapper">Route::post(<span class="hljs-string">'productimage/upload'</span>,[<span class="hljs-string">'as'</span> =&gt; <span class="hljs-string">'productimage/upload'</span>, <span class="hljs-string">'uses'</span> =&gt; <span class="hljs-string">'ProductController@addImage'</span>]);</div></div></div></div></body></html>

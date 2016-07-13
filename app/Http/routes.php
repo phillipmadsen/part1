@@ -25,6 +25,14 @@ Route::get('/r', function ()
     return philsroutes();
 });
 
+
+//Route::group(array('before' => 'auth'), function ()
+//{
+    Route::get('/laravel-filemanager', '\Tsawler\Laravelfilemanager\controllers\LfmController@show');
+    Route::post('/laravel-filemanager/upload', '\Tsawler\Laravelfilemanager\controllers\LfmController@upload');
+    // list all lfm routes here...
+//});
+
 // Route::bind('product',function($product){
 //     return App\Product::where('product_name','=', $product)->first();
 // });
@@ -46,7 +54,7 @@ Route::get('/r', function ()
  Route::post('upload/delete', ['as' => 'upload-remove', 'uses' =>'ImageController@deleteUpload']);
 
 
-
+ Route::get('/doc');
 /**
  * Part 2 - Display already uploaded images in Dropzone
  */

@@ -1,0 +1,211 @@
+<!DOCTYPE html><html lang="en"><head><title>config/app</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../"><meta name="groc-document-path" content="config/app"><meta name="groc-project-path" content="config/app.php"><meta name="groc-github-url" content="https://github.com/phillipmadsen/part1"><link rel="stylesheet" type="text/css" media="all" href="../assets/style.css"><script type="text/javascript" src="../assets/behavior.js"></script><body><div id="meta"><div class="file-path"><a href="https://github.com/phillipmadsen/part1/blob/master/config/app.php">config/app.php</a></div></div><div id="document"><div class="segment"><div class="code"><div class="wrapper"><span class="hljs-preprocessor">&lt;?php</span>
+
+<span class="hljs-keyword">return</span> [
+
+    <span class="hljs-comment">/*
+    |--------------------------------------------------------------------------
+    | Application Debug Mode
+    |--------------------------------------------------------------------------
+    |
+    | When your application is in debug mode, detailed error messages with
+    | stack traces will be shown on every error that occurs within your
+    | application. If disabled, a simple generic error page is shown.
+    |
+    */</span>
+
+    <span class="hljs-string">'debug'</span> =&gt; env(<span class="hljs-string">'APP_DEBUG'</span>, <span class="hljs-keyword">true</span>),
+
+    <span class="hljs-string">'env'</span> =&gt; env(<span class="hljs-string">'APP_ENV'</span>, <span class="hljs-string">'local'</span>),
+
+    <span class="hljs-comment">/*
+    |--------------------------------------------------------------------------
+    | Application URL
+    |--------------------------------------------------------------------------
+    |
+    | This URL is used by the console to properly generate URLs when using
+    | the Artisan command line tool. You should set this to the root of
+    | your application so that it is used when running Artisan tasks.
+    |
+    */</span>
+
+    <span class="hljs-string">'url'</span> =&gt; <span class="hljs-string">'http://localhost'</span>,
+
+    <span class="hljs-comment">/*
+    |--------------------------------------------------------------------------
+    | Application Timezone
+    |--------------------------------------------------------------------------
+    |
+    | Here you may specify the default timezone for your application, which
+    | will be used by the PHP date and date-time functions. We have gone
+    | ahead and set this to a sensible default for you out of the box.
+    |
+    */</span>
+
+    <span class="hljs-string">'timezone'</span> =&gt; <span class="hljs-string">'UTC'</span>,
+
+    <span class="hljs-comment">/*
+    |--------------------------------------------------------------------------
+    | Application Locale Configuration
+    |--------------------------------------------------------------------------
+    |
+    | The application locale determines the default locale that will be used
+    | by the translation service provider. You are free to set this value
+    | to any of the locales which will be supported by the application.
+    |
+    */</span>
+
+    <span class="hljs-string">'locale'</span> =&gt; <span class="hljs-string">'en'</span>,
+
+    <span class="hljs-comment">/*
+    |--------------------------------------------------------------------------
+    | Application Fallback Locale
+    |--------------------------------------------------------------------------
+    |
+    | The fallback locale determines the locale to use when the current one
+    | is not available. You may change the value to correspond to any of
+    | the language folders that are provided through your application.
+    |
+    */</span>
+
+    <span class="hljs-string">'fallback_locale'</span> =&gt; <span class="hljs-string">'en'</span>,
+
+    <span class="hljs-comment">/*
+    |--------------------------------------------------------------------------
+    | Encryption Key
+    |--------------------------------------------------------------------------
+    |
+    | This key is used by the Illuminate encrypter service and should be set
+    | to a random, 32 character string, otherwise these encrypted strings
+    | will not be safe. Please do this before deploying an application!
+    |
+    */</span>
+
+    <span class="hljs-string">'key'</span> =&gt; env(<span class="hljs-string">'APP_KEY'</span>, <span class="hljs-string">'SomeRandomString'</span>),
+
+    <span class="hljs-string">'cipher'</span> =&gt; <span class="hljs-string">'AES-256-CBC'</span>,
+
+    <span class="hljs-comment">/*
+    |--------------------------------------------------------------------------
+    | Logging Configuration
+    |--------------------------------------------------------------------------
+    |
+    | Here you may configure the log settings for your application. Out of
+    | the box, Laravel uses the Monolog PHP logging library. This gives
+    | you a variety of powerful log handlers / formatters to utilize.
+    |
+    | Available Settings: "single", "daily", "syslog", "errorlog"
+    |
+    */</span>
+
+    <span class="hljs-string">'log'</span> =&gt; <span class="hljs-string">'single'</span>,
+
+    <span class="hljs-comment">/*
+    |--------------------------------------------------------------------------
+    | Autoloaded Service Providers
+    |--------------------------------------------------------------------------
+    |
+    | The service providers listed here will be automatically loaded on the
+    | request to your application. Feel free to add your own services to
+    | this array to grant expanded functionality to your applications.
+    |
+    */</span>
+
+    <span class="hljs-string">'providers'</span> =&gt; [
+
+        <span class="hljs-comment">/*
+         * Laravel Framework Service Providers...
+         */</span>
+        Illuminate\Auth\AuthServiceProvider::class,
+        Illuminate\Broadcasting\BroadcastServiceProvider::class,
+        Illuminate\Bus\BusServiceProvider::class,
+        Illuminate\Cache\CacheServiceProvider::class,
+        Illuminate\Foundation\Providers\ConsoleSupportServiceProvider::class,
+        Illuminate\Cookie\CookieServiceProvider::class,
+        Illuminate\Database\DatabaseServiceProvider::class,
+        Illuminate\Encryption\EncryptionServiceProvider::class,
+        Illuminate\Filesystem\FilesystemServiceProvider::class,
+        Illuminate\Foundation\Providers\FoundationServiceProvider::class,
+        Illuminate\Hashing\HashServiceProvider::class,
+        Illuminate\Mail\MailServiceProvider::class,
+        Illuminate\Pagination\PaginationServiceProvider::class,
+        Illuminate\Pipeline\PipelineServiceProvider::class,
+        Illuminate\Queue\QueueServiceProvider::class,
+        Illuminate\Redis\RedisServiceProvider::class,
+        Illuminate\Auth\Passwords\PasswordResetServiceProvider::class,
+        Illuminate\Session\SessionServiceProvider::class,
+        Illuminate\Translation\TranslationServiceProvider::class,
+        Illuminate\Validation\ValidationServiceProvider::class,
+        Illuminate\View\ViewServiceProvider::class,
+
+        <span class="hljs-comment">/*
+         * Application Service Providers...
+         */</span>
+        App\Providers\AppServiceProvider::class,
+        App\Providers\EventServiceProvider::class,
+        App\Providers\RouteServiceProvider::class,
+
+        Intervention\Image\ImageServiceProvider::class,
+        Collective\Html\HtmlServiceProvider::class,
+        Evercode1\ViewMaker\ViewMakerServiceProvider::class,
+
+
+        Tsawler\Laravelfilemanager\LaravelFilemanagerServiceProvider::class,
+        Beaudierman\Ups\UpsServiceProvider::class,
+
+    ],
+
+    <span class="hljs-comment">/*
+    |--------------------------------------------------------------------------
+    | Class Aliases
+    |--------------------------------------------------------------------------
+    |
+    | This array of class aliases will be registered when this application
+    | is started. However, feel free to register as many as you wish as
+    | the aliases are "lazy" loaded so they don't hinder performance.
+    |
+    */</span>
+
+    <span class="hljs-string">'aliases'</span> =&gt; [
+
+        <span class="hljs-string">'App'</span>       =&gt; Illuminate\Support\Facades\App::class,
+        <span class="hljs-string">'Artisan'</span>   =&gt; Illuminate\Support\Facades\Artisan::class,
+        <span class="hljs-string">'Auth'</span>      =&gt; Illuminate\Support\Facades\Auth::class,
+        <span class="hljs-string">'Blade'</span>     =&gt; Illuminate\Support\Facades\Blade::class,
+        <span class="hljs-string">'Bus'</span>       =&gt; Illuminate\Support\Facades\Bus::class,
+        <span class="hljs-string">'Cache'</span>     =&gt; Illuminate\Support\Facades\Cache::class,
+        <span class="hljs-string">'Config'</span>    =&gt; Illuminate\Support\Facades\Config::class,
+        <span class="hljs-string">'Cookie'</span>    =&gt; Illuminate\Support\Facades\Cookie::class,
+        <span class="hljs-string">'Crypt'</span>     =&gt; Illuminate\Support\Facades\Crypt::class,
+        <span class="hljs-string">'DB'</span>        =&gt; Illuminate\Support\Facades\DB::class,
+        <span class="hljs-string">'Eloquent'</span>  =&gt; Illuminate\Database\Eloquent\Model::class,
+        <span class="hljs-string">'Event'</span>     =&gt; Illuminate\Support\Facades\Event::class,
+        <span class="hljs-string">'File'</span>      =&gt; Illuminate\Support\Facades\File::class,
+        <span class="hljs-string">'Hash'</span>      =&gt; Illuminate\Support\Facades\Hash::class,
+        <span class="hljs-string">'Input'</span>     =&gt; Illuminate\Support\Facades\Input::class,
+        <span class="hljs-string">'Inspiring'</span> =&gt; Illuminate\Foundation\Inspiring::class,
+        <span class="hljs-string">'Lang'</span>      =&gt; Illuminate\Support\Facades\Lang::class,
+        <span class="hljs-string">'Log'</span>       =&gt; Illuminate\Support\Facades\Log::class,
+        <span class="hljs-string">'Mail'</span>      =&gt; Illuminate\Support\Facades\Mail::class,
+        <span class="hljs-string">'Password'</span>  =&gt; Illuminate\Support\Facades\Password::class,
+        <span class="hljs-string">'Queue'</span>     =&gt; Illuminate\Support\Facades\Queue::class,
+        <span class="hljs-string">'Redirect'</span>  =&gt; Illuminate\Support\Facades\Redirect::class,
+        <span class="hljs-string">'Redis'</span>     =&gt; Illuminate\Support\Facades\Redis::class,
+        <span class="hljs-string">'Request'</span>   =&gt; Illuminate\Support\Facades\Request::class,
+        <span class="hljs-string">'Response'</span>  =&gt; Illuminate\Support\Facades\Response::class,
+        <span class="hljs-string">'Route'</span>     =&gt; Illuminate\Support\Facades\Route::class,
+        <span class="hljs-string">'Schema'</span>    =&gt; Illuminate\Support\Facades\Schema::class,
+        <span class="hljs-string">'Session'</span>   =&gt; Illuminate\Support\Facades\Session::class,
+        <span class="hljs-string">'Storage'</span>   =&gt; Illuminate\Support\Facades\Storage::class,
+        <span class="hljs-string">'URL'</span>       =&gt; Illuminate\Support\Facades\URL::class,
+        <span class="hljs-string">'Validator'</span> =&gt; Illuminate\Support\Facades\Validator::class,
+        <span class="hljs-string">'View'</span>      =&gt; Illuminate\Support\Facades\View::class,
+        <span class="hljs-string">'Form'</span>      =&gt; Collective\Html\FormFacade::class,
+        <span class="hljs-string">'HTML'</span>      =&gt; Collective\Html\HtmlFacade::class,
+        <span class="hljs-string">'Html'</span>      =&gt; Collective\Html\HtmlFacade::class,
+        <span class="hljs-string">'Image'</span>     =&gt; Intervention\Image\Facades\Image::class,
+        <span class="hljs-string">'Str'</span> =&gt; Illuminate\Support\Str::class,
+
+        <span class="hljs-string">'Ups'</span>             =&gt; Beaudierman\Ups\Facades\Ups::class,
+    ],
+
+];</div></div></div></div></body></html>

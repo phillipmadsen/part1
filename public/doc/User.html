@@ -1,0 +1,69 @@
+<!DOCTYPE html><html lang="en"><head><title>User</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content=""><meta name="groc-document-path" content="User"><meta name="groc-project-path" content="app/User.php"><meta name="groc-github-url" content="https://github.com/phillipmadsen/part1"><link rel="stylesheet" type="text/css" media="all" href="assets/style.css"><script type="text/javascript" src="assets/behavior.js"></script><body><div id="meta"><div class="file-path"><a href="https://github.com/phillipmadsen/part1/blob/master/app/User.php">app/User.php</a></div></div><div id="document"><div class="segment"><div class="code"><div class="wrapper"><span class="hljs-preprocessor">&lt;?php</span>
+
+<span class="hljs-keyword">namespace</span> <span class="hljs-title">App</span>;
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">Illuminate</span>\<span class="hljs-title">Auth</span>\<span class="hljs-title">Authenticatable</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">Illuminate</span>\<span class="hljs-title">Database</span>\<span class="hljs-title">Eloquent</span>\<span class="hljs-title">Model</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">Illuminate</span>\<span class="hljs-title">Auth</span>\<span class="hljs-title">Passwords</span>\<span class="hljs-title">CanResetPassword</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">Illuminate</span>\<span class="hljs-title">Contracts</span>\<span class="hljs-title">Auth</span>\<span class="hljs-title">Authenticatable</span> <span class="hljs-title">as</span> <span class="hljs-title">AuthenticatableContract</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">Illuminate</span>\<span class="hljs-title">Contracts</span>\<span class="hljs-title">Auth</span>\<span class="hljs-title">CanResetPassword</span> <span class="hljs-title">as</span> <span class="hljs-title">CanResetPasswordContract</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">User</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Model</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">AuthenticatableContract</span>, <span class="hljs-title">CanResetPasswordContract</span>
+</span>{
+    <span class="hljs-keyword">use</span> <span class="hljs-title">Authenticatable</span>, <span class="hljs-title">CanResetPassword</span>;
+
+	<span class="hljs-comment">/**
+	 * User constructor.
+	 *
+	 * <span class="hljs-doctag">@param</span> string $table
+	 */</span>
+	<span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span><span class="hljs-params">()</span>
+	</span>{
+		<span class="hljs-variable">$this</span>-&gt;user = Auth::user();
+		view()-&gt;share(<span class="hljs-string">'singedIn'</span>, Auth::check());
+		view()-&gt;share(<span class="hljs-string">'user'</span>, <span class="hljs-variable">$this</span>-&gt;user);
+	}
+
+    <span class="hljs-comment">/**
+     * The database table used by the model.
+     *
+     * <span class="hljs-doctag">@var</span> string
+     */</span>
+    <span class="hljs-keyword">protected</span> <span class="hljs-variable">$table</span> = <span class="hljs-string">'users'</span>;
+
+    <span class="hljs-comment">/**
+     * The attributes that are mass assignable.
+     *
+     * <span class="hljs-doctag">@var</span> array
+     */</span>
+    <span class="hljs-keyword">protected</span> <span class="hljs-variable">$fillable</span> = [<span class="hljs-string">'name'</span>, <span class="hljs-string">'email'</span>, <span class="hljs-string">'password'</span>];
+
+    <span class="hljs-comment">/**
+     * The attributes excluded from the model's JSON form.
+     *
+     * <span class="hljs-doctag">@var</span> array
+     */</span>
+    <span class="hljs-keyword">protected</span> <span class="hljs-variable">$hidden</span> = [<span class="hljs-string">'password'</span>, <span class="hljs-string">'remember_token'</span>];
+
+	<span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">owns</span><span class="hljs-params">(<span class="hljs-variable">$relation</span>)</span>
+	</span>{
+		<span class="hljs-keyword">return</span> <span class="hljs-variable">$relation</span>-&gt;user_id == <span class="hljs-variable">$this</span>-&gt;id;
+	}
+
+	<span class="hljs-comment">/**
+	 * Relationship with the product model.
+	 *
+	 * <span class="hljs-doctag">@author</span>	Phillip Madsen
+	 * <span class="hljs-doctag">@return</span>	\Illuminate\Database\Eloquent\Relations\HasMany
+	 */</span>
+	<span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">products</span><span class="hljs-params">()</span>
+	</span>{
+		<span class="hljs-keyword">return</span> <span class="hljs-variable">$this</span>-&gt;hasMany(Product::class);
+	}
+
+
+	<span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">publish</span><span class="hljs-params">(Product <span class="hljs-variable">$product</span>)</span>
+	</span>{
+		<span class="hljs-variable">$this</span>-&gt;products()-&gt;save(<span class="hljs-variable">$product</span>);
+	}
+}</div></div></div></div></body></html>

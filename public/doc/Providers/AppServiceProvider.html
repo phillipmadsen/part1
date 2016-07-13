@@ -1,0 +1,29 @@
+<!DOCTYPE html><html lang="en"><head><title>Providers/AppServiceProvider</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../"><meta name="groc-document-path" content="Providers/AppServiceProvider"><meta name="groc-project-path" content="app/Providers/AppServiceProvider.php"><meta name="groc-github-url" content="https://github.com/phillipmadsen/part1"><link rel="stylesheet" type="text/css" media="all" href="../assets/style.css"><script type="text/javascript" src="../assets/behavior.js"></script><body><div id="meta"><div class="file-path"><a href="https://github.com/phillipmadsen/part1/blob/master/app/Providers/AppServiceProvider.php">app/Providers/AppServiceProvider.php</a></div></div><div id="document"><div class="segment"><div class="code"><div class="wrapper"><span class="hljs-preprocessor">&lt;?php</span>
+
+<span class="hljs-keyword">namespace</span> <span class="hljs-title">App</span>\<span class="hljs-title">Providers</span>;
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">Illuminate</span>\<span class="hljs-title">Support</span>\<span class="hljs-title">ServiceProvider</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">AppServiceProvider</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">ServiceProvider</span>
+</span>{
+    <span class="hljs-comment">/**
+     * Bootstrap any application services.
+     *
+     * <span class="hljs-doctag">@return</span> void
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">boot</span><span class="hljs-params">()</span>
+    </span>{
+    }
+
+    <span class="hljs-comment">/**
+     * Register any application services.
+     *
+     * <span class="hljs-doctag">@return</span> void
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">register</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">if</span> (<span class="hljs-variable">$this</span>-&gt;app-&gt;environment() == <span class="hljs-string">'local'</span>) {
+            <span class="hljs-variable">$this</span>-&gt;app-&gt;register(<span class="hljs-string">'Laracasts\Generators\GeneratorsServiceProvider'</span>);
+        }
+    }
+}</div></div></div></div></body></html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html><html lang="en"><head><title>database/factories/ModelFactory</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../../"><meta name="groc-document-path" content="database/factories/ModelFactory"><meta name="groc-project-path" content="database/factories/ModelFactory.php"><meta name="groc-github-url" content="https://github.com/phillipmadsen/part1"><link rel="stylesheet" type="text/css" media="all" href="../../assets/style.css"><script type="text/javascript" src="../../assets/behavior.js"></script><body><div id="meta"><div class="file-path"><a href="https://github.com/phillipmadsen/part1/blob/master/database/factories/ModelFactory.php">database/factories/ModelFactory.php</a></div></div><div id="document"><div class="segment"><div class="code"><div class="wrapper"><span class="hljs-preprocessor">&lt;?php</span>
+
+<span class="hljs-comment">/*
+|--------------------------------------------------------------------------
+| Model Factories
+|--------------------------------------------------------------------------
+|
+| Here you may define all of your model factories. Model factories give
+| you a convenient way to create models for testing and seeding your
+| database. Just tell the factory how a default model should look.
+|
+*/</span>
+
+<span class="hljs-variable">$factory</span>-&gt;define(App\User::class, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(Faker\Generator <span class="hljs-variable">$faker</span>)</span> </span>{
+    <span class="hljs-keyword">return</span> [
+        <span class="hljs-string">'name'</span> =&gt; <span class="hljs-variable">$faker</span>-&gt;name,
+        <span class="hljs-string">'email'</span> =&gt; <span class="hljs-variable">$faker</span>-&gt;safeEmail,
+        <span class="hljs-string">'password'</span> =&gt; bcrypt(str_random(<span class="hljs-number">10</span>)),
+        <span class="hljs-string">'remember_token'</span> =&gt; str_random(<span class="hljs-number">10</span>),
+    ];
+});
+
+<span class="hljs-comment">//https://placebear.com/g/200/300</span></div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>Begin Product Factory   fillmurray.com/730/350
+// factory(App\Product::class)-&gt;create();</p></div></div><div class="code"><div class="wrapper"><span class="hljs-variable">$factory</span>-&gt;define(App\Product::class, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(Faker\Generator <span class="hljs-variable">$faker</span>)</span> </span>{
+
+    <span class="hljs-keyword">return</span> [
+        <span class="hljs-string">'product_name'</span> =&gt; <span class="hljs-variable">$faker</span>-&gt;unique()-&gt;word,
+        <span class="hljs-string">'upc'</span> =&gt; <span class="hljs-variable">$faker</span>-&gt;ean13,
+        <span class="hljs-string">'sku'</span> =&gt; str_random(<span class="hljs-number">8</span>),
+        <span class="hljs-string">'description'</span> =&gt;  <span class="hljs-variable">$faker</span>-&gt;paragraph,
+        <span class="hljs-string">'price'</span> =&gt; <span class="hljs-variable">$faker</span>-&gt;numberBetween(<span class="hljs-variable">$min</span> = <span class="hljs-number">1000</span>, <span class="hljs-variable">$max</span> = <span class="hljs-number">9000</span>),
+
+    ];
+});</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>factory(App\Models\ProductImage::class, 6)-&gt;create();</p></div></div><div class="code"><div class="wrapper"><span class="hljs-variable">$factory</span>-&gt;define(App\Models\ProductImage::class, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(Faker\Generator <span class="hljs-variable">$faker</span>)</span> </span>{
+
+	<span class="hljs-variable">$product_id</span> = array_pluck(App\Product::all(), <span class="hljs-string">'id'</span>);
+	<span class="hljs-variable">$width</span> = <span class="hljs-number">730</span>;
+	<span class="hljs-variable">$height</span> = <span class="hljs-number">350</span>;
+	<span class="hljs-variable">$lorem_images</span> = [
+			<span class="hljs-string">'https://spaceholder.cc/widthxheight'</span> ,
+			<span class="hljs-string">'https://placebear.com/width/height'</span>,
+			<span class="hljs-string">'http://fillmurray.com/width/height'</span>,
+			<span class="hljs-string">'http://www.placecage.com/width/height'</span>,
+			<span class="hljs-string">'http://placekitten.com/width/height'</span>,
+			<span class="hljs-string">'http://baconmockup.com/width/height/'</span>
+	];
+	<span class="hljs-variable">$provider</span> = <span class="hljs-variable">$lorem_images</span>[array_rand([<span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span> ,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>])];
+	<span class="hljs-variable">$path</span> = str_replace(<span class="hljs-string">'height'</span>, <span class="hljs-variable">$height</span>, str_replace(<span class="hljs-string">'width'</span>, <span class="hljs-variable">$width</span>, <span class="hljs-variable">$provider</span>));
+
+	<span class="hljs-keyword">return</span> [
+        <span class="hljs-string">'product_id'</span> =&gt; <span class="hljs-number">1</span>,
+        <span class="hljs-string">'path'</span> =&gt; <span class="hljs-variable">$path</span>,
+
+
+
+    ];
+});
+
+<span class="hljs-comment">//'product_id' =&gt; $faker-&gt;numberBetween($min = 1, $max = 4),</span>
+<span class="hljs-comment">////use bheller\ImagesGenerator\ImagesGeneratorProvider;</span>
+
+<span class="hljs-variable">$factory</span>-&gt;define(App\Post::class, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(Faker\Generator <span class="hljs-variable">$faker</span>)</span> </span>{
+    <span class="hljs-keyword">return</span> [
+        <span class="hljs-string">'title'</span> =&gt; <span class="hljs-variable">$faker</span>-&gt;sentence,
+        <span class="hljs-string">'body'</span> =&gt; <span class="hljs-variable">$faker</span>-&gt;paragraph,
+        <span class="hljs-string">'img'</span> =&gt; <span class="hljs-variable">$faker</span>-&gt;imageGenerator(<span class="hljs-keyword">null</span>, <span class="hljs-number">640</span>, <span class="hljs-number">480</span>, <span class="hljs-string">'png'</span>, <span class="hljs-keyword">false</span>, <span class="hljs-keyword">true</span>, <span class="hljs-string">'#1f1f1f'</span>, <span class="hljs-string">'#ff2222'</span>), <span class="hljs-comment">//composer require bheller/images-generator</span>
+    ];
+});</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>End Product Factory</p></div></div></div></div></body></html>

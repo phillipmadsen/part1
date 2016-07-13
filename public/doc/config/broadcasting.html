@@ -1,0 +1,49 @@
+<!DOCTYPE html><html lang="en"><head><title>config/broadcasting</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../"><meta name="groc-document-path" content="config/broadcasting"><meta name="groc-project-path" content="config/broadcasting.php"><meta name="groc-github-url" content="https://github.com/phillipmadsen/part1"><link rel="stylesheet" type="text/css" media="all" href="../assets/style.css"><script type="text/javascript" src="../assets/behavior.js"></script><body><div id="meta"><div class="file-path"><a href="https://github.com/phillipmadsen/part1/blob/master/config/broadcasting.php">config/broadcasting.php</a></div></div><div id="document"><div class="segment"><div class="code"><div class="wrapper"><span class="hljs-preprocessor">&lt;?php</span>
+
+<span class="hljs-keyword">return</span> [
+
+    <span class="hljs-comment">/*
+    |--------------------------------------------------------------------------
+    | Default Broadcaster
+    |--------------------------------------------------------------------------
+    |
+    | This option controls the default broadcaster that will be used by the
+    | framework when an event needs to be broadcast. You may set this to
+    | any of the connections defined in the "connections" array below.
+    |
+    */</span>
+
+    <span class="hljs-string">'default'</span> =&gt; env(<span class="hljs-string">'BROADCAST_DRIVER'</span>, <span class="hljs-string">'pusher'</span>),
+
+    <span class="hljs-comment">/*
+    |--------------------------------------------------------------------------
+    | Broadcast Connections
+    |--------------------------------------------------------------------------
+    |
+    | Here you may define all of the broadcast connections that will be used
+    | to broadcast events to other systems or over websockets. Samples of
+    | each available type of connection are provided inside this array.
+    |
+    */</span>
+
+    <span class="hljs-string">'connections'</span> =&gt; [
+
+        <span class="hljs-string">'pusher'</span> =&gt; [
+            <span class="hljs-string">'driver'</span> =&gt; <span class="hljs-string">'pusher'</span>,
+            <span class="hljs-string">'key'</span> =&gt; env(<span class="hljs-string">'PUSHER_KEY'</span>),
+            <span class="hljs-string">'secret'</span> =&gt; env(<span class="hljs-string">'PUSHER_SECRET'</span>),
+            <span class="hljs-string">'app_id'</span> =&gt; env(<span class="hljs-string">'PUSHER_APP_ID'</span>),
+        ],
+
+        <span class="hljs-string">'redis'</span> =&gt; [
+            <span class="hljs-string">'driver'</span> =&gt; <span class="hljs-string">'redis'</span>,
+            <span class="hljs-string">'connection'</span> =&gt; <span class="hljs-string">'default'</span>,
+        ],
+
+        <span class="hljs-string">'log'</span> =&gt; [
+            <span class="hljs-string">'driver'</span> =&gt; <span class="hljs-string">'log'</span>,
+        ],
+
+    ],
+
+];</div></div></div></div></body></html>

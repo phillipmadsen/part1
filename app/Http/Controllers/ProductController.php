@@ -2,17 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests;
 use App\Http\Requests\ProductCreateRequest;
 use App\Models\ProductImage;
 use App\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
-use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Response;
-use Str;
-
 
 class ProductController extends Controller
 {
@@ -23,7 +19,6 @@ class ProductController extends Controller
      */
     public function index()
     {
-
         return view('product.index');
     }
 
@@ -34,50 +29,64 @@ class ProductController extends Controller
      */
     public function create()
     {
-
-	    // flash()->overlay('Welcome Aboard!', 'Thank you for signing up');
+        // flash()->overlay('Welcome Aboard!', 'Thank you for signing up');
         return view('product.create');
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request    $request
      * @return \Illuminate\Http\Response
      */
     public function store(ProductCreateRequest $request)
     {
-		Product::create($request->all());
+        // Product::create($request->all());
+        // flash()->success('Success!', 'Your product has been created');
+        // return Redirect::route('product.index');
 
-	    flash()->success('Success!', 'Your product has been created');
+        $validator = Validator::make($data = Input::all(), Product::$rules);
+
+        if ($validator->fails())
+        {
+            return Redirect::back()->withErrors($validator)->withInput();
+        }
+
+        Product::create($data);
 
         return Redirect::route('product.index');
 
+
+
+
     }
 
-	//flash()->success('Successful Upload', 'your product images are saved');
-	public function addImage(Request $request)
-	{
-
+    //flash()->success('Successful Upload', 'your product images are saved');
+    /**
+     * @param Request $request
+     * @param $id
+     */
+    public function addImage($id, Request $request)
+    {
         // dd($request->file('file'));
 
-		$file = $request->file('file');
-		$name = time() . $file->getClientOriginalName();
-		$file->move('uploads/products/', $name);
+        $file = $request->file('file');
+        $name = time() . $file->getClientOriginalName();
+        $file->move('uploads/products/', $name);
 
-		$product = $request->findOrFail($id)->first();
+        $product = $request->findOrNew($id)->first();
 
-		$product->images = ProductImage::create(['path' => '/uploads/products/{$name}']);
-        //$product->images()->create(['path' => '/uploads/products/{$name}']);
-		//$product->images()->create(['image' => 'mightbeWorking.jpg']);
+        // $product->images = ProductImage::create(['path' => '/uploads/products/{$name}']);
+        $product->images()->create(['path' => '/uploads/products/{$name}']);
+        //$product->images()->create(['image' => 'mightbeWorking.jpg']);
 
-		return 'done';
+        return 'done';
 
-	}
+    }
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  int                         $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -90,7 +99,7 @@ class ProductController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  int                         $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id, Request $request)
@@ -100,30 +109,23 @@ class ProductController extends Controller
 
         $product = $request->all();
 
-
         return view('product.edit', compact('product'));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \Illuminate\Http\Request    $request
+     * @param  int                         $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update($id)
     {
-
-
-
         $this->validate($request, [
-            'product_name' => 'required|string|max:40|unique:products,product_name,' .$id
+            'product_name' => 'required|string|max:40|unique:products,product_name,' . $id
 
         ]);
         $product = Product::findOrFail($id);
-
-
-
 
         flash()->success('Success!!', 'you successfully updated the product');
 
@@ -136,7 +138,7 @@ class ProductController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  int                         $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)

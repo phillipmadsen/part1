@@ -1,0 +1,62 @@
+<!DOCTYPE html><html lang="en"><head><title>composer</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content=""><meta name="groc-document-path" content="composer"><meta name="groc-project-path" content="composer.json"><meta name="groc-github-url" content="https://github.com/phillipmadsen/part1"><link rel="stylesheet" type="text/css" media="all" href="assets/style.css"><script type="text/javascript" src="assets/behavior.js"></script><body><div id="meta"><div class="file-path"><a href="https://github.com/phillipmadsen/part1/blob/master/composer.json">composer.json</a></div></div><div id="document"><div class="segment"><div class="code"><div class="wrapper">{
+    "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"laravel/laravel"</span></span>,
+    "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"The Laravel Framework."</span></span>,
+    "<span class="hljs-attribute">keywords</span>": <span class="hljs-value">[<span class="hljs-string">"framework"</span>, <span class="hljs-string">"laravel"</span>]</span>,
+    "<span class="hljs-attribute">license</span>": <span class="hljs-value"><span class="hljs-string">"MIT"</span></span>,
+    "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"project"</span></span>,
+    "<span class="hljs-attribute">require</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">php</span>": <span class="hljs-value"><span class="hljs-string">"&gt;=5.5.9"</span></span>,
+        "<span class="hljs-attribute">laravel/framework</span>": <span class="hljs-value"><span class="hljs-string">"5.2.*"</span></span>,
+        "<span class="hljs-attribute">laravelcollective/html</span>": <span class="hljs-value"><span class="hljs-string">"5.2.*"</span></span>,
+        "<span class="hljs-attribute">intervention/image</span>": <span class="hljs-value"><span class="hljs-string">"^2.3"</span></span>,
+	    "<span class="hljs-attribute">evercode1/view-maker</span>": <span class="hljs-value"><span class="hljs-string">"^3.5"</span></span>,
+        "<span class="hljs-attribute">beaudierman/ups</span>": <span class="hljs-value"><span class="hljs-string">"^1.1"</span></span>,
+        "<span class="hljs-attribute">tsawler/laravel-filemanager</span>": <span class="hljs-value"><span class="hljs-string">"^0.6.2"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">require-dev</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">fzaninotto/faker</span>": <span class="hljs-value"><span class="hljs-string">"~1.4"</span></span>,
+        "<span class="hljs-attribute">mockery/mockery</span>": <span class="hljs-value"><span class="hljs-string">"0.9.*"</span></span>,
+        "<span class="hljs-attribute">phpunit/phpunit</span>": <span class="hljs-value"><span class="hljs-string">"~4.0"</span></span>,
+        "<span class="hljs-attribute">phpspec/phpspec</span>": <span class="hljs-value"><span class="hljs-string">"~2.1"</span></span>,
+        "<span class="hljs-attribute">symfony/dom-crawler</span>": <span class="hljs-value"><span class="hljs-string">"~3.0"</span></span>,
+        "<span class="hljs-attribute">symfony/css-selector</span>": <span class="hljs-value"><span class="hljs-string">"~3.0"</span></span>,
+        "<span class="hljs-attribute">laracasts/generators</span>": <span class="hljs-value"><span class="hljs-string">"^1.1"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">autoload</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">classmap</span>": <span class="hljs-value">[
+            <span class="hljs-string">"database"</span>
+        ]</span>,
+        "<span class="hljs-attribute">psr-4</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">App\\</span>": <span class="hljs-value"><span class="hljs-string">"app/"</span>
+        </span>}
+    </span>}</span>,
+    "<span class="hljs-attribute">autoload-dev</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">classmap</span>": <span class="hljs-value">[
+            <span class="hljs-string">"tests/TestCase.php"</span>
+        ]</span>,
+	    "<span class="hljs-attribute">files</span>":<span class="hljs-value">[
+		    <span class="hljs-string">"app/helpers.php"</span>
+	    ]
+    </span>}</span>,
+    "<span class="hljs-attribute">scripts</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">post-install-cmd</span>": <span class="hljs-value">[
+            <span class="hljs-string">"php artisan clear-compiled"</span>,
+            <span class="hljs-string">"php artisan optimize"</span>
+        ]</span>,
+        "<span class="hljs-attribute">pre-update-cmd</span>": <span class="hljs-value">[
+            <span class="hljs-string">"php artisan clear-compiled"</span>
+        ]</span>,
+        "<span class="hljs-attribute">post-update-cmd</span>": <span class="hljs-value">[
+            <span class="hljs-string">"php artisan optimize"</span>
+        ]</span>,
+        "<span class="hljs-attribute">post-root-package-install</span>": <span class="hljs-value">[
+            <span class="hljs-string">"php -r \"copy('.env.example', '.env');\""</span>
+        ]</span>,
+        "<span class="hljs-attribute">post-create-project-cmd</span>": <span class="hljs-value">[
+            <span class="hljs-string">"php artisan key:generate"</span>
+        ]
+    </span>}</span>,
+    "<span class="hljs-attribute">config</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">preferred-install</span>": <span class="hljs-value"><span class="hljs-string">"dist"</span>
+    </span>}
+</span>}</div></div></div></div></body></html>

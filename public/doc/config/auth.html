@@ -1,0 +1,67 @@
+<!DOCTYPE html><html lang="en"><head><title>config/auth</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../"><meta name="groc-document-path" content="config/auth"><meta name="groc-project-path" content="config/auth.php"><meta name="groc-github-url" content="https://github.com/phillipmadsen/part1"><link rel="stylesheet" type="text/css" media="all" href="../assets/style.css"><script type="text/javascript" src="../assets/behavior.js"></script><body><div id="meta"><div class="file-path"><a href="https://github.com/phillipmadsen/part1/blob/master/config/auth.php">config/auth.php</a></div></div><div id="document"><div class="segment"><div class="code"><div class="wrapper"><span class="hljs-preprocessor">&lt;?php</span>
+
+<span class="hljs-keyword">return</span> [
+
+    <span class="hljs-comment">/*
+    |--------------------------------------------------------------------------
+    | Default Authentication Driver
+    |--------------------------------------------------------------------------
+    |
+    | This option controls the authentication driver that will be utilized.
+    | This driver manages the retrieval and authentication of the users
+    | attempting to get access to protected areas of your application.
+    |
+    | Supported: "database", "eloquent"
+    |
+    */</span>
+
+    <span class="hljs-string">'driver'</span> =&gt; <span class="hljs-string">'eloquent'</span>,
+
+    <span class="hljs-comment">/*
+    |--------------------------------------------------------------------------
+    | Authentication Model
+    |--------------------------------------------------------------------------
+    |
+    | When using the "Eloquent" authentication driver, we need to know which
+    | Eloquent model should be used to retrieve your users. Of course, it
+    | is often just the "User" model but you may use whatever you like.
+    |
+    */</span>
+
+    <span class="hljs-string">'model'</span> =&gt; App\User::class,
+
+    <span class="hljs-comment">/*
+    |--------------------------------------------------------------------------
+    | Authentication Table
+    |--------------------------------------------------------------------------
+    |
+    | When using the "Database" authentication driver, we need to know which
+    | table should be used to retrieve your users. We have chosen a basic
+    | default value but you may easily change it to any table you like.
+    |
+    */</span>
+
+    <span class="hljs-string">'table'</span> =&gt; <span class="hljs-string">'users'</span>,
+
+    <span class="hljs-comment">/*
+    |--------------------------------------------------------------------------
+    | Password Reset Settings
+    |--------------------------------------------------------------------------
+    |
+    | Here you may set the options for resetting passwords including the view
+    | that is your password reset e-mail. You can also set the name of the
+    | table that maintains all of the reset tokens for your application.
+    |
+    | The expire time is the number of minutes that the reset token should be
+    | considered valid. This security feature keeps tokens short-lived so
+    | they have less time to be guessed. You may change this as needed.
+    |
+    */</span>
+
+    <span class="hljs-string">'password'</span> =&gt; [
+        <span class="hljs-string">'email'</span> =&gt; <span class="hljs-string">'emails.password'</span>,
+        <span class="hljs-string">'table'</span> =&gt; <span class="hljs-string">'password_resets'</span>,
+        <span class="hljs-string">'expire'</span> =&gt; <span class="hljs-number">60</span>,
+    ],
+
+];</div></div></div></div></body></html>

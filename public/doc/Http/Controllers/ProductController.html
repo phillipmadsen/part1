@@ -1,0 +1,139 @@
+<!DOCTYPE html><html lang="en"><head><title>Http/Controllers/ProductController</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../../"><meta name="groc-document-path" content="Http/Controllers/ProductController"><meta name="groc-project-path" content="app/Http/Controllers/ProductController.php"><meta name="groc-github-url" content="https://github.com/phillipmadsen/part1"><link rel="stylesheet" type="text/css" media="all" href="../../assets/style.css"><script type="text/javascript" src="../../assets/behavior.js"></script><body><div id="meta"><div class="file-path"><a href="https://github.com/phillipmadsen/part1/blob/master/app/Http/Controllers/ProductController.php">app/Http/Controllers/ProductController.php</a></div></div><div id="document"><div class="segment"><div class="code"><div class="wrapper"><span class="hljs-preprocessor">&lt;?php</span>
+
+<span class="hljs-keyword">namespace</span> <span class="hljs-title">App</span>\<span class="hljs-title">Http</span>\<span class="hljs-title">Controllers</span>;
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">App</span>\<span class="hljs-title">Http</span>\<span class="hljs-title">Requests</span>\<span class="hljs-title">ProductCreateRequest</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">App</span>\<span class="hljs-title">Models</span>\<span class="hljs-title">ProductImage</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">App</span>\<span class="hljs-title">Product</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">Illuminate</span>\<span class="hljs-title">Http</span>\<span class="hljs-title">Request</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">Illuminate</span>\<span class="hljs-title">Support</span>\<span class="hljs-title">Facades</span>\<span class="hljs-title">File</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">Illuminate</span>\<span class="hljs-title">Support</span>\<span class="hljs-title">Facades</span>\<span class="hljs-title">Redirect</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">Illuminate</span>\<span class="hljs-title">Support</span>\<span class="hljs-title">Facades</span>\<span class="hljs-title">Response</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ProductController</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Controller</span>
+</span>{
+    <span class="hljs-comment">/**
+     * Display a listing of the resource.
+     *
+     * <span class="hljs-doctag">@return</span> \Illuminate\Http\Response
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">index</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">return</span> view(<span class="hljs-string">'product.index'</span>);
+    }
+
+    <span class="hljs-comment">/**
+     * Show the form for creating a new resource.
+     *
+     * <span class="hljs-doctag">@return</span> \Illuminate\Http\Response
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">create</span><span class="hljs-params">()</span>
+    </span>{</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>flash()-&gt;overlay(&#39;Welcome Aboard!&#39;, &#39;Thank you for signing up&#39;);</p></div></div><div class="code"><div class="wrapper">        <span class="hljs-keyword">return</span> view(<span class="hljs-string">'product.create'</span>);
+    }
+
+    <span class="hljs-comment">/**
+     * Store a newly created resource in storage.
+     *
+     * <span class="hljs-doctag">@param</span>  \Illuminate\Http\Request    $request
+     * <span class="hljs-doctag">@return</span> \Illuminate\Http\Response
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">store</span><span class="hljs-params">(ProductCreateRequest <span class="hljs-variable">$request</span>)</span>
+    </span>{</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>Product::create($request-&gt;all());
+flash()-&gt;success(&#39;Success!&#39;, &#39;Your product has been created&#39;);
+return Redirect::route(&#39;product.index&#39;);</p></div></div><div class="code"><div class="wrapper">        <span class="hljs-variable">$validator</span> = Validator::make(<span class="hljs-variable">$data</span> = Input::all(), Product::<span class="hljs-variable">$rules</span>);
+
+        <span class="hljs-keyword">if</span> (<span class="hljs-variable">$validator</span>-&gt;fails())
+        {
+            <span class="hljs-keyword">return</span> Redirect::back()-&gt;withErrors(<span class="hljs-variable">$validator</span>)-&gt;withInput();
+        }
+
+        Product::create(<span class="hljs-variable">$data</span>);
+
+        <span class="hljs-keyword">return</span> Redirect::route(<span class="hljs-string">'product.index'</span>);
+
+
+
+
+    }
+
+    <span class="hljs-comment">//flash()-&gt;success('Successful Upload', 'your product images are saved');</span>
+    <span class="hljs-comment">/**
+     * <span class="hljs-doctag">@param</span> Request $request
+     * <span class="hljs-doctag">@param</span> $id
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">addImage</span><span class="hljs-params">(<span class="hljs-variable">$id</span>, Request <span class="hljs-variable">$request</span>)</span>
+    </span>{</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>dd($request-&gt;file(&#39;file&#39;));</p></div></div><div class="code"><div class="wrapper">        <span class="hljs-variable">$file</span> = <span class="hljs-variable">$request</span>-&gt;file(<span class="hljs-string">'file'</span>);
+        <span class="hljs-variable">$name</span> = time() . <span class="hljs-variable">$file</span>-&gt;getClientOriginalName();
+        <span class="hljs-variable">$file</span>-&gt;move(<span class="hljs-string">'uploads/products/'</span>, <span class="hljs-variable">$name</span>);
+
+        <span class="hljs-variable">$product</span> = <span class="hljs-variable">$request</span>-&gt;findOrNew(<span class="hljs-variable">$id</span>)-&gt;first();</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>$product-&gt;images = ProductImage::create([&#39;path&#39; =&gt; &#39;/uploads/products/{$name}&#39;]);</p></div></div><div class="code"><div class="wrapper">        <span class="hljs-variable">$product</span>-&gt;images()-&gt;create([<span class="hljs-string">'path'</span> =&gt; <span class="hljs-string">'/uploads/products/{$name}'</span>]);
+        <span class="hljs-comment">//$product-&gt;images()-&gt;create(['image' =&gt; 'mightbeWorking.jpg']);</span>
+
+        <span class="hljs-keyword">return</span> <span class="hljs-string">'done'</span>;
+
+    }
+    <span class="hljs-comment">/**
+     * Display the specified resource.
+     *
+     * <span class="hljs-doctag">@param</span>  int                         $id
+     * <span class="hljs-doctag">@return</span> \Illuminate\Http\Response
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">show</span><span class="hljs-params">(<span class="hljs-variable">$id</span>)</span>
+    </span>{
+        <span class="hljs-variable">$product</span> = Product::findOrFail(<span class="hljs-variable">$id</span>);
+
+        <span class="hljs-keyword">return</span> view(<span class="hljs-string">'product.show'</span>, compact(<span class="hljs-string">'product'</span>));
+    }
+
+    <span class="hljs-comment">/**
+     * Show the form for editing the specified resource.
+     *
+     * <span class="hljs-doctag">@param</span>  int                         $id
+     * <span class="hljs-doctag">@return</span> \Illuminate\Http\Response
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">edit</span><span class="hljs-params">(<span class="hljs-variable">$id</span>, Request <span class="hljs-variable">$request</span>)</span>
+    </span>{
+        <span class="hljs-variable">$product</span> = Product::findOrFail(<span class="hljs-variable">$id</span>);
+        <span class="hljs-comment">//$slug = Str::slug($product-&gt;name);</span>
+
+        <span class="hljs-variable">$product</span> = <span class="hljs-variable">$request</span>-&gt;all();
+
+        <span class="hljs-keyword">return</span> view(<span class="hljs-string">'product.edit'</span>, compact(<span class="hljs-string">'product'</span>));
+    }
+
+    <span class="hljs-comment">/**
+     * Update the specified resource in storage.
+     *
+     * <span class="hljs-doctag">@param</span>  \Illuminate\Http\Request    $request
+     * <span class="hljs-doctag">@param</span>  int                         $id
+     * <span class="hljs-doctag">@return</span> \Illuminate\Http\Response
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">update</span><span class="hljs-params">(<span class="hljs-variable">$id</span>)</span>
+    </span>{
+        <span class="hljs-variable">$this</span>-&gt;validate(<span class="hljs-variable">$request</span>, [
+            <span class="hljs-string">'product_name'</span> =&gt; <span class="hljs-string">'required|string|max:40|unique:products,product_name,'</span> . <span class="hljs-variable">$id</span>
+
+        ]);
+        <span class="hljs-variable">$product</span> = Product::findOrFail(<span class="hljs-variable">$id</span>);
+
+        flash()-&gt;success(<span class="hljs-string">'Success!!'</span>, <span class="hljs-string">'you successfully updated the product'</span>);
+
+        <span class="hljs-variable">$product</span>-&gt;update([<span class="hljs-string">'product_name'</span> =&gt; <span class="hljs-variable">$request</span>-&gt;product_name]);
+        <span class="hljs-variable">$product</span>-&gt;update(<span class="hljs-variable">$request</span>-&gt;all());
+
+        <span class="hljs-keyword">return</span> Redirect::route(<span class="hljs-string">'product.index'</span>, [<span class="hljs-string">'product'</span> =&gt; <span class="hljs-variable">$product</span>]);
+    }
+
+    <span class="hljs-comment">/**
+     * Remove the specified resource from storage.
+     *
+     * <span class="hljs-doctag">@param</span>  int                         $id
+     * <span class="hljs-doctag">@return</span> \Illuminate\Http\Response
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">destroy</span><span class="hljs-params">(<span class="hljs-variable">$id</span>)</span>
+    </span>{
+        Product::destroy(<span class="hljs-variable">$id</span>);
+
+        <span class="hljs-keyword">return</span> Redirect::route(<span class="hljs-string">'product.index'</span>);
+    }
+}</div></div></div></div></body></html>

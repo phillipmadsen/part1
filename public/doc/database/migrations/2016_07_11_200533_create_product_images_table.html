@@ -1,0 +1,35 @@
+<!DOCTYPE html><html lang="en"><head><title>database/migrations/2016_07_11_200533_create_product_images_table</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../../"><meta name="groc-document-path" content="database/migrations/2016_07_11_200533_create_product_images_table"><meta name="groc-project-path" content="database/migrations/2016_07_11_200533_create_product_images_table.php"><meta name="groc-github-url" content="https://github.com/phillipmadsen/part1"><link rel="stylesheet" type="text/css" media="all" href="../../assets/style.css"><script type="text/javascript" src="../../assets/behavior.js"></script><body><div id="meta"><div class="file-path"><a href="https://github.com/phillipmadsen/part1/blob/master/database/migrations/2016_07_11_200533_create_product_images_table.php">database/migrations/2016_07_11_200533_create_product_images_table.php</a></div></div><div id="document"><div class="segment"><div class="code"><div class="wrapper"><span class="hljs-preprocessor">&lt;?php</span>
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">Illuminate</span>\<span class="hljs-title">Database</span>\<span class="hljs-title">Schema</span>\<span class="hljs-title">Blueprint</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">Illuminate</span>\<span class="hljs-title">Database</span>\<span class="hljs-title">Migrations</span>\<span class="hljs-title">Migration</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CreateProductImagesTable</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Migration</span>
+</span>{
+    <span class="hljs-comment">/**
+     * Run the migrations.
+     *
+     * <span class="hljs-doctag">@return</span> void
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">up</span><span class="hljs-params">()</span>
+    </span>{
+        Schema::create(<span class="hljs-string">'product_images'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(Blueprint <span class="hljs-variable">$table</span>)</span> </span>{
+            <span class="hljs-variable">$table</span>-&gt;increments(<span class="hljs-string">'id'</span>);
+
+	        <span class="hljs-variable">$table</span>-&gt;integer(<span class="hljs-string">'product_id'</span>)-&gt;unsigned();
+	        <span class="hljs-variable">$table</span>-&gt;foreign(<span class="hljs-string">'product_id'</span>)-&gt;references(<span class="hljs-string">'id'</span>)-&gt;on(<span class="hljs-string">'products'</span>)-&gt;onDelete(<span class="hljs-string">"cascade"</span>);
+
+	        <span class="hljs-variable">$table</span>-&gt;string(<span class="hljs-string">'path'</span>);
+            <span class="hljs-variable">$table</span>-&gt;timestamps();
+        });
+    }
+
+    <span class="hljs-comment">/**
+     * Reverse the migrations.
+     *
+     * <span class="hljs-doctag">@return</span> void
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">down</span><span class="hljs-params">()</span>
+    </span>{
+        Schema::drop(<span class="hljs-string">'product_images'</span>);
+    }
+}</div></div></div></div></body></html>

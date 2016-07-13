@@ -1,0 +1,33 @@
+<!DOCTYPE html><html lang="en"><head><title>Console/Commands/Inspire</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../../"><meta name="groc-document-path" content="Console/Commands/Inspire"><meta name="groc-project-path" content="app/Console/Commands/Inspire.php"><meta name="groc-github-url" content="https://github.com/phillipmadsen/part1"><link rel="stylesheet" type="text/css" media="all" href="../../assets/style.css"><script type="text/javascript" src="../../assets/behavior.js"></script><body><div id="meta"><div class="file-path"><a href="https://github.com/phillipmadsen/part1/blob/master/app/Console/Commands/Inspire.php">app/Console/Commands/Inspire.php</a></div></div><div id="document"><div class="segment"><div class="code"><div class="wrapper"><span class="hljs-preprocessor">&lt;?php</span>
+
+<span class="hljs-keyword">namespace</span> <span class="hljs-title">App</span>\<span class="hljs-title">Console</span>\<span class="hljs-title">Commands</span>;
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">Illuminate</span>\<span class="hljs-title">Console</span>\<span class="hljs-title">Command</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">Illuminate</span>\<span class="hljs-title">Foundation</span>\<span class="hljs-title">Inspiring</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Inspire</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Command</span>
+</span>{
+    <span class="hljs-comment">/**
+     * The name and signature of the console command.
+     *
+     * <span class="hljs-doctag">@var</span> string
+     */</span>
+    <span class="hljs-keyword">protected</span> <span class="hljs-variable">$signature</span> = <span class="hljs-string">'inspire'</span>;
+
+    <span class="hljs-comment">/**
+     * The console command description.
+     *
+     * <span class="hljs-doctag">@var</span> string
+     */</span>
+    <span class="hljs-keyword">protected</span> <span class="hljs-variable">$description</span> = <span class="hljs-string">'Display an inspiring quote'</span>;
+
+    <span class="hljs-comment">/**
+     * Execute the console command.
+     *
+     * <span class="hljs-doctag">@return</span> mixed
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">handle</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-variable">$this</span>-&gt;comment(PHP_EOL.Inspiring::quote().PHP_EOL);
+    }
+}</div></div></div></div></body></html>

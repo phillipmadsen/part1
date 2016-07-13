@@ -1,0 +1,82 @@
+<!DOCTYPE html><html lang="en"><head><title>config/filesystems</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../"><meta name="groc-document-path" content="config/filesystems"><meta name="groc-project-path" content="config/filesystems.php"><meta name="groc-github-url" content="https://github.com/phillipmadsen/part1"><link rel="stylesheet" type="text/css" media="all" href="../assets/style.css"><script type="text/javascript" src="../assets/behavior.js"></script><body><div id="meta"><div class="file-path"><a href="https://github.com/phillipmadsen/part1/blob/master/config/filesystems.php">config/filesystems.php</a></div></div><div id="document"><div class="segment"><div class="code"><div class="wrapper"><span class="hljs-preprocessor">&lt;?php</span>
+
+<span class="hljs-keyword">return</span> [
+
+    <span class="hljs-comment">/*
+    |--------------------------------------------------------------------------
+    | Default Filesystem Disk
+    |--------------------------------------------------------------------------
+    |
+    | Here you may specify the default filesystem disk that should be used
+    | by the framework. A "local" driver, as well as a variety of cloud
+    | based drivers are available for your choosing. Just store away!
+    |
+    | Supported: "local", "ftp", "s3", "rackspace"
+    |
+    */</span>
+
+    <span class="hljs-string">'default'</span> =&gt; <span class="hljs-string">'local'</span>,
+
+    <span class="hljs-comment">/*
+    |--------------------------------------------------------------------------
+    | Default Cloud Filesystem Disk
+    |--------------------------------------------------------------------------
+    |
+    | Many applications store files both locally and in the cloud. For this
+    | reason, you may specify a default "cloud" driver here. This driver
+    | will be bound as the Cloud disk implementation in the container.
+    |
+    */</span>
+
+    <span class="hljs-string">'cloud'</span> =&gt; <span class="hljs-string">'s3'</span>,
+
+    <span class="hljs-comment">/*
+    |--------------------------------------------------------------------------
+    | Filesystem Disks
+    |--------------------------------------------------------------------------
+    |
+    | Here you may configure as many filesystem "disks" as you wish, and you
+    | may even configure multiple disks of the same driver. Defaults have
+    | been setup for each driver as an example of the required options.
+    |
+    */</span>
+
+    <span class="hljs-string">'disks'</span> =&gt; [
+
+        <span class="hljs-string">'local'</span> =&gt; [
+            <span class="hljs-string">'driver'</span> =&gt; <span class="hljs-string">'local'</span>,
+            <span class="hljs-string">'root'</span>   =&gt; storage_path(<span class="hljs-string">'app'</span>),
+        ],
+
+        <span class="hljs-string">'ftp'</span> =&gt; [
+            <span class="hljs-string">'driver'</span>   =&gt; <span class="hljs-string">'ftp'</span>,
+            <span class="hljs-string">'host'</span>     =&gt; <span class="hljs-string">'ftp.example.com'</span>,
+            <span class="hljs-string">'username'</span> =&gt; <span class="hljs-string">'your-username'</span>,
+            <span class="hljs-string">'password'</span> =&gt; <span class="hljs-string">'your-password'</span>,</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>Optional FTP Settings...
+&#39;port&#39;     =&gt; 21,
+&#39;root&#39;     =&gt; &#39;&#39;,
+&#39;passive&#39;  =&gt; true,
+&#39;ssl&#39;      =&gt; true,
+&#39;timeout&#39;  =&gt; 30,</p></div></div><div class="code"><div class="wrapper">        ],
+
+        <span class="hljs-string">'s3'</span> =&gt; [
+            <span class="hljs-string">'driver'</span> =&gt; <span class="hljs-string">'s3'</span>,
+            <span class="hljs-string">'key'</span>    =&gt; <span class="hljs-string">'your-key'</span>,
+            <span class="hljs-string">'secret'</span> =&gt; <span class="hljs-string">'your-secret'</span>,
+            <span class="hljs-string">'region'</span> =&gt; <span class="hljs-string">'your-region'</span>,
+            <span class="hljs-string">'bucket'</span> =&gt; <span class="hljs-string">'your-bucket'</span>,
+        ],
+
+        <span class="hljs-string">'rackspace'</span> =&gt; [
+            <span class="hljs-string">'driver'</span>    =&gt; <span class="hljs-string">'rackspace'</span>,
+            <span class="hljs-string">'username'</span>  =&gt; <span class="hljs-string">'your-username'</span>,
+            <span class="hljs-string">'key'</span>       =&gt; <span class="hljs-string">'your-key'</span>,
+            <span class="hljs-string">'container'</span> =&gt; <span class="hljs-string">'your-container'</span>,
+            <span class="hljs-string">'endpoint'</span>  =&gt; <span class="hljs-string">'https://identity.api.rackspacecloud.com/v2.0/'</span>,
+            <span class="hljs-string">'region'</span>    =&gt; <span class="hljs-string">'IAD'</span>,
+            <span class="hljs-string">'url_type'</span>  =&gt; <span class="hljs-string">'publicURL'</span>,
+        ],
+
+    ],
+
+];</div></div></div></div></body></html>

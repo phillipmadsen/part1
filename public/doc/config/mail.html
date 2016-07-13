@@ -1,0 +1,124 @@
+<!DOCTYPE html><html lang="en"><head><title>config/mail</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../"><meta name="groc-document-path" content="config/mail"><meta name="groc-project-path" content="config/mail.php"><meta name="groc-github-url" content="https://github.com/phillipmadsen/part1"><link rel="stylesheet" type="text/css" media="all" href="../assets/style.css"><script type="text/javascript" src="../assets/behavior.js"></script><body><div id="meta"><div class="file-path"><a href="https://github.com/phillipmadsen/part1/blob/master/config/mail.php">config/mail.php</a></div></div><div id="document"><div class="segment"><div class="code"><div class="wrapper"><span class="hljs-preprocessor">&lt;?php</span>
+
+<span class="hljs-keyword">return</span> [
+
+    <span class="hljs-comment">/*
+    |--------------------------------------------------------------------------
+    | Mail Driver
+    |--------------------------------------------------------------------------
+    |
+    | Laravel supports both SMTP and PHP's "mail" function as drivers for the
+    | sending of e-mail. You may specify which one you're using throughout
+    | your application here. By default, Laravel is setup for SMTP mail.
+    |
+    | Supported: "smtp", "mail", "sendmail", "mailgun", "mandrill", "ses", "log"
+    |
+    */</span>
+
+    <span class="hljs-string">'driver'</span> =&gt; env(<span class="hljs-string">'MAIL_DRIVER'</span>, <span class="hljs-string">'smtp'</span>),
+
+    <span class="hljs-comment">/*
+    |--------------------------------------------------------------------------
+    | SMTP Host Address
+    |--------------------------------------------------------------------------
+    |
+    | Here you may provide the host address of the SMTP server used by your
+    | applications. A default option is provided that is compatible with
+    | the Mailgun mail service which will provide reliable deliveries.
+    |
+    */</span>
+
+    <span class="hljs-string">'host'</span> =&gt; env(<span class="hljs-string">'MAIL_HOST'</span>, <span class="hljs-string">'smtp.mailgun.org'</span>),
+
+    <span class="hljs-comment">/*
+    |--------------------------------------------------------------------------
+    | SMTP Host Port
+    |--------------------------------------------------------------------------
+    |
+    | This is the SMTP port used by your application to deliver e-mails to
+    | users of the application. Like the host we have set this value to
+    | stay compatible with the Mailgun e-mail application by default.
+    |
+    */</span>
+
+    <span class="hljs-string">'port'</span> =&gt; env(<span class="hljs-string">'MAIL_PORT'</span>, <span class="hljs-number">587</span>),
+
+    <span class="hljs-comment">/*
+    |--------------------------------------------------------------------------
+    | Global "From" Address
+    |--------------------------------------------------------------------------
+    |
+    | You may wish for all e-mails sent by your application to be sent from
+    | the same address. Here, you may specify a name and address that is
+    | used globally for all e-mails that are sent by your application.
+    |
+    */</span>
+
+    <span class="hljs-string">'from'</span> =&gt; [<span class="hljs-string">'address'</span> =&gt; <span class="hljs-keyword">null</span>, <span class="hljs-string">'name'</span> =&gt; <span class="hljs-keyword">null</span>],
+
+    <span class="hljs-comment">/*
+    |--------------------------------------------------------------------------
+    | E-Mail Encryption Protocol
+    |--------------------------------------------------------------------------
+    |
+    | Here you may specify the encryption protocol that should be used when
+    | the application send e-mail messages. A sensible default using the
+    | transport layer security protocol should provide great security.
+    |
+    */</span>
+
+    <span class="hljs-string">'encryption'</span> =&gt; env(<span class="hljs-string">'MAIL_ENCRYPTION'</span>, <span class="hljs-string">'tls'</span>),
+
+    <span class="hljs-comment">/*
+    |--------------------------------------------------------------------------
+    | SMTP Server Username
+    |--------------------------------------------------------------------------
+    |
+    | If your SMTP server requires a username for authentication, you should
+    | set it here. This will get used to authenticate with your server on
+    | connection. You may also set the "password" value below this one.
+    |
+    */</span>
+
+    <span class="hljs-string">'username'</span> =&gt; env(<span class="hljs-string">'MAIL_USERNAME'</span>),
+
+    <span class="hljs-comment">/*
+    |--------------------------------------------------------------------------
+    | SMTP Server Password
+    |--------------------------------------------------------------------------
+    |
+    | Here you may set the password required by your SMTP server to send out
+    | messages from your application. This will be given to the server on
+    | connection so that the application will be able to send messages.
+    |
+    */</span>
+
+    <span class="hljs-string">'password'</span> =&gt; env(<span class="hljs-string">'MAIL_PASSWORD'</span>),
+
+    <span class="hljs-comment">/*
+    |--------------------------------------------------------------------------
+    | Sendmail System Path
+    |--------------------------------------------------------------------------
+    |
+    | When using the "sendmail" driver to send e-mails, we will need to know
+    | the path to where Sendmail lives on this server. A default path has
+    | been provided here, which will work well on most of your systems.
+    |
+    */</span>
+
+    <span class="hljs-string">'sendmail'</span> =&gt; <span class="hljs-string">'/usr/sbin/sendmail -bs'</span>,
+
+    <span class="hljs-comment">/*
+    |--------------------------------------------------------------------------
+    | Mail "Pretend"
+    |--------------------------------------------------------------------------
+    |
+    | When this option is enabled, e-mail will not actually be sent over the
+    | web and will instead be written to your application's logs files so
+    | you may inspect the message. This is great for local development.
+    |
+    */</span>
+
+    <span class="hljs-string">'pretend'</span> =&gt; <span class="hljs-keyword">false</span>,
+
+];</div></div></div></div></body></html>

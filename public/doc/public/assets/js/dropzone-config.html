@@ -1,0 +1,54 @@
+<!DOCTYPE html><html lang="en"><head><title>public/assets/js/dropzone-config</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../../../"><meta name="groc-document-path" content="public/assets/js/dropzone-config"><meta name="groc-project-path" content="public/assets/js/dropzone-config.js"><meta name="groc-github-url" content="https://github.com/phillipmadsen/part1"><link rel="stylesheet" type="text/css" media="all" href="../../../assets/style.css"><script type="text/javascript" src="../../../assets/behavior.js"></script><body><div id="meta"><div class="file-path"><a href="https://github.com/phillipmadsen/part1/blob/master/public/assets/js/dropzone-config.js">public/assets/js/dropzone-config.js</a></div></div><div id="document"><div class="segment"><div class="code"><div class="wrapper"><span class="hljs-keyword">var</span> photo_counter = <span class="hljs-number">0</span>;
+Dropzone.options.realDropzone = {
+    autoProcessQueue: <span class="hljs-literal">false</span>,
+    uploadMultiple: <span class="hljs-literal">true</span>,
+    parallelUploads: <span class="hljs-number">100</span>,
+    maxFiles: <span class="hljs-number">100</span>,
+    maxFilesize: <span class="hljs-number">8</span>,
+    previewsContainer: <span class="hljs-string">'#dropzonePreview'</span>,
+    previewTemplate: <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'#preview-template'</span>).innerHTML,
+    addRemoveLinks: <span class="hljs-literal">true</span>,
+    dictRemoveFile: <span class="hljs-string">'Remove'</span>,
+    dictFileTooBig: <span class="hljs-string">'Image is bigger than 8MB'</span>,</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>The setting up of the dropzone</p></div></div><div class="code"><div class="wrapper">    init:<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    	<span class="hljs-keyword">this</span>.on(<span class="hljs-string">"success"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">file, responseText</span>) </span>{</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>Handle the responseText here. For example, add the text to the preview element:</p></div></div><div class="code"><div class="wrapper">	      file.previewTemplate.appendChild(<span class="hljs-built_in">document</span>.createTextNode(responseText));
+	});
+
+        <span class="hljs-keyword">this</span>.on(<span class="hljs-string">"removedfile"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">file</span>) </span>{
+
+            $.ajax({
+                type: <span class="hljs-string">'POST'</span>,
+                url: <span class="hljs-string">'upload/delete'</span>,
+                data: {id: file.name, _token: $(<span class="hljs-string">'#csrf-token'</span>).val()},
+                dataType: <span class="hljs-string">'html'</span>,
+                success: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">data</span>)</span>{
+                    <span class="hljs-keyword">var</span> rep = <span class="hljs-built_in">JSON</span>.parse(data);
+                    <span class="hljs-keyword">if</span>(rep.code == <span class="hljs-number">200</span>)
+                    {
+                        photo_counter--;
+                        $(<span class="hljs-string">"#photoCounter"</span>).text( <span class="hljs-string">"("</span> + photo_counter + <span class="hljs-string">")"</span>);
+                    }
+
+                }
+            });
+
+        } );
+    },
+    error: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">file, response</span>) </span>{
+        <span class="hljs-keyword">if</span>($.type(response) === <span class="hljs-string">"string"</span>)
+            <span class="hljs-keyword">var</span> message = response; <span class="hljs-comment">//dropzone sends it's own error messages in string</span>
+        <span class="hljs-keyword">else</span>
+            <span class="hljs-keyword">var</span> message = response.message;
+        file.previewElement.classList.add(<span class="hljs-string">"dz-error"</span>);
+        _ref = file.previewElement.querySelectorAll(<span class="hljs-string">"[data-dz-errormessage]"</span>);
+        _results = [];
+        <span class="hljs-keyword">for</span> (_i = <span class="hljs-number">0</span>, _len = _ref.length; _i &lt; _len; _i++) {
+            node = _ref[_i];
+            _results.push(node.textContent = message);
+        }
+        <span class="hljs-keyword">return</span> _results;
+    },
+    success: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">file,done</span>) </span>{
+        photo_counter++;
+        $(<span class="hljs-string">"#photoCounter"</span>).text( <span class="hljs-string">"("</span> + photo_counter + <span class="hljs-string">")"</span>);
+    }
+}</div></div></div></div></body></html>

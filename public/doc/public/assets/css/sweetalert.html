@@ -1,0 +1,912 @@
+<!DOCTYPE html><html lang="en"><head><title>public/assets/css/sweetalert</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../../../"><meta name="groc-document-path" content="public/assets/css/sweetalert"><meta name="groc-project-path" content="public/assets/css/sweetalert.css"><meta name="groc-github-url" content="https://github.com/phillipmadsen/part1"><link rel="stylesheet" type="text/css" media="all" href="../../../assets/style.css"><script type="text/javascript" src="../../../assets/behavior.js"></script><body><div id="meta"><div class="file-path"><a href="https://github.com/phillipmadsen/part1/blob/master/public/assets/css/sweetalert.css">public/assets/css/sweetalert.css</a></div></div><div id="document"><div class="segment"><div class="code"><div class="wrapper"><span class="hljs-tag">body</span><span class="hljs-class">.stop-scrolling</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">height</span>:<span class="hljs-value"> <span class="hljs-number">100%</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">overflow</span>:<span class="hljs-value"> hidden</span></span>; }</span>
+
+<span class="hljs-class">.sweet-overlay</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">background-color</span>:<span class="hljs-value"> black</span></span>;</span></div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>IE8 </p></div></div><div class="code"><div class="wrapper">  <span class="hljs-tag">-ms-filter</span>: "<span class="hljs-tag">progid</span><span class="hljs-pseudo">:DXImageTransform</span><span class="hljs-class">.Microsoft</span><span class="hljs-class">.Alpha</span>(<span class="hljs-tag">Opacity</span>=40)";</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>IE8 </p></div></div><div class="code"><div class="wrapper">  <span class="hljs-tag">background-color</span>: <span class="hljs-tag">rgba</span>(0, 0, 0, 0<span class="hljs-class">.4</span>);
+  <span class="hljs-tag">position</span>: <span class="hljs-tag">fixed</span>;
+  <span class="hljs-tag">left</span>: 0;
+  <span class="hljs-tag">right</span>: 0;
+  <span class="hljs-tag">top</span>: 0;
+  <span class="hljs-tag">bottom</span>: 0;
+  <span class="hljs-tag">display</span>: <span class="hljs-tag">none</span>;
+  <span class="hljs-tag">z-index</span>: 10000; }
+
+<span class="hljs-class">.sweet-alert</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">background-color</span>:<span class="hljs-value"> white</span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">font-family</span>:<span class="hljs-value"> <span class="hljs-string">'Open Sans'</span>, <span class="hljs-string">'Helvetica Neue'</span>, Helvetica, Arial, sans-serif</span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">width</span>:<span class="hljs-value"> <span class="hljs-number">478px</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">padding</span>:<span class="hljs-value"> <span class="hljs-number">17px</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">border-radius</span>:<span class="hljs-value"> <span class="hljs-number">5px</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">text-align</span>:<span class="hljs-value"> center</span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">position</span>:<span class="hljs-value"> fixed</span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">left</span>:<span class="hljs-value"> <span class="hljs-number">50%</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">top</span>:<span class="hljs-value"> <span class="hljs-number">50%</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">margin-left</span>:<span class="hljs-value"> -<span class="hljs-number">256px</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">margin-top</span>:<span class="hljs-value"> -<span class="hljs-number">200px</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">overflow</span>:<span class="hljs-value"> hidden</span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">display</span>:<span class="hljs-value"> none</span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">z-index</span>:<span class="hljs-value"> <span class="hljs-number">99999</span></span></span>; }</span>
+  <span class="hljs-at_rule">@<span class="hljs-keyword">media</span> all and (max-width: <span class="hljs-number">540px</span>) </span>{
+    <span class="hljs-class">.sweet-alert</span> <span class="hljs-rules">{
+      <span class="hljs-rule"><span class="hljs-attribute">width</span>:<span class="hljs-value"> auto</span></span>;
+      <span class="hljs-rule"><span class="hljs-attribute">margin-left</span>:<span class="hljs-value"> <span class="hljs-number">0</span></span></span>;
+      <span class="hljs-rule"><span class="hljs-attribute">margin-right</span>:<span class="hljs-value"> <span class="hljs-number">0</span></span></span>;
+      <span class="hljs-rule"><span class="hljs-attribute">left</span>:<span class="hljs-value"> <span class="hljs-number">15px</span></span></span>;
+      <span class="hljs-rule"><span class="hljs-attribute">right</span>:<span class="hljs-value"> <span class="hljs-number">15px</span></span></span>; }</span> }
+  <span class="hljs-class">.sweet-alert</span> <span class="hljs-tag">h2</span> <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">color</span>:<span class="hljs-value"> <span class="hljs-hexcolor">#575757</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">font-size</span>:<span class="hljs-value"> <span class="hljs-number">30px</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">text-align</span>:<span class="hljs-value"> center</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">font-weight</span>:<span class="hljs-value"> <span class="hljs-number">600</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">text-transform</span>:<span class="hljs-value"> none</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">position</span>:<span class="hljs-value"> relative</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">margin</span>:<span class="hljs-value"> <span class="hljs-number">25px</span> <span class="hljs-number">0</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">padding</span>:<span class="hljs-value"> <span class="hljs-number">0</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">line-height</span>:<span class="hljs-value"> <span class="hljs-number">40px</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">display</span>:<span class="hljs-value"> block</span></span>; }</span>
+  <span class="hljs-class">.sweet-alert</span> <span class="hljs-tag">p</span> <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">color</span>:<span class="hljs-value"> <span class="hljs-hexcolor">#797979</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">font-size</span>:<span class="hljs-value"> <span class="hljs-number">16px</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">text-align</span>:<span class="hljs-value"> center</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">font-weight</span>:<span class="hljs-value"> <span class="hljs-number">300</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">position</span>:<span class="hljs-value"> relative</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">text-align</span>:<span class="hljs-value"> inherit</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">float</span>:<span class="hljs-value"> none</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">margin</span>:<span class="hljs-value"> <span class="hljs-number">0</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">padding</span>:<span class="hljs-value"> <span class="hljs-number">0</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">line-height</span>:<span class="hljs-value"> normal</span></span>; }</span>
+  <span class="hljs-class">.sweet-alert</span> <span class="hljs-tag">fieldset</span> <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">border</span>:<span class="hljs-value"> none</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">position</span>:<span class="hljs-value"> relative</span></span>; }</span>
+  <span class="hljs-class">.sweet-alert</span> <span class="hljs-class">.sa-error-container</span> <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">background-color</span>:<span class="hljs-value"> <span class="hljs-hexcolor">#f1f1f1</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">margin-left</span>:<span class="hljs-value"> -<span class="hljs-number">17px</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">margin-right</span>:<span class="hljs-value"> -<span class="hljs-number">17px</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">overflow</span>:<span class="hljs-value"> hidden</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">padding</span>:<span class="hljs-value"> <span class="hljs-number">0</span> <span class="hljs-number">10px</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">max-height</span>:<span class="hljs-value"> <span class="hljs-number">0</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">webkit-transition</span>:<span class="hljs-value"> padding <span class="hljs-number">0.15s</span>, max-height <span class="hljs-number">0.15s</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">transition</span>:<span class="hljs-value"> padding <span class="hljs-number">0.15s</span>, max-height <span class="hljs-number">0.15s</span></span></span>; }</span>
+    <span class="hljs-class">.sweet-alert</span> <span class="hljs-class">.sa-error-container</span><span class="hljs-class">.show</span> <span class="hljs-rules">{
+      <span class="hljs-rule"><span class="hljs-attribute">padding</span>:<span class="hljs-value"> <span class="hljs-number">10px</span> <span class="hljs-number">0</span></span></span>;
+      <span class="hljs-rule"><span class="hljs-attribute">max-height</span>:<span class="hljs-value"> <span class="hljs-number">100px</span></span></span>;
+      <span class="hljs-rule"><span class="hljs-attribute">webkit-transition</span>:<span class="hljs-value"> padding <span class="hljs-number">0.2s</span>, max-height <span class="hljs-number">0.2s</span></span></span>;
+      <span class="hljs-rule"><span class="hljs-attribute">transition</span>:<span class="hljs-value"> padding <span class="hljs-number">0.25s</span>, max-height <span class="hljs-number">0.25s</span></span></span>; }</span>
+    <span class="hljs-class">.sweet-alert</span> <span class="hljs-class">.sa-error-container</span> <span class="hljs-class">.icon</span> <span class="hljs-rules">{
+      <span class="hljs-rule"><span class="hljs-attribute">display</span>:<span class="hljs-value"> inline-block</span></span>;
+      <span class="hljs-rule"><span class="hljs-attribute">width</span>:<span class="hljs-value"> <span class="hljs-number">24px</span></span></span>;
+      <span class="hljs-rule"><span class="hljs-attribute">height</span>:<span class="hljs-value"> <span class="hljs-number">24px</span></span></span>;
+      <span class="hljs-rule"><span class="hljs-attribute">border-radius</span>:<span class="hljs-value"> <span class="hljs-number">50%</span></span></span>;
+      <span class="hljs-rule"><span class="hljs-attribute">background-color</span>:<span class="hljs-value"> <span class="hljs-hexcolor">#ea7d7d</span></span></span>;
+      <span class="hljs-rule"><span class="hljs-attribute">color</span>:<span class="hljs-value"> white</span></span>;
+      <span class="hljs-rule"><span class="hljs-attribute">line-height</span>:<span class="hljs-value"> <span class="hljs-number">24px</span></span></span>;
+      <span class="hljs-rule"><span class="hljs-attribute">text-align</span>:<span class="hljs-value"> center</span></span>;
+      <span class="hljs-rule"><span class="hljs-attribute">margin-right</span>:<span class="hljs-value"> <span class="hljs-number">3px</span></span></span>; }</span>
+    <span class="hljs-class">.sweet-alert</span> <span class="hljs-class">.sa-error-container</span> <span class="hljs-tag">p</span> <span class="hljs-rules">{
+      <span class="hljs-rule"><span class="hljs-attribute">display</span>:<span class="hljs-value"> inline-block</span></span>; }</span>
+  <span class="hljs-class">.sweet-alert</span> <span class="hljs-class">.sa-input-error</span> <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">position</span>:<span class="hljs-value"> absolute</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">top</span>:<span class="hljs-value"> <span class="hljs-number">29px</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">right</span>:<span class="hljs-value"> <span class="hljs-number">26px</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">width</span>:<span class="hljs-value"> <span class="hljs-number">20px</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">height</span>:<span class="hljs-value"> <span class="hljs-number">20px</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">opacity</span>:<span class="hljs-value"> <span class="hljs-number">0</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">-webkit-transform</span>:<span class="hljs-value"> <span class="hljs-function">scale</span>(<span class="hljs-number">0.5</span>)</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">transform</span>:<span class="hljs-value"> <span class="hljs-function">scale</span>(<span class="hljs-number">0.5</span>)</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">-webkit-transform-origin</span>:<span class="hljs-value"> <span class="hljs-number">50%</span> <span class="hljs-number">50%</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">transform-origin</span>:<span class="hljs-value"> <span class="hljs-number">50%</span> <span class="hljs-number">50%</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">-webkit-transition</span>:<span class="hljs-value"> all <span class="hljs-number">0.1s</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">transition</span>:<span class="hljs-value"> all <span class="hljs-number">0.1s</span></span></span>; }</span>
+    <span class="hljs-class">.sweet-alert</span> <span class="hljs-class">.sa-input-error</span><span class="hljs-pseudo">::before</span>, <span class="hljs-class">.sweet-alert</span> <span class="hljs-class">.sa-input-error</span><span class="hljs-pseudo">::after</span> <span class="hljs-rules">{
+      <span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">""</span></span></span>;
+      <span class="hljs-rule"><span class="hljs-attribute">width</span>:<span class="hljs-value"> <span class="hljs-number">20px</span></span></span>;
+      <span class="hljs-rule"><span class="hljs-attribute">height</span>:<span class="hljs-value"> <span class="hljs-number">6px</span></span></span>;
+      <span class="hljs-rule"><span class="hljs-attribute">background-color</span>:<span class="hljs-value"> <span class="hljs-hexcolor">#f06e57</span></span></span>;
+      <span class="hljs-rule"><span class="hljs-attribute">border-radius</span>:<span class="hljs-value"> <span class="hljs-number">3px</span></span></span>;
+      <span class="hljs-rule"><span class="hljs-attribute">position</span>:<span class="hljs-value"> absolute</span></span>;
+      <span class="hljs-rule"><span class="hljs-attribute">top</span>:<span class="hljs-value"> <span class="hljs-number">50%</span></span></span>;
+      <span class="hljs-rule"><span class="hljs-attribute">margin-top</span>:<span class="hljs-value"> -<span class="hljs-number">4px</span></span></span>;
+      <span class="hljs-rule"><span class="hljs-attribute">left</span>:<span class="hljs-value"> <span class="hljs-number">50%</span></span></span>;
+      <span class="hljs-rule"><span class="hljs-attribute">margin-left</span>:<span class="hljs-value"> -<span class="hljs-number">9px</span></span></span>; }</span>
+    <span class="hljs-class">.sweet-alert</span> <span class="hljs-class">.sa-input-error</span><span class="hljs-pseudo">::before</span> <span class="hljs-rules">{
+      <span class="hljs-rule"><span class="hljs-attribute">-webkit-transform</span>:<span class="hljs-value"> <span class="hljs-function">rotate</span>(-<span class="hljs-number">45deg</span>)</span></span>;
+      <span class="hljs-rule"><span class="hljs-attribute">transform</span>:<span class="hljs-value"> <span class="hljs-function">rotate</span>(-<span class="hljs-number">45deg</span>)</span></span>; }</span>
+    <span class="hljs-class">.sweet-alert</span> <span class="hljs-class">.sa-input-error</span><span class="hljs-pseudo">::after</span> <span class="hljs-rules">{
+      <span class="hljs-rule"><span class="hljs-attribute">-webkit-transform</span>:<span class="hljs-value"> <span class="hljs-function">rotate</span>(<span class="hljs-number">45deg</span>)</span></span>;
+      <span class="hljs-rule"><span class="hljs-attribute">transform</span>:<span class="hljs-value"> <span class="hljs-function">rotate</span>(<span class="hljs-number">45deg</span>)</span></span>; }</span>
+    <span class="hljs-class">.sweet-alert</span> <span class="hljs-class">.sa-input-error</span><span class="hljs-class">.show</span> <span class="hljs-rules">{
+      <span class="hljs-rule"><span class="hljs-attribute">opacity</span>:<span class="hljs-value"> <span class="hljs-number">1</span></span></span>;
+      <span class="hljs-rule"><span class="hljs-attribute">-webkit-transform</span>:<span class="hljs-value"> <span class="hljs-function">scale</span>(<span class="hljs-number">1</span>)</span></span>;
+      <span class="hljs-rule"><span class="hljs-attribute">transform</span>:<span class="hljs-value"> <span class="hljs-function">scale</span>(<span class="hljs-number">1</span>)</span></span>; }</span>
+  <span class="hljs-class">.sweet-alert</span> <span class="hljs-tag">input</span> <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">width</span>:<span class="hljs-value"> <span class="hljs-number">100%</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">box-sizing</span>:<span class="hljs-value"> border-box</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">border-radius</span>:<span class="hljs-value"> <span class="hljs-number">3px</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">border</span>:<span class="hljs-value"> <span class="hljs-number">1px</span> solid <span class="hljs-hexcolor">#d7d7d7</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">height</span>:<span class="hljs-value"> <span class="hljs-number">43px</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">margin-top</span>:<span class="hljs-value"> <span class="hljs-number">10px</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">margin-bottom</span>:<span class="hljs-value"> <span class="hljs-number">17px</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">font-size</span>:<span class="hljs-value"> <span class="hljs-number">18px</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">box-shadow</span>:<span class="hljs-value"> inset <span class="hljs-number">0px</span> <span class="hljs-number">1px</span> <span class="hljs-number">1px</span> <span class="hljs-function">rgba</span>(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0.06</span>)</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">padding</span>:<span class="hljs-value"> <span class="hljs-number">0</span> <span class="hljs-number">12px</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">display</span>:<span class="hljs-value"> none</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">-webkit-transition</span>:<span class="hljs-value"> all <span class="hljs-number">0.3s</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">transition</span>:<span class="hljs-value"> all <span class="hljs-number">0.3s</span></span></span>; }</span>
+    <span class="hljs-class">.sweet-alert</span> <span class="hljs-tag">input</span><span class="hljs-pseudo">:focus</span> <span class="hljs-rules">{
+      <span class="hljs-rule"><span class="hljs-attribute">outline</span>:<span class="hljs-value"> none</span></span>;
+      <span class="hljs-rule"><span class="hljs-attribute">box-shadow</span>:<span class="hljs-value"> <span class="hljs-number">0px</span> <span class="hljs-number">0px</span> <span class="hljs-number">3px</span> <span class="hljs-hexcolor">#c4e6f5</span></span></span>;
+      <span class="hljs-rule"><span class="hljs-attribute">border</span>:<span class="hljs-value"> <span class="hljs-number">1px</span> solid <span class="hljs-hexcolor">#b4dbed</span></span></span>; }</span>
+      <span class="hljs-class">.sweet-alert</span> <span class="hljs-tag">input</span><span class="hljs-pseudo">:focus</span><span class="hljs-pseudo">::-moz-placeholder</span> <span class="hljs-rules">{
+        <span class="hljs-rule"><span class="hljs-attribute">transition</span>:<span class="hljs-value"> opacity <span class="hljs-number">0.3s</span> <span class="hljs-number">0.03s</span> ease</span></span>;
+        <span class="hljs-rule"><span class="hljs-attribute">opacity</span>:<span class="hljs-value"> <span class="hljs-number">0.5</span></span></span>; }</span>
+      <span class="hljs-class">.sweet-alert</span> <span class="hljs-tag">input</span><span class="hljs-pseudo">:focus</span><span class="hljs-pseudo">:-ms-input-placeholder</span> <span class="hljs-rules">{
+        <span class="hljs-rule"><span class="hljs-attribute">transition</span>:<span class="hljs-value"> opacity <span class="hljs-number">0.3s</span> <span class="hljs-number">0.03s</span> ease</span></span>;
+        <span class="hljs-rule"><span class="hljs-attribute">opacity</span>:<span class="hljs-value"> <span class="hljs-number">0.5</span></span></span>; }</span>
+      <span class="hljs-class">.sweet-alert</span> <span class="hljs-tag">input</span><span class="hljs-pseudo">:focus</span><span class="hljs-pseudo">::-webkit-input-placeholder</span> <span class="hljs-rules">{
+        <span class="hljs-rule"><span class="hljs-attribute">transition</span>:<span class="hljs-value"> opacity <span class="hljs-number">0.3s</span> <span class="hljs-number">0.03s</span> ease</span></span>;
+        <span class="hljs-rule"><span class="hljs-attribute">opacity</span>:<span class="hljs-value"> <span class="hljs-number">0.5</span></span></span>; }</span>
+    <span class="hljs-class">.sweet-alert</span> <span class="hljs-tag">input</span><span class="hljs-pseudo">::-moz-placeholder</span> <span class="hljs-rules">{
+      <span class="hljs-rule"><span class="hljs-attribute">color</span>:<span class="hljs-value"> <span class="hljs-hexcolor">#bdbdbd</span></span></span>; }</span>
+    <span class="hljs-class">.sweet-alert</span> <span class="hljs-tag">input</span><span class="hljs-pseudo">:-ms-input-placeholder</span> <span class="hljs-rules">{
+      <span class="hljs-rule"><span class="hljs-attribute">color</span>:<span class="hljs-value"> <span class="hljs-hexcolor">#bdbdbd</span></span></span>; }</span>
+    <span class="hljs-class">.sweet-alert</span> <span class="hljs-tag">input</span><span class="hljs-pseudo">::-webkit-input-placeholder</span> <span class="hljs-rules">{
+      <span class="hljs-rule"><span class="hljs-attribute">color</span>:<span class="hljs-value"> <span class="hljs-hexcolor">#bdbdbd</span></span></span>; }</span>
+  <span class="hljs-class">.sweet-alert</span><span class="hljs-class">.show-input</span> <span class="hljs-tag">input</span> <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">display</span>:<span class="hljs-value"> block</span></span>; }</span>
+  <span class="hljs-class">.sweet-alert</span> <span class="hljs-class">.sa-confirm-button-container</span> <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">display</span>:<span class="hljs-value"> inline-block</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">position</span>:<span class="hljs-value"> relative</span></span>; }</span>
+  <span class="hljs-class">.sweet-alert</span> <span class="hljs-class">.la-ball-fall</span> <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">position</span>:<span class="hljs-value"> absolute</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">left</span>:<span class="hljs-value"> <span class="hljs-number">50%</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">top</span>:<span class="hljs-value"> <span class="hljs-number">50%</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">margin-left</span>:<span class="hljs-value"> -<span class="hljs-number">27px</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">margin-top</span>:<span class="hljs-value"> <span class="hljs-number">4px</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">opacity</span>:<span class="hljs-value"> <span class="hljs-number">0</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">visibility</span>:<span class="hljs-value"> hidden</span></span>; }</span>
+  <span class="hljs-class">.sweet-alert</span> <span class="hljs-tag">button</span> <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">background-color</span>:<span class="hljs-value"> <span class="hljs-hexcolor">#8CD4F5</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">color</span>:<span class="hljs-value"> white</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">border</span>:<span class="hljs-value"> none</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">box-shadow</span>:<span class="hljs-value"> none</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">font-size</span>:<span class="hljs-value"> <span class="hljs-number">17px</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">font-weight</span>:<span class="hljs-value"> <span class="hljs-number">500</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">-webkit-border-radius</span>:<span class="hljs-value"> <span class="hljs-number">4px</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">border-radius</span>:<span class="hljs-value"> <span class="hljs-number">5px</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">padding</span>:<span class="hljs-value"> <span class="hljs-number">10px</span> <span class="hljs-number">32px</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">margin</span>:<span class="hljs-value"> <span class="hljs-number">26px</span> <span class="hljs-number">5px</span> <span class="hljs-number">0</span> <span class="hljs-number">5px</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">cursor</span>:<span class="hljs-value"> pointer</span></span>; }</span>
+    <span class="hljs-class">.sweet-alert</span> <span class="hljs-tag">button</span><span class="hljs-pseudo">:focus</span> <span class="hljs-rules">{
+      <span class="hljs-rule"><span class="hljs-attribute">outline</span>:<span class="hljs-value"> none</span></span>;
+      <span class="hljs-rule"><span class="hljs-attribute">box-shadow</span>:<span class="hljs-value"> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">2px</span> <span class="hljs-function">rgba</span>(<span class="hljs-number">128</span>, <span class="hljs-number">179</span>, <span class="hljs-number">235</span>, <span class="hljs-number">0.5</span>), inset <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">1px</span> <span class="hljs-function">rgba</span>(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0.05</span>)</span></span>; }</span>
+    <span class="hljs-class">.sweet-alert</span> <span class="hljs-tag">button</span><span class="hljs-pseudo">:hover</span> <span class="hljs-rules">{
+      <span class="hljs-rule"><span class="hljs-attribute">background-color</span>:<span class="hljs-value"> <span class="hljs-hexcolor">#7ecff4</span></span></span>; }</span>
+    <span class="hljs-class">.sweet-alert</span> <span class="hljs-tag">button</span><span class="hljs-pseudo">:active</span> <span class="hljs-rules">{
+      <span class="hljs-rule"><span class="hljs-attribute">background-color</span>:<span class="hljs-value"> <span class="hljs-hexcolor">#5dc2f1</span></span></span>; }</span>
+    <span class="hljs-class">.sweet-alert</span> <span class="hljs-tag">button</span><span class="hljs-class">.cancel</span> <span class="hljs-rules">{
+      <span class="hljs-rule"><span class="hljs-attribute">background-color</span>:<span class="hljs-value"> <span class="hljs-hexcolor">#C1C1C1</span></span></span>; }</span>
+      <span class="hljs-class">.sweet-alert</span> <span class="hljs-tag">button</span><span class="hljs-class">.cancel</span><span class="hljs-pseudo">:hover</span> <span class="hljs-rules">{
+        <span class="hljs-rule"><span class="hljs-attribute">background-color</span>:<span class="hljs-value"> <span class="hljs-hexcolor">#b9b9b9</span></span></span>; }</span>
+      <span class="hljs-class">.sweet-alert</span> <span class="hljs-tag">button</span><span class="hljs-class">.cancel</span><span class="hljs-pseudo">:active</span> <span class="hljs-rules">{
+        <span class="hljs-rule"><span class="hljs-attribute">background-color</span>:<span class="hljs-value"> <span class="hljs-hexcolor">#a8a8a8</span></span></span>; }</span>
+      <span class="hljs-class">.sweet-alert</span> <span class="hljs-tag">button</span><span class="hljs-class">.cancel</span><span class="hljs-pseudo">:focus</span> <span class="hljs-rules">{
+        <span class="hljs-rule"><span class="hljs-attribute">box-shadow</span>:<span class="hljs-value"> <span class="hljs-function">rgba</span>(<span class="hljs-number">197</span>, <span class="hljs-number">205</span>, <span class="hljs-number">211</span>, <span class="hljs-number">0.8</span>) <span class="hljs-number">0px</span> <span class="hljs-number">0px</span> <span class="hljs-number">2px</span>, <span class="hljs-function">rgba</span>(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0.0470588</span>) <span class="hljs-number">0px</span> <span class="hljs-number">0px</span> <span class="hljs-number">0px</span> <span class="hljs-number">1px</span> inset <span class="hljs-important">!important</span></span></span>; }</span>
+    <span class="hljs-class">.sweet-alert</span> <span class="hljs-tag">button</span><span class="hljs-attr_selector">[disabled]</span> <span class="hljs-rules">{
+      <span class="hljs-rule"><span class="hljs-attribute">opacity</span>:<span class="hljs-value"> .<span class="hljs-number">6</span></span></span>;
+      <span class="hljs-rule"><span class="hljs-attribute">cursor</span>:<span class="hljs-value"> default</span></span>; }</span>
+    <span class="hljs-class">.sweet-alert</span> <span class="hljs-tag">button</span><span class="hljs-class">.confirm</span><span class="hljs-attr_selector">[disabled]</span> <span class="hljs-rules">{
+      <span class="hljs-rule"><span class="hljs-attribute">color</span>:<span class="hljs-value"> transparent</span></span>; }</span>
+      <span class="hljs-class">.sweet-alert</span> <span class="hljs-tag">button</span><span class="hljs-class">.confirm</span><span class="hljs-attr_selector">[disabled]</span> ~ <span class="hljs-class">.la-ball-fall</span> <span class="hljs-rules">{
+        <span class="hljs-rule"><span class="hljs-attribute">opacity</span>:<span class="hljs-value"> <span class="hljs-number">1</span></span></span>;
+        <span class="hljs-rule"><span class="hljs-attribute">visibility</span>:<span class="hljs-value"> visible</span></span>;
+        <span class="hljs-rule"><span class="hljs-attribute">transition-delay</span>:<span class="hljs-value"> <span class="hljs-number">0s</span></span></span>; }</span>
+    <span class="hljs-class">.sweet-alert</span> <span class="hljs-tag">button</span><span class="hljs-pseudo">::-moz-focus-inner</span> <span class="hljs-rules">{
+      <span class="hljs-rule"><span class="hljs-attribute">border</span>:<span class="hljs-value"> <span class="hljs-number">0</span></span></span>; }</span>
+  <span class="hljs-class">.sweet-alert</span><span class="hljs-attr_selector">[data-has-cancel-button=false]</span> <span class="hljs-tag">button</span> <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">box-shadow</span>:<span class="hljs-value"> none <span class="hljs-important">!important</span></span></span>; }</span>
+  <span class="hljs-class">.sweet-alert</span><span class="hljs-attr_selector">[data-has-confirm-button=false]</span><span class="hljs-attr_selector">[data-has-cancel-button=false]</span> <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">padding-bottom</span>:<span class="hljs-value"> <span class="hljs-number">40px</span></span></span>; }</span>
+  <span class="hljs-class">.sweet-alert</span> <span class="hljs-class">.sa-icon</span> <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">width</span>:<span class="hljs-value"> <span class="hljs-number">80px</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">height</span>:<span class="hljs-value"> <span class="hljs-number">80px</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">border</span>:<span class="hljs-value"> <span class="hljs-number">4px</span> solid gray</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">-webkit-border-radius</span>:<span class="hljs-value"> <span class="hljs-number">40px</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">border-radius</span>:<span class="hljs-value"> <span class="hljs-number">40px</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">border-radius</span>:<span class="hljs-value"> <span class="hljs-number">50%</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">margin</span>:<span class="hljs-value"> <span class="hljs-number">20px</span> auto</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">padding</span>:<span class="hljs-value"> <span class="hljs-number">0</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">position</span>:<span class="hljs-value"> relative</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">box-sizing</span>:<span class="hljs-value"> content-box</span></span>; }</span>
+    <span class="hljs-class">.sweet-alert</span> <span class="hljs-class">.sa-icon</span><span class="hljs-class">.sa-error</span> <span class="hljs-rules">{
+      <span class="hljs-rule"><span class="hljs-attribute">border-color</span>:<span class="hljs-value"> <span class="hljs-hexcolor">#F27474</span></span></span>; }</span>
+      <span class="hljs-class">.sweet-alert</span> <span class="hljs-class">.sa-icon</span><span class="hljs-class">.sa-error</span> <span class="hljs-class">.sa-x-mark</span> <span class="hljs-rules">{
+        <span class="hljs-rule"><span class="hljs-attribute">position</span>:<span class="hljs-value"> relative</span></span>;
+        <span class="hljs-rule"><span class="hljs-attribute">display</span>:<span class="hljs-value"> block</span></span>; }</span>
+      <span class="hljs-class">.sweet-alert</span> <span class="hljs-class">.sa-icon</span><span class="hljs-class">.sa-error</span> <span class="hljs-class">.sa-line</span> <span class="hljs-rules">{
+        <span class="hljs-rule"><span class="hljs-attribute">position</span>:<span class="hljs-value"> absolute</span></span>;
+        <span class="hljs-rule"><span class="hljs-attribute">height</span>:<span class="hljs-value"> <span class="hljs-number">5px</span></span></span>;
+        <span class="hljs-rule"><span class="hljs-attribute">width</span>:<span class="hljs-value"> <span class="hljs-number">47px</span></span></span>;
+        <span class="hljs-rule"><span class="hljs-attribute">background-color</span>:<span class="hljs-value"> <span class="hljs-hexcolor">#F27474</span></span></span>;
+        <span class="hljs-rule"><span class="hljs-attribute">display</span>:<span class="hljs-value"> block</span></span>;
+        <span class="hljs-rule"><span class="hljs-attribute">top</span>:<span class="hljs-value"> <span class="hljs-number">37px</span></span></span>;
+        <span class="hljs-rule"><span class="hljs-attribute">border-radius</span>:<span class="hljs-value"> <span class="hljs-number">2px</span></span></span>; }</span>
+        <span class="hljs-class">.sweet-alert</span> <span class="hljs-class">.sa-icon</span><span class="hljs-class">.sa-error</span> <span class="hljs-class">.sa-line</span><span class="hljs-class">.sa-left</span> <span class="hljs-rules">{
+          <span class="hljs-rule"><span class="hljs-attribute">-webkit-transform</span>:<span class="hljs-value"> <span class="hljs-function">rotate</span>(<span class="hljs-number">45deg</span>)</span></span>;
+          <span class="hljs-rule"><span class="hljs-attribute">transform</span>:<span class="hljs-value"> <span class="hljs-function">rotate</span>(<span class="hljs-number">45deg</span>)</span></span>;
+          <span class="hljs-rule"><span class="hljs-attribute">left</span>:<span class="hljs-value"> <span class="hljs-number">17px</span></span></span>; }</span>
+        <span class="hljs-class">.sweet-alert</span> <span class="hljs-class">.sa-icon</span><span class="hljs-class">.sa-error</span> <span class="hljs-class">.sa-line</span><span class="hljs-class">.sa-right</span> <span class="hljs-rules">{
+          <span class="hljs-rule"><span class="hljs-attribute">-webkit-transform</span>:<span class="hljs-value"> <span class="hljs-function">rotate</span>(-<span class="hljs-number">45deg</span>)</span></span>;
+          <span class="hljs-rule"><span class="hljs-attribute">transform</span>:<span class="hljs-value"> <span class="hljs-function">rotate</span>(-<span class="hljs-number">45deg</span>)</span></span>;
+          <span class="hljs-rule"><span class="hljs-attribute">right</span>:<span class="hljs-value"> <span class="hljs-number">16px</span></span></span>; }</span>
+    <span class="hljs-class">.sweet-alert</span> <span class="hljs-class">.sa-icon</span><span class="hljs-class">.sa-warning</span> <span class="hljs-rules">{
+      <span class="hljs-rule"><span class="hljs-attribute">border-color</span>:<span class="hljs-value"> <span class="hljs-hexcolor">#F8BB86</span></span></span>; }</span>
+      <span class="hljs-class">.sweet-alert</span> <span class="hljs-class">.sa-icon</span><span class="hljs-class">.sa-warning</span> <span class="hljs-class">.sa-body</span> <span class="hljs-rules">{
+        <span class="hljs-rule"><span class="hljs-attribute">position</span>:<span class="hljs-value"> absolute</span></span>;
+        <span class="hljs-rule"><span class="hljs-attribute">width</span>:<span class="hljs-value"> <span class="hljs-number">5px</span></span></span>;
+        <span class="hljs-rule"><span class="hljs-attribute">height</span>:<span class="hljs-value"> <span class="hljs-number">47px</span></span></span>;
+        <span class="hljs-rule"><span class="hljs-attribute">left</span>:<span class="hljs-value"> <span class="hljs-number">50%</span></span></span>;
+        <span class="hljs-rule"><span class="hljs-attribute">top</span>:<span class="hljs-value"> <span class="hljs-number">10px</span></span></span>;
+        <span class="hljs-rule"><span class="hljs-attribute">-webkit-border-radius</span>:<span class="hljs-value"> <span class="hljs-number">2px</span></span></span>;
+        <span class="hljs-rule"><span class="hljs-attribute">border-radius</span>:<span class="hljs-value"> <span class="hljs-number">2px</span></span></span>;
+        <span class="hljs-rule"><span class="hljs-attribute">margin-left</span>:<span class="hljs-value"> -<span class="hljs-number">2px</span></span></span>;
+        <span class="hljs-rule"><span class="hljs-attribute">background-color</span>:<span class="hljs-value"> <span class="hljs-hexcolor">#F8BB86</span></span></span>; }</span>
+      <span class="hljs-class">.sweet-alert</span> <span class="hljs-class">.sa-icon</span><span class="hljs-class">.sa-warning</span> <span class="hljs-class">.sa-dot</span> <span class="hljs-rules">{
+        <span class="hljs-rule"><span class="hljs-attribute">position</span>:<span class="hljs-value"> absolute</span></span>;
+        <span class="hljs-rule"><span class="hljs-attribute">width</span>:<span class="hljs-value"> <span class="hljs-number">7px</span></span></span>;
+        <span class="hljs-rule"><span class="hljs-attribute">height</span>:<span class="hljs-value"> <span class="hljs-number">7px</span></span></span>;
+        <span class="hljs-rule"><span class="hljs-attribute">-webkit-border-radius</span>:<span class="hljs-value"> <span class="hljs-number">50%</span></span></span>;
+        <span class="hljs-rule"><span class="hljs-attribute">border-radius</span>:<span class="hljs-value"> <span class="hljs-number">50%</span></span></span>;
+        <span class="hljs-rule"><span class="hljs-attribute">margin-left</span>:<span class="hljs-value"> -<span class="hljs-number">3px</span></span></span>;
+        <span class="hljs-rule"><span class="hljs-attribute">left</span>:<span class="hljs-value"> <span class="hljs-number">50%</span></span></span>;
+        <span class="hljs-rule"><span class="hljs-attribute">bottom</span>:<span class="hljs-value"> <span class="hljs-number">10px</span></span></span>;
+        <span class="hljs-rule"><span class="hljs-attribute">background-color</span>:<span class="hljs-value"> <span class="hljs-hexcolor">#F8BB86</span></span></span>; }</span>
+    <span class="hljs-class">.sweet-alert</span> <span class="hljs-class">.sa-icon</span><span class="hljs-class">.sa-info</span> <span class="hljs-rules">{
+      <span class="hljs-rule"><span class="hljs-attribute">border-color</span>:<span class="hljs-value"> <span class="hljs-hexcolor">#C9DAE1</span></span></span>; }</span>
+      <span class="hljs-class">.sweet-alert</span> <span class="hljs-class">.sa-icon</span><span class="hljs-class">.sa-info</span><span class="hljs-pseudo">::before</span> <span class="hljs-rules">{
+        <span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">""</span></span></span>;
+        <span class="hljs-rule"><span class="hljs-attribute">position</span>:<span class="hljs-value"> absolute</span></span>;
+        <span class="hljs-rule"><span class="hljs-attribute">width</span>:<span class="hljs-value"> <span class="hljs-number">5px</span></span></span>;
+        <span class="hljs-rule"><span class="hljs-attribute">height</span>:<span class="hljs-value"> <span class="hljs-number">29px</span></span></span>;
+        <span class="hljs-rule"><span class="hljs-attribute">left</span>:<span class="hljs-value"> <span class="hljs-number">50%</span></span></span>;
+        <span class="hljs-rule"><span class="hljs-attribute">bottom</span>:<span class="hljs-value"> <span class="hljs-number">17px</span></span></span>;
+        <span class="hljs-rule"><span class="hljs-attribute">border-radius</span>:<span class="hljs-value"> <span class="hljs-number">2px</span></span></span>;
+        <span class="hljs-rule"><span class="hljs-attribute">margin-left</span>:<span class="hljs-value"> -<span class="hljs-number">2px</span></span></span>;
+        <span class="hljs-rule"><span class="hljs-attribute">background-color</span>:<span class="hljs-value"> <span class="hljs-hexcolor">#C9DAE1</span></span></span>; }</span>
+      <span class="hljs-class">.sweet-alert</span> <span class="hljs-class">.sa-icon</span><span class="hljs-class">.sa-info</span><span class="hljs-pseudo">::after</span> <span class="hljs-rules">{
+        <span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">""</span></span></span>;
+        <span class="hljs-rule"><span class="hljs-attribute">position</span>:<span class="hljs-value"> absolute</span></span>;
+        <span class="hljs-rule"><span class="hljs-attribute">width</span>:<span class="hljs-value"> <span class="hljs-number">7px</span></span></span>;
+        <span class="hljs-rule"><span class="hljs-attribute">height</span>:<span class="hljs-value"> <span class="hljs-number">7px</span></span></span>;
+        <span class="hljs-rule"><span class="hljs-attribute">border-radius</span>:<span class="hljs-value"> <span class="hljs-number">50%</span></span></span>;
+        <span class="hljs-rule"><span class="hljs-attribute">margin-left</span>:<span class="hljs-value"> -<span class="hljs-number">3px</span></span></span>;
+        <span class="hljs-rule"><span class="hljs-attribute">top</span>:<span class="hljs-value"> <span class="hljs-number">19px</span></span></span>;
+        <span class="hljs-rule"><span class="hljs-attribute">background-color</span>:<span class="hljs-value"> <span class="hljs-hexcolor">#C9DAE1</span></span></span>; }</span>
+    <span class="hljs-class">.sweet-alert</span> <span class="hljs-class">.sa-icon</span><span class="hljs-class">.sa-success</span> <span class="hljs-rules">{
+      <span class="hljs-rule"><span class="hljs-attribute">border-color</span>:<span class="hljs-value"> <span class="hljs-hexcolor">#A5DC86</span></span></span>; }</span>
+      <span class="hljs-class">.sweet-alert</span> <span class="hljs-class">.sa-icon</span><span class="hljs-class">.sa-success</span><span class="hljs-pseudo">::before</span>, <span class="hljs-class">.sweet-alert</span> <span class="hljs-class">.sa-icon</span><span class="hljs-class">.sa-success</span><span class="hljs-pseudo">::after</span> <span class="hljs-rules">{
+        <span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">''</span></span></span>;
+        <span class="hljs-rule"><span class="hljs-attribute">-webkit-border-radius</span>:<span class="hljs-value"> <span class="hljs-number">40px</span></span></span>;
+        <span class="hljs-rule"><span class="hljs-attribute">border-radius</span>:<span class="hljs-value"> <span class="hljs-number">40px</span></span></span>;
+        <span class="hljs-rule"><span class="hljs-attribute">border-radius</span>:<span class="hljs-value"> <span class="hljs-number">50%</span></span></span>;
+        <span class="hljs-rule"><span class="hljs-attribute">position</span>:<span class="hljs-value"> absolute</span></span>;
+        <span class="hljs-rule"><span class="hljs-attribute">width</span>:<span class="hljs-value"> <span class="hljs-number">60px</span></span></span>;
+        <span class="hljs-rule"><span class="hljs-attribute">height</span>:<span class="hljs-value"> <span class="hljs-number">120px</span></span></span>;
+        <span class="hljs-rule"><span class="hljs-attribute">background</span>:<span class="hljs-value"> white</span></span>;
+        <span class="hljs-rule"><span class="hljs-attribute">-webkit-transform</span>:<span class="hljs-value"> <span class="hljs-function">rotate</span>(<span class="hljs-number">45deg</span>)</span></span>;
+        <span class="hljs-rule"><span class="hljs-attribute">transform</span>:<span class="hljs-value"> <span class="hljs-function">rotate</span>(<span class="hljs-number">45deg</span>)</span></span>; }</span>
+      <span class="hljs-class">.sweet-alert</span> <span class="hljs-class">.sa-icon</span><span class="hljs-class">.sa-success</span><span class="hljs-pseudo">::before</span> <span class="hljs-rules">{
+        <span class="hljs-rule"><span class="hljs-attribute">-webkit-border-radius</span>:<span class="hljs-value"> <span class="hljs-number">120px</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">120px</span></span></span>;
+        <span class="hljs-rule"><span class="hljs-attribute">border-radius</span>:<span class="hljs-value"> <span class="hljs-number">120px</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">120px</span></span></span>;
+        <span class="hljs-rule"><span class="hljs-attribute">top</span>:<span class="hljs-value"> -<span class="hljs-number">7px</span></span></span>;
+        <span class="hljs-rule"><span class="hljs-attribute">left</span>:<span class="hljs-value"> -<span class="hljs-number">33px</span></span></span>;
+        <span class="hljs-rule"><span class="hljs-attribute">-webkit-transform</span>:<span class="hljs-value"> <span class="hljs-function">rotate</span>(-<span class="hljs-number">45deg</span>)</span></span>;
+        <span class="hljs-rule"><span class="hljs-attribute">transform</span>:<span class="hljs-value"> <span class="hljs-function">rotate</span>(-<span class="hljs-number">45deg</span>)</span></span>;
+        <span class="hljs-rule"><span class="hljs-attribute">-webkit-transform-origin</span>:<span class="hljs-value"> <span class="hljs-number">60px</span> <span class="hljs-number">60px</span></span></span>;
+        <span class="hljs-rule"><span class="hljs-attribute">transform-origin</span>:<span class="hljs-value"> <span class="hljs-number">60px</span> <span class="hljs-number">60px</span></span></span>; }</span>
+      <span class="hljs-class">.sweet-alert</span> <span class="hljs-class">.sa-icon</span><span class="hljs-class">.sa-success</span><span class="hljs-pseudo">::after</span> <span class="hljs-rules">{
+        <span class="hljs-rule"><span class="hljs-attribute">-webkit-border-radius</span>:<span class="hljs-value"> <span class="hljs-number">0</span> <span class="hljs-number">120px</span> <span class="hljs-number">120px</span> <span class="hljs-number">0</span></span></span>;
+        <span class="hljs-rule"><span class="hljs-attribute">border-radius</span>:<span class="hljs-value"> <span class="hljs-number">0</span> <span class="hljs-number">120px</span> <span class="hljs-number">120px</span> <span class="hljs-number">0</span></span></span>;
+        <span class="hljs-rule"><span class="hljs-attribute">top</span>:<span class="hljs-value"> -<span class="hljs-number">11px</span></span></span>;
+        <span class="hljs-rule"><span class="hljs-attribute">left</span>:<span class="hljs-value"> <span class="hljs-number">30px</span></span></span>;
+        <span class="hljs-rule"><span class="hljs-attribute">-webkit-transform</span>:<span class="hljs-value"> <span class="hljs-function">rotate</span>(-<span class="hljs-number">45deg</span>)</span></span>;
+        <span class="hljs-rule"><span class="hljs-attribute">transform</span>:<span class="hljs-value"> <span class="hljs-function">rotate</span>(-<span class="hljs-number">45deg</span>)</span></span>;
+        <span class="hljs-rule"><span class="hljs-attribute">-webkit-transform-origin</span>:<span class="hljs-value"> <span class="hljs-number">0px</span> <span class="hljs-number">60px</span></span></span>;
+        <span class="hljs-rule"><span class="hljs-attribute">transform-origin</span>:<span class="hljs-value"> <span class="hljs-number">0px</span> <span class="hljs-number">60px</span></span></span>; }</span>
+      <span class="hljs-class">.sweet-alert</span> <span class="hljs-class">.sa-icon</span><span class="hljs-class">.sa-success</span> <span class="hljs-class">.sa-placeholder</span> <span class="hljs-rules">{
+        <span class="hljs-rule"><span class="hljs-attribute">width</span>:<span class="hljs-value"> <span class="hljs-number">80px</span></span></span>;
+        <span class="hljs-rule"><span class="hljs-attribute">height</span>:<span class="hljs-value"> <span class="hljs-number">80px</span></span></span>;
+        <span class="hljs-rule"><span class="hljs-attribute">border</span>:<span class="hljs-value"> <span class="hljs-number">4px</span> solid <span class="hljs-function">rgba</span>(<span class="hljs-number">165</span>, <span class="hljs-number">220</span>, <span class="hljs-number">134</span>, <span class="hljs-number">0.2</span>)</span></span>;
+        <span class="hljs-rule"><span class="hljs-attribute">-webkit-border-radius</span>:<span class="hljs-value"> <span class="hljs-number">40px</span></span></span>;
+        <span class="hljs-rule"><span class="hljs-attribute">border-radius</span>:<span class="hljs-value"> <span class="hljs-number">40px</span></span></span>;
+        <span class="hljs-rule"><span class="hljs-attribute">border-radius</span>:<span class="hljs-value"> <span class="hljs-number">50%</span></span></span>;
+        <span class="hljs-rule"><span class="hljs-attribute">box-sizing</span>:<span class="hljs-value"> content-box</span></span>;
+        <span class="hljs-rule"><span class="hljs-attribute">position</span>:<span class="hljs-value"> absolute</span></span>;
+        <span class="hljs-rule"><span class="hljs-attribute">left</span>:<span class="hljs-value"> -<span class="hljs-number">4px</span></span></span>;
+        <span class="hljs-rule"><span class="hljs-attribute">top</span>:<span class="hljs-value"> -<span class="hljs-number">4px</span></span></span>;
+        <span class="hljs-rule"><span class="hljs-attribute">z-index</span>:<span class="hljs-value"> <span class="hljs-number">2</span></span></span>; }</span>
+      <span class="hljs-class">.sweet-alert</span> <span class="hljs-class">.sa-icon</span><span class="hljs-class">.sa-success</span> <span class="hljs-class">.sa-fix</span> <span class="hljs-rules">{
+        <span class="hljs-rule"><span class="hljs-attribute">width</span>:<span class="hljs-value"> <span class="hljs-number">5px</span></span></span>;
+        <span class="hljs-rule"><span class="hljs-attribute">height</span>:<span class="hljs-value"> <span class="hljs-number">90px</span></span></span>;
+        <span class="hljs-rule"><span class="hljs-attribute">background-color</span>:<span class="hljs-value"> white</span></span>;
+        <span class="hljs-rule"><span class="hljs-attribute">position</span>:<span class="hljs-value"> absolute</span></span>;
+        <span class="hljs-rule"><span class="hljs-attribute">left</span>:<span class="hljs-value"> <span class="hljs-number">28px</span></span></span>;
+        <span class="hljs-rule"><span class="hljs-attribute">top</span>:<span class="hljs-value"> <span class="hljs-number">8px</span></span></span>;
+        <span class="hljs-rule"><span class="hljs-attribute">z-index</span>:<span class="hljs-value"> <span class="hljs-number">1</span></span></span>;
+        <span class="hljs-rule"><span class="hljs-attribute">-webkit-transform</span>:<span class="hljs-value"> <span class="hljs-function">rotate</span>(-<span class="hljs-number">45deg</span>)</span></span>;
+        <span class="hljs-rule"><span class="hljs-attribute">transform</span>:<span class="hljs-value"> <span class="hljs-function">rotate</span>(-<span class="hljs-number">45deg</span>)</span></span>; }</span>
+      <span class="hljs-class">.sweet-alert</span> <span class="hljs-class">.sa-icon</span><span class="hljs-class">.sa-success</span> <span class="hljs-class">.sa-line</span> <span class="hljs-rules">{
+        <span class="hljs-rule"><span class="hljs-attribute">height</span>:<span class="hljs-value"> <span class="hljs-number">5px</span></span></span>;
+        <span class="hljs-rule"><span class="hljs-attribute">background-color</span>:<span class="hljs-value"> <span class="hljs-hexcolor">#A5DC86</span></span></span>;
+        <span class="hljs-rule"><span class="hljs-attribute">display</span>:<span class="hljs-value"> block</span></span>;
+        <span class="hljs-rule"><span class="hljs-attribute">border-radius</span>:<span class="hljs-value"> <span class="hljs-number">2px</span></span></span>;
+        <span class="hljs-rule"><span class="hljs-attribute">position</span>:<span class="hljs-value"> absolute</span></span>;
+        <span class="hljs-rule"><span class="hljs-attribute">z-index</span>:<span class="hljs-value"> <span class="hljs-number">2</span></span></span>; }</span>
+        <span class="hljs-class">.sweet-alert</span> <span class="hljs-class">.sa-icon</span><span class="hljs-class">.sa-success</span> <span class="hljs-class">.sa-line</span><span class="hljs-class">.sa-tip</span> <span class="hljs-rules">{
+          <span class="hljs-rule"><span class="hljs-attribute">width</span>:<span class="hljs-value"> <span class="hljs-number">25px</span></span></span>;
+          <span class="hljs-rule"><span class="hljs-attribute">left</span>:<span class="hljs-value"> <span class="hljs-number">14px</span></span></span>;
+          <span class="hljs-rule"><span class="hljs-attribute">top</span>:<span class="hljs-value"> <span class="hljs-number">46px</span></span></span>;
+          <span class="hljs-rule"><span class="hljs-attribute">-webkit-transform</span>:<span class="hljs-value"> <span class="hljs-function">rotate</span>(<span class="hljs-number">45deg</span>)</span></span>;
+          <span class="hljs-rule"><span class="hljs-attribute">transform</span>:<span class="hljs-value"> <span class="hljs-function">rotate</span>(<span class="hljs-number">45deg</span>)</span></span>; }</span>
+        <span class="hljs-class">.sweet-alert</span> <span class="hljs-class">.sa-icon</span><span class="hljs-class">.sa-success</span> <span class="hljs-class">.sa-line</span><span class="hljs-class">.sa-long</span> <span class="hljs-rules">{
+          <span class="hljs-rule"><span class="hljs-attribute">width</span>:<span class="hljs-value"> <span class="hljs-number">47px</span></span></span>;
+          <span class="hljs-rule"><span class="hljs-attribute">right</span>:<span class="hljs-value"> <span class="hljs-number">8px</span></span></span>;
+          <span class="hljs-rule"><span class="hljs-attribute">top</span>:<span class="hljs-value"> <span class="hljs-number">38px</span></span></span>;
+          <span class="hljs-rule"><span class="hljs-attribute">-webkit-transform</span>:<span class="hljs-value"> <span class="hljs-function">rotate</span>(-<span class="hljs-number">45deg</span>)</span></span>;
+          <span class="hljs-rule"><span class="hljs-attribute">transform</span>:<span class="hljs-value"> <span class="hljs-function">rotate</span>(-<span class="hljs-number">45deg</span>)</span></span>; }</span>
+    <span class="hljs-class">.sweet-alert</span> <span class="hljs-class">.sa-icon</span><span class="hljs-class">.sa-custom</span> <span class="hljs-rules">{
+      <span class="hljs-rule"><span class="hljs-attribute">background-size</span>:<span class="hljs-value"> contain</span></span>;
+      <span class="hljs-rule"><span class="hljs-attribute">border-radius</span>:<span class="hljs-value"> <span class="hljs-number">0</span></span></span>;
+      <span class="hljs-rule"><span class="hljs-attribute">border</span>:<span class="hljs-value"> none</span></span>;
+      <span class="hljs-rule"><span class="hljs-attribute">background-position</span>:<span class="hljs-value"> center center</span></span>;
+      <span class="hljs-rule"><span class="hljs-attribute">background-repeat</span>:<span class="hljs-value"> no-repeat</span></span>; }</span></div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>Animations</p></div></div><div class="code"><div class="wrapper"><span class="hljs-at_rule">@<span class="hljs-keyword">-webkit-keyframes</span> showSweetAlert </span>{
+  0% <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">transform</span>:<span class="hljs-value"> <span class="hljs-function">scale</span>(<span class="hljs-number">0.7</span>)</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">-webkit-transform</span>:<span class="hljs-value"> <span class="hljs-function">scale</span>(<span class="hljs-number">0.7</span>)</span></span>; }</span>
+  45% <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">transform</span>:<span class="hljs-value"> <span class="hljs-function">scale</span>(<span class="hljs-number">1.05</span>)</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">-webkit-transform</span>:<span class="hljs-value"> <span class="hljs-function">scale</span>(<span class="hljs-number">1.05</span>)</span></span>; }</span>
+  80% <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">transform</span>:<span class="hljs-value"> <span class="hljs-function">scale</span>(<span class="hljs-number">0.95</span>)</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">-webkit-transform</span>:<span class="hljs-value"> <span class="hljs-function">scale</span>(<span class="hljs-number">0.95</span>)</span></span>; }</span>
+  100% <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">transform</span>:<span class="hljs-value"> <span class="hljs-function">scale</span>(<span class="hljs-number">1</span>)</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">-webkit-transform</span>:<span class="hljs-value"> <span class="hljs-function">scale</span>(<span class="hljs-number">1</span>)</span></span>; }</span> }
+
+<span class="hljs-at_rule">@<span class="hljs-keyword">keyframes</span> showSweetAlert </span>{
+  0% <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">transform</span>:<span class="hljs-value"> <span class="hljs-function">scale</span>(<span class="hljs-number">0.7</span>)</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">-webkit-transform</span>:<span class="hljs-value"> <span class="hljs-function">scale</span>(<span class="hljs-number">0.7</span>)</span></span>; }</span>
+  45% <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">transform</span>:<span class="hljs-value"> <span class="hljs-function">scale</span>(<span class="hljs-number">1.05</span>)</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">-webkit-transform</span>:<span class="hljs-value"> <span class="hljs-function">scale</span>(<span class="hljs-number">1.05</span>)</span></span>; }</span>
+  80% <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">transform</span>:<span class="hljs-value"> <span class="hljs-function">scale</span>(<span class="hljs-number">0.95</span>)</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">-webkit-transform</span>:<span class="hljs-value"> <span class="hljs-function">scale</span>(<span class="hljs-number">0.95</span>)</span></span>; }</span>
+  100% <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">transform</span>:<span class="hljs-value"> <span class="hljs-function">scale</span>(<span class="hljs-number">1</span>)</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">-webkit-transform</span>:<span class="hljs-value"> <span class="hljs-function">scale</span>(<span class="hljs-number">1</span>)</span></span>; }</span> }
+
+<span class="hljs-at_rule">@<span class="hljs-keyword">-webkit-keyframes</span> hideSweetAlert </span>{
+  0% <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">transform</span>:<span class="hljs-value"> <span class="hljs-function">scale</span>(<span class="hljs-number">1</span>)</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">-webkit-transform</span>:<span class="hljs-value"> <span class="hljs-function">scale</span>(<span class="hljs-number">1</span>)</span></span>; }</span>
+  100% <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">transform</span>:<span class="hljs-value"> <span class="hljs-function">scale</span>(<span class="hljs-number">0.5</span>)</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">-webkit-transform</span>:<span class="hljs-value"> <span class="hljs-function">scale</span>(<span class="hljs-number">0.5</span>)</span></span>; }</span> }
+
+<span class="hljs-at_rule">@<span class="hljs-keyword">keyframes</span> hideSweetAlert </span>{
+  0% <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">transform</span>:<span class="hljs-value"> <span class="hljs-function">scale</span>(<span class="hljs-number">1</span>)</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">-webkit-transform</span>:<span class="hljs-value"> <span class="hljs-function">scale</span>(<span class="hljs-number">1</span>)</span></span>; }</span>
+  100% <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">transform</span>:<span class="hljs-value"> <span class="hljs-function">scale</span>(<span class="hljs-number">0.5</span>)</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">-webkit-transform</span>:<span class="hljs-value"> <span class="hljs-function">scale</span>(<span class="hljs-number">0.5</span>)</span></span>; }</span> }
+
+<span class="hljs-at_rule">@<span class="hljs-keyword">-webkit-keyframes</span> slideFromTop </span>{
+  0% <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">top</span>:<span class="hljs-value"> <span class="hljs-number">0%</span></span></span>; }</span>
+  100% <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">top</span>:<span class="hljs-value"> <span class="hljs-number">50%</span></span></span>; }</span> }
+
+<span class="hljs-at_rule">@<span class="hljs-keyword">keyframes</span> slideFromTop </span>{
+  0% <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">top</span>:<span class="hljs-value"> <span class="hljs-number">0%</span></span></span>; }</span>
+  100% <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">top</span>:<span class="hljs-value"> <span class="hljs-number">50%</span></span></span>; }</span> }
+
+<span class="hljs-at_rule">@<span class="hljs-keyword">-webkit-keyframes</span> slideToTop </span>{
+  0% <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">top</span>:<span class="hljs-value"> <span class="hljs-number">50%</span></span></span>; }</span>
+  100% <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">top</span>:<span class="hljs-value"> <span class="hljs-number">0%</span></span></span>; }</span> }
+
+<span class="hljs-at_rule">@<span class="hljs-keyword">keyframes</span> slideToTop </span>{
+  0% <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">top</span>:<span class="hljs-value"> <span class="hljs-number">50%</span></span></span>; }</span>
+  100% <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">top</span>:<span class="hljs-value"> <span class="hljs-number">0%</span></span></span>; }</span> }
+
+<span class="hljs-at_rule">@<span class="hljs-keyword">-webkit-keyframes</span> slideFromBottom </span>{
+  0% <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">top</span>:<span class="hljs-value"> <span class="hljs-number">70%</span></span></span>; }</span>
+  100% <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">top</span>:<span class="hljs-value"> <span class="hljs-number">50%</span></span></span>; }</span> }
+
+<span class="hljs-at_rule">@<span class="hljs-keyword">keyframes</span> slideFromBottom </span>{
+  0% <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">top</span>:<span class="hljs-value"> <span class="hljs-number">70%</span></span></span>; }</span>
+  100% <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">top</span>:<span class="hljs-value"> <span class="hljs-number">50%</span></span></span>; }</span> }
+
+<span class="hljs-at_rule">@<span class="hljs-keyword">-webkit-keyframes</span> slideToBottom </span>{
+  0% <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">top</span>:<span class="hljs-value"> <span class="hljs-number">50%</span></span></span>; }</span>
+  100% <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">top</span>:<span class="hljs-value"> <span class="hljs-number">70%</span></span></span>; }</span> }
+
+<span class="hljs-at_rule">@<span class="hljs-keyword">keyframes</span> slideToBottom </span>{
+  0% <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">top</span>:<span class="hljs-value"> <span class="hljs-number">50%</span></span></span>; }</span>
+  100% <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">top</span>:<span class="hljs-value"> <span class="hljs-number">70%</span></span></span>; }</span> }
+
+<span class="hljs-class">.showSweetAlert</span><span class="hljs-attr_selector">[data-animation=pop]</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">-webkit-animation</span>:<span class="hljs-value"> showSweetAlert <span class="hljs-number">0.3s</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">animation</span>:<span class="hljs-value"> showSweetAlert <span class="hljs-number">0.3s</span></span></span>; }</span>
+
+<span class="hljs-class">.showSweetAlert</span><span class="hljs-attr_selector">[data-animation=none]</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">-webkit-animation</span>:<span class="hljs-value"> none</span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">animation</span>:<span class="hljs-value"> none</span></span>; }</span>
+
+<span class="hljs-class">.showSweetAlert</span><span class="hljs-attr_selector">[data-animation=slide-from-top]</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">-webkit-animation</span>:<span class="hljs-value"> slideFromTop <span class="hljs-number">0.3s</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">animation</span>:<span class="hljs-value"> slideFromTop <span class="hljs-number">0.3s</span></span></span>; }</span>
+
+<span class="hljs-class">.showSweetAlert</span><span class="hljs-attr_selector">[data-animation=slide-from-bottom]</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">-webkit-animation</span>:<span class="hljs-value"> slideFromBottom <span class="hljs-number">0.3s</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">animation</span>:<span class="hljs-value"> slideFromBottom <span class="hljs-number">0.3s</span></span></span>; }</span>
+
+<span class="hljs-class">.hideSweetAlert</span><span class="hljs-attr_selector">[data-animation=pop]</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">-webkit-animation</span>:<span class="hljs-value"> hideSweetAlert <span class="hljs-number">0.2s</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">animation</span>:<span class="hljs-value"> hideSweetAlert <span class="hljs-number">0.2s</span></span></span>; }</span>
+
+<span class="hljs-class">.hideSweetAlert</span><span class="hljs-attr_selector">[data-animation=none]</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">-webkit-animation</span>:<span class="hljs-value"> none</span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">animation</span>:<span class="hljs-value"> none</span></span>; }</span>
+
+<span class="hljs-class">.hideSweetAlert</span><span class="hljs-attr_selector">[data-animation=slide-from-top]</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">-webkit-animation</span>:<span class="hljs-value"> slideToTop <span class="hljs-number">0.4s</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">animation</span>:<span class="hljs-value"> slideToTop <span class="hljs-number">0.4s</span></span></span>; }</span>
+
+<span class="hljs-class">.hideSweetAlert</span><span class="hljs-attr_selector">[data-animation=slide-from-bottom]</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">-webkit-animation</span>:<span class="hljs-value"> slideToBottom <span class="hljs-number">0.3s</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">animation</span>:<span class="hljs-value"> slideToBottom <span class="hljs-number">0.3s</span></span></span>; }</span>
+
+<span class="hljs-at_rule">@<span class="hljs-keyword">-webkit-keyframes</span> animateSuccessTip </span>{
+  0% <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">width</span>:<span class="hljs-value"> <span class="hljs-number">0</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">left</span>:<span class="hljs-value"> <span class="hljs-number">1px</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">top</span>:<span class="hljs-value"> <span class="hljs-number">19px</span></span></span>; }</span>
+  54% <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">width</span>:<span class="hljs-value"> <span class="hljs-number">0</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">left</span>:<span class="hljs-value"> <span class="hljs-number">1px</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">top</span>:<span class="hljs-value"> <span class="hljs-number">19px</span></span></span>; }</span>
+  70% <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">width</span>:<span class="hljs-value"> <span class="hljs-number">50px</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">left</span>:<span class="hljs-value"> -<span class="hljs-number">8px</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">top</span>:<span class="hljs-value"> <span class="hljs-number">37px</span></span></span>; }</span>
+  84% <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">width</span>:<span class="hljs-value"> <span class="hljs-number">17px</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">left</span>:<span class="hljs-value"> <span class="hljs-number">21px</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">top</span>:<span class="hljs-value"> <span class="hljs-number">48px</span></span></span>; }</span>
+  100% <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">width</span>:<span class="hljs-value"> <span class="hljs-number">25px</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">left</span>:<span class="hljs-value"> <span class="hljs-number">14px</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">top</span>:<span class="hljs-value"> <span class="hljs-number">45px</span></span></span>; }</span> }
+
+<span class="hljs-at_rule">@<span class="hljs-keyword">keyframes</span> animateSuccessTip </span>{
+  0% <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">width</span>:<span class="hljs-value"> <span class="hljs-number">0</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">left</span>:<span class="hljs-value"> <span class="hljs-number">1px</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">top</span>:<span class="hljs-value"> <span class="hljs-number">19px</span></span></span>; }</span>
+  54% <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">width</span>:<span class="hljs-value"> <span class="hljs-number">0</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">left</span>:<span class="hljs-value"> <span class="hljs-number">1px</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">top</span>:<span class="hljs-value"> <span class="hljs-number">19px</span></span></span>; }</span>
+  70% <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">width</span>:<span class="hljs-value"> <span class="hljs-number">50px</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">left</span>:<span class="hljs-value"> -<span class="hljs-number">8px</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">top</span>:<span class="hljs-value"> <span class="hljs-number">37px</span></span></span>; }</span>
+  84% <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">width</span>:<span class="hljs-value"> <span class="hljs-number">17px</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">left</span>:<span class="hljs-value"> <span class="hljs-number">21px</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">top</span>:<span class="hljs-value"> <span class="hljs-number">48px</span></span></span>; }</span>
+  100% <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">width</span>:<span class="hljs-value"> <span class="hljs-number">25px</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">left</span>:<span class="hljs-value"> <span class="hljs-number">14px</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">top</span>:<span class="hljs-value"> <span class="hljs-number">45px</span></span></span>; }</span> }
+
+<span class="hljs-at_rule">@<span class="hljs-keyword">-webkit-keyframes</span> animateSuccessLong </span>{
+  0% <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">width</span>:<span class="hljs-value"> <span class="hljs-number">0</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">right</span>:<span class="hljs-value"> <span class="hljs-number">46px</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">top</span>:<span class="hljs-value"> <span class="hljs-number">54px</span></span></span>; }</span>
+  65% <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">width</span>:<span class="hljs-value"> <span class="hljs-number">0</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">right</span>:<span class="hljs-value"> <span class="hljs-number">46px</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">top</span>:<span class="hljs-value"> <span class="hljs-number">54px</span></span></span>; }</span>
+  84% <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">width</span>:<span class="hljs-value"> <span class="hljs-number">55px</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">right</span>:<span class="hljs-value"> <span class="hljs-number">0px</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">top</span>:<span class="hljs-value"> <span class="hljs-number">35px</span></span></span>; }</span>
+  100% <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">width</span>:<span class="hljs-value"> <span class="hljs-number">47px</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">right</span>:<span class="hljs-value"> <span class="hljs-number">8px</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">top</span>:<span class="hljs-value"> <span class="hljs-number">38px</span></span></span>; }</span> }
+
+<span class="hljs-at_rule">@<span class="hljs-keyword">keyframes</span> animateSuccessLong </span>{
+  0% <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">width</span>:<span class="hljs-value"> <span class="hljs-number">0</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">right</span>:<span class="hljs-value"> <span class="hljs-number">46px</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">top</span>:<span class="hljs-value"> <span class="hljs-number">54px</span></span></span>; }</span>
+  65% <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">width</span>:<span class="hljs-value"> <span class="hljs-number">0</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">right</span>:<span class="hljs-value"> <span class="hljs-number">46px</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">top</span>:<span class="hljs-value"> <span class="hljs-number">54px</span></span></span>; }</span>
+  84% <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">width</span>:<span class="hljs-value"> <span class="hljs-number">55px</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">right</span>:<span class="hljs-value"> <span class="hljs-number">0px</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">top</span>:<span class="hljs-value"> <span class="hljs-number">35px</span></span></span>; }</span>
+  100% <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">width</span>:<span class="hljs-value"> <span class="hljs-number">47px</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">right</span>:<span class="hljs-value"> <span class="hljs-number">8px</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">top</span>:<span class="hljs-value"> <span class="hljs-number">38px</span></span></span>; }</span> }
+
+<span class="hljs-at_rule">@<span class="hljs-keyword">-webkit-keyframes</span> rotatePlaceholder </span>{
+  0% <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">transform</span>:<span class="hljs-value"> <span class="hljs-function">rotate</span>(-<span class="hljs-number">45deg</span>)</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">-webkit-transform</span>:<span class="hljs-value"> <span class="hljs-function">rotate</span>(-<span class="hljs-number">45deg</span>)</span></span>; }</span>
+  5% <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">transform</span>:<span class="hljs-value"> <span class="hljs-function">rotate</span>(-<span class="hljs-number">45deg</span>)</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">-webkit-transform</span>:<span class="hljs-value"> <span class="hljs-function">rotate</span>(-<span class="hljs-number">45deg</span>)</span></span>; }</span>
+  12% <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">transform</span>:<span class="hljs-value"> <span class="hljs-function">rotate</span>(-<span class="hljs-number">405deg</span>)</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">-webkit-transform</span>:<span class="hljs-value"> <span class="hljs-function">rotate</span>(-<span class="hljs-number">405deg</span>)</span></span>; }</span>
+  100% <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">transform</span>:<span class="hljs-value"> <span class="hljs-function">rotate</span>(-<span class="hljs-number">405deg</span>)</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">-webkit-transform</span>:<span class="hljs-value"> <span class="hljs-function">rotate</span>(-<span class="hljs-number">405deg</span>)</span></span>; }</span> }
+
+<span class="hljs-at_rule">@<span class="hljs-keyword">keyframes</span> rotatePlaceholder </span>{
+  0% <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">transform</span>:<span class="hljs-value"> <span class="hljs-function">rotate</span>(-<span class="hljs-number">45deg</span>)</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">-webkit-transform</span>:<span class="hljs-value"> <span class="hljs-function">rotate</span>(-<span class="hljs-number">45deg</span>)</span></span>; }</span>
+  5% <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">transform</span>:<span class="hljs-value"> <span class="hljs-function">rotate</span>(-<span class="hljs-number">45deg</span>)</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">-webkit-transform</span>:<span class="hljs-value"> <span class="hljs-function">rotate</span>(-<span class="hljs-number">45deg</span>)</span></span>; }</span>
+  12% <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">transform</span>:<span class="hljs-value"> <span class="hljs-function">rotate</span>(-<span class="hljs-number">405deg</span>)</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">-webkit-transform</span>:<span class="hljs-value"> <span class="hljs-function">rotate</span>(-<span class="hljs-number">405deg</span>)</span></span>; }</span>
+  100% <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">transform</span>:<span class="hljs-value"> <span class="hljs-function">rotate</span>(-<span class="hljs-number">405deg</span>)</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">-webkit-transform</span>:<span class="hljs-value"> <span class="hljs-function">rotate</span>(-<span class="hljs-number">405deg</span>)</span></span>; }</span> }
+
+<span class="hljs-class">.animateSuccessTip</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">-webkit-animation</span>:<span class="hljs-value"> animateSuccessTip <span class="hljs-number">0.75s</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">animation</span>:<span class="hljs-value"> animateSuccessTip <span class="hljs-number">0.75s</span></span></span>; }</span>
+
+<span class="hljs-class">.animateSuccessLong</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">-webkit-animation</span>:<span class="hljs-value"> animateSuccessLong <span class="hljs-number">0.75s</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">animation</span>:<span class="hljs-value"> animateSuccessLong <span class="hljs-number">0.75s</span></span></span>; }</span>
+
+<span class="hljs-class">.sa-icon</span><span class="hljs-class">.sa-success</span><span class="hljs-class">.animate</span><span class="hljs-pseudo">::after</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">-webkit-animation</span>:<span class="hljs-value"> rotatePlaceholder <span class="hljs-number">4.25s</span> ease-in</span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">animation</span>:<span class="hljs-value"> rotatePlaceholder <span class="hljs-number">4.25s</span> ease-in</span></span>; }</span>
+
+<span class="hljs-at_rule">@<span class="hljs-keyword">-webkit-keyframes</span> animateErrorIcon </span>{
+  0% <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">transform</span>:<span class="hljs-value"> <span class="hljs-function">rotateX</span>(<span class="hljs-number">100deg</span>)</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">-webkit-transform</span>:<span class="hljs-value"> <span class="hljs-function">rotateX</span>(<span class="hljs-number">100deg</span>)</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">opacity</span>:<span class="hljs-value"> <span class="hljs-number">0</span></span></span>; }</span>
+  100% <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">transform</span>:<span class="hljs-value"> <span class="hljs-function">rotateX</span>(<span class="hljs-number">0deg</span>)</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">-webkit-transform</span>:<span class="hljs-value"> <span class="hljs-function">rotateX</span>(<span class="hljs-number">0deg</span>)</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">opacity</span>:<span class="hljs-value"> <span class="hljs-number">1</span></span></span>; }</span> }
+
+<span class="hljs-at_rule">@<span class="hljs-keyword">keyframes</span> animateErrorIcon </span>{
+  0% <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">transform</span>:<span class="hljs-value"> <span class="hljs-function">rotateX</span>(<span class="hljs-number">100deg</span>)</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">-webkit-transform</span>:<span class="hljs-value"> <span class="hljs-function">rotateX</span>(<span class="hljs-number">100deg</span>)</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">opacity</span>:<span class="hljs-value"> <span class="hljs-number">0</span></span></span>; }</span>
+  100% <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">transform</span>:<span class="hljs-value"> <span class="hljs-function">rotateX</span>(<span class="hljs-number">0deg</span>)</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">-webkit-transform</span>:<span class="hljs-value"> <span class="hljs-function">rotateX</span>(<span class="hljs-number">0deg</span>)</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">opacity</span>:<span class="hljs-value"> <span class="hljs-number">1</span></span></span>; }</span> }
+
+<span class="hljs-class">.animateErrorIcon</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">-webkit-animation</span>:<span class="hljs-value"> animateErrorIcon <span class="hljs-number">0.5s</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">animation</span>:<span class="hljs-value"> animateErrorIcon <span class="hljs-number">0.5s</span></span></span>; }</span>
+
+<span class="hljs-at_rule">@<span class="hljs-keyword">-webkit-keyframes</span> animateXMark </span>{
+  0% <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">transform</span>:<span class="hljs-value"> <span class="hljs-function">scale</span>(<span class="hljs-number">0.4</span>)</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">-webkit-transform</span>:<span class="hljs-value"> <span class="hljs-function">scale</span>(<span class="hljs-number">0.4</span>)</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">margin-top</span>:<span class="hljs-value"> <span class="hljs-number">26px</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">opacity</span>:<span class="hljs-value"> <span class="hljs-number">0</span></span></span>; }</span>
+  50% <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">transform</span>:<span class="hljs-value"> <span class="hljs-function">scale</span>(<span class="hljs-number">0.4</span>)</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">-webkit-transform</span>:<span class="hljs-value"> <span class="hljs-function">scale</span>(<span class="hljs-number">0.4</span>)</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">margin-top</span>:<span class="hljs-value"> <span class="hljs-number">26px</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">opacity</span>:<span class="hljs-value"> <span class="hljs-number">0</span></span></span>; }</span>
+  80% <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">transform</span>:<span class="hljs-value"> <span class="hljs-function">scale</span>(<span class="hljs-number">1.15</span>)</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">-webkit-transform</span>:<span class="hljs-value"> <span class="hljs-function">scale</span>(<span class="hljs-number">1.15</span>)</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">margin-top</span>:<span class="hljs-value"> -<span class="hljs-number">6px</span></span></span>; }</span>
+  100% <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">transform</span>:<span class="hljs-value"> <span class="hljs-function">scale</span>(<span class="hljs-number">1</span>)</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">-webkit-transform</span>:<span class="hljs-value"> <span class="hljs-function">scale</span>(<span class="hljs-number">1</span>)</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">margin-top</span>:<span class="hljs-value"> <span class="hljs-number">0</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">opacity</span>:<span class="hljs-value"> <span class="hljs-number">1</span></span></span>; }</span> }
+
+<span class="hljs-at_rule">@<span class="hljs-keyword">keyframes</span> animateXMark </span>{
+  0% <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">transform</span>:<span class="hljs-value"> <span class="hljs-function">scale</span>(<span class="hljs-number">0.4</span>)</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">-webkit-transform</span>:<span class="hljs-value"> <span class="hljs-function">scale</span>(<span class="hljs-number">0.4</span>)</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">margin-top</span>:<span class="hljs-value"> <span class="hljs-number">26px</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">opacity</span>:<span class="hljs-value"> <span class="hljs-number">0</span></span></span>; }</span>
+  50% <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">transform</span>:<span class="hljs-value"> <span class="hljs-function">scale</span>(<span class="hljs-number">0.4</span>)</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">-webkit-transform</span>:<span class="hljs-value"> <span class="hljs-function">scale</span>(<span class="hljs-number">0.4</span>)</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">margin-top</span>:<span class="hljs-value"> <span class="hljs-number">26px</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">opacity</span>:<span class="hljs-value"> <span class="hljs-number">0</span></span></span>; }</span>
+  80% <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">transform</span>:<span class="hljs-value"> <span class="hljs-function">scale</span>(<span class="hljs-number">1.15</span>)</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">-webkit-transform</span>:<span class="hljs-value"> <span class="hljs-function">scale</span>(<span class="hljs-number">1.15</span>)</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">margin-top</span>:<span class="hljs-value"> -<span class="hljs-number">6px</span></span></span>; }</span>
+  100% <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">transform</span>:<span class="hljs-value"> <span class="hljs-function">scale</span>(<span class="hljs-number">1</span>)</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">-webkit-transform</span>:<span class="hljs-value"> <span class="hljs-function">scale</span>(<span class="hljs-number">1</span>)</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">margin-top</span>:<span class="hljs-value"> <span class="hljs-number">0</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">opacity</span>:<span class="hljs-value"> <span class="hljs-number">1</span></span></span>; }</span> }
+
+<span class="hljs-class">.animateXMark</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">-webkit-animation</span>:<span class="hljs-value"> animateXMark <span class="hljs-number">0.5s</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">animation</span>:<span class="hljs-value"> animateXMark <span class="hljs-number">0.5s</span></span></span>; }</span>
+
+<span class="hljs-at_rule">@<span class="hljs-keyword">-webkit-keyframes</span> pulseWarning </span>{
+  0% <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">border-color</span>:<span class="hljs-value"> <span class="hljs-hexcolor">#F8D486</span></span></span>; }</span>
+  100% <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">border-color</span>:<span class="hljs-value"> <span class="hljs-hexcolor">#F8BB86</span></span></span>; }</span> }
+
+<span class="hljs-at_rule">@<span class="hljs-keyword">keyframes</span> pulseWarning </span>{
+  0% <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">border-color</span>:<span class="hljs-value"> <span class="hljs-hexcolor">#F8D486</span></span></span>; }</span>
+  100% <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">border-color</span>:<span class="hljs-value"> <span class="hljs-hexcolor">#F8BB86</span></span></span>; }</span> }
+
+<span class="hljs-class">.pulseWarning</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">-webkit-animation</span>:<span class="hljs-value"> pulseWarning <span class="hljs-number">0.75s</span> infinite alternate</span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">animation</span>:<span class="hljs-value"> pulseWarning <span class="hljs-number">0.75s</span> infinite alternate</span></span>; }</span>
+
+<span class="hljs-at_rule">@<span class="hljs-keyword">-webkit-keyframes</span> pulseWarningIns </span>{
+  0% <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">background-color</span>:<span class="hljs-value"> <span class="hljs-hexcolor">#F8D486</span></span></span>; }</span>
+  100% <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">background-color</span>:<span class="hljs-value"> <span class="hljs-hexcolor">#F8BB86</span></span></span>; }</span> }
+
+<span class="hljs-at_rule">@<span class="hljs-keyword">keyframes</span> pulseWarningIns </span>{
+  0% <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">background-color</span>:<span class="hljs-value"> <span class="hljs-hexcolor">#F8D486</span></span></span>; }</span>
+  100% <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">background-color</span>:<span class="hljs-value"> <span class="hljs-hexcolor">#F8BB86</span></span></span>; }</span> }
+
+<span class="hljs-class">.pulseWarningIns</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">-webkit-animation</span>:<span class="hljs-value"> pulseWarningIns <span class="hljs-number">0.75s</span> infinite alternate</span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">animation</span>:<span class="hljs-value"> pulseWarningIns <span class="hljs-number">0.75s</span> infinite alternate</span></span>; }</span>
+
+<span class="hljs-at_rule">@<span class="hljs-keyword">-webkit-keyframes</span> rotate-loading </span>{
+  0% <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">transform</span>:<span class="hljs-value"> <span class="hljs-function">rotate</span>(<span class="hljs-number">0deg</span>)</span></span>; }</span>
+  100% <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">transform</span>:<span class="hljs-value"> <span class="hljs-function">rotate</span>(<span class="hljs-number">360deg</span>)</span></span>; }</span> }
+
+<span class="hljs-at_rule">@<span class="hljs-keyword">keyframes</span> rotate-loading </span>{
+  0% <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">transform</span>:<span class="hljs-value"> <span class="hljs-function">rotate</span>(<span class="hljs-number">0deg</span>)</span></span>; }</span>
+  100% <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">transform</span>:<span class="hljs-value"> <span class="hljs-function">rotate</span>(<span class="hljs-number">360deg</span>)</span></span>; }</span> }</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>Internet Explorer 9 has some special quirks that are fixed here 
+The icons are not animated. 
+This file is automatically merged into sweet-alert.min.js through Gulp 
+Error icon </p></div></div><div class="code"><div class="wrapper"><span class="hljs-class">.sweet-alert</span> <span class="hljs-class">.sa-icon</span><span class="hljs-class">.sa-error</span> <span class="hljs-class">.sa-line</span><span class="hljs-class">.sa-left</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">-ms-transform</span>:<span class="hljs-value"> <span class="hljs-function">rotate</span>(<span class="hljs-number">45deg</span>) \<span class="hljs-number">9</span></span></span>; }</span>
+
+<span class="hljs-class">.sweet-alert</span> <span class="hljs-class">.sa-icon</span><span class="hljs-class">.sa-error</span> <span class="hljs-class">.sa-line</span><span class="hljs-class">.sa-right</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">-ms-transform</span>:<span class="hljs-value"> <span class="hljs-function">rotate</span>(-<span class="hljs-number">45deg</span>) \<span class="hljs-number">9</span></span></span>; }</span></div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>Success icon </p></div></div><div class="code"><div class="wrapper"><span class="hljs-class">.sweet-alert</span> <span class="hljs-class">.sa-icon</span><span class="hljs-class">.sa-success</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">border-color</span>:<span class="hljs-value"> transparent\<span class="hljs-number">9</span></span></span>; }</span>
+
+<span class="hljs-class">.sweet-alert</span> <span class="hljs-class">.sa-icon</span><span class="hljs-class">.sa-success</span> <span class="hljs-class">.sa-line</span><span class="hljs-class">.sa-tip</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">-ms-transform</span>:<span class="hljs-value"> <span class="hljs-function">rotate</span>(<span class="hljs-number">45deg</span>) \<span class="hljs-number">9</span></span></span>; }</span>
+
+<span class="hljs-class">.sweet-alert</span> <span class="hljs-class">.sa-icon</span><span class="hljs-class">.sa-success</span> <span class="hljs-class">.sa-line</span><span class="hljs-class">.sa-long</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">-ms-transform</span>:<span class="hljs-value"> <span class="hljs-function">rotate</span>(-<span class="hljs-number">45deg</span>) \<span class="hljs-number">9</span></span></span>; }</span>
+
+<span class="hljs-comment">/*!
+ * Load Awesome v1.1.0 (http://github.danielcardoso.net/load-awesome/)
+ * Copyright 2015 Daniel Cardoso &lt;@DanielCardoso&gt;
+ * Licensed under MIT
+ */</span>
+<span class="hljs-class">.la-ball-fall</span>,
+<span class="hljs-class">.la-ball-fall</span> &gt; <span class="hljs-tag">div</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">position</span>:<span class="hljs-value"> relative</span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">-webkit-box-sizing</span>:<span class="hljs-value"> border-box</span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">-moz-box-sizing</span>:<span class="hljs-value"> border-box</span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">box-sizing</span>:<span class="hljs-value"> border-box</span></span>; }</span>
+
+<span class="hljs-class">.la-ball-fall</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">display</span>:<span class="hljs-value"> block</span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">font-size</span>:<span class="hljs-value"> <span class="hljs-number">0</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">color</span>:<span class="hljs-value"> <span class="hljs-hexcolor">#fff</span></span></span>; }</span>
+
+<span class="hljs-class">.la-ball-fall</span><span class="hljs-class">.la-dark</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">color</span>:<span class="hljs-value"> <span class="hljs-hexcolor">#333</span></span></span>; }</span>
+
+<span class="hljs-class">.la-ball-fall</span> &gt; <span class="hljs-tag">div</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">display</span>:<span class="hljs-value"> inline-block</span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">float</span>:<span class="hljs-value"> none</span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">background-color</span>:<span class="hljs-value"> currentColor</span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">border</span>:<span class="hljs-value"> <span class="hljs-number">0</span> solid currentColor</span></span>; }</span>
+
+<span class="hljs-class">.la-ball-fall</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">width</span>:<span class="hljs-value"> <span class="hljs-number">54px</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">height</span>:<span class="hljs-value"> <span class="hljs-number">18px</span></span></span>; }</span>
+
+<span class="hljs-class">.la-ball-fall</span> &gt; <span class="hljs-tag">div</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">width</span>:<span class="hljs-value"> <span class="hljs-number">10px</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">height</span>:<span class="hljs-value"> <span class="hljs-number">10px</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">margin</span>:<span class="hljs-value"> <span class="hljs-number">4px</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">border-radius</span>:<span class="hljs-value"> <span class="hljs-number">100%</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">opacity</span>:<span class="hljs-value"> <span class="hljs-number">0</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">-webkit-animation</span>:<span class="hljs-value"> ball-fall <span class="hljs-number">1s</span> ease-in-out infinite</span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">-moz-animation</span>:<span class="hljs-value"> ball-fall <span class="hljs-number">1s</span> ease-in-out infinite</span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">-o-animation</span>:<span class="hljs-value"> ball-fall <span class="hljs-number">1s</span> ease-in-out infinite</span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">animation</span>:<span class="hljs-value"> ball-fall <span class="hljs-number">1s</span> ease-in-out infinite</span></span>; }</span>
+
+<span class="hljs-class">.la-ball-fall</span> &gt; <span class="hljs-tag">div</span><span class="hljs-pseudo">:nth-child(1)</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">-webkit-animation-delay</span>:<span class="hljs-value"> -<span class="hljs-number">200ms</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">-moz-animation-delay</span>:<span class="hljs-value"> -<span class="hljs-number">200ms</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">-o-animation-delay</span>:<span class="hljs-value"> -<span class="hljs-number">200ms</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">animation-delay</span>:<span class="hljs-value"> -<span class="hljs-number">200ms</span></span></span>; }</span>
+
+<span class="hljs-class">.la-ball-fall</span> &gt; <span class="hljs-tag">div</span><span class="hljs-pseudo">:nth-child(2)</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">-webkit-animation-delay</span>:<span class="hljs-value"> -<span class="hljs-number">100ms</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">-moz-animation-delay</span>:<span class="hljs-value"> -<span class="hljs-number">100ms</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">-o-animation-delay</span>:<span class="hljs-value"> -<span class="hljs-number">100ms</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">animation-delay</span>:<span class="hljs-value"> -<span class="hljs-number">100ms</span></span></span>; }</span>
+
+<span class="hljs-class">.la-ball-fall</span> &gt; <span class="hljs-tag">div</span><span class="hljs-pseudo">:nth-child(3)</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">-webkit-animation-delay</span>:<span class="hljs-value"> <span class="hljs-number">0ms</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">-moz-animation-delay</span>:<span class="hljs-value"> <span class="hljs-number">0ms</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">-o-animation-delay</span>:<span class="hljs-value"> <span class="hljs-number">0ms</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">animation-delay</span>:<span class="hljs-value"> <span class="hljs-number">0ms</span></span></span>; }</span>
+
+<span class="hljs-class">.la-ball-fall</span><span class="hljs-class">.la-sm</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">width</span>:<span class="hljs-value"> <span class="hljs-number">26px</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">height</span>:<span class="hljs-value"> <span class="hljs-number">8px</span></span></span>; }</span>
+
+<span class="hljs-class">.la-ball-fall</span><span class="hljs-class">.la-sm</span> &gt; <span class="hljs-tag">div</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">width</span>:<span class="hljs-value"> <span class="hljs-number">4px</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">height</span>:<span class="hljs-value"> <span class="hljs-number">4px</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">margin</span>:<span class="hljs-value"> <span class="hljs-number">2px</span></span></span>; }</span>
+
+<span class="hljs-class">.la-ball-fall</span><span class="hljs-class">.la-2x</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">width</span>:<span class="hljs-value"> <span class="hljs-number">108px</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">height</span>:<span class="hljs-value"> <span class="hljs-number">36px</span></span></span>; }</span>
+
+<span class="hljs-class">.la-ball-fall</span><span class="hljs-class">.la-2x</span> &gt; <span class="hljs-tag">div</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">width</span>:<span class="hljs-value"> <span class="hljs-number">20px</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">height</span>:<span class="hljs-value"> <span class="hljs-number">20px</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">margin</span>:<span class="hljs-value"> <span class="hljs-number">8px</span></span></span>; }</span>
+
+<span class="hljs-class">.la-ball-fall</span><span class="hljs-class">.la-3x</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">width</span>:<span class="hljs-value"> <span class="hljs-number">162px</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">height</span>:<span class="hljs-value"> <span class="hljs-number">54px</span></span></span>; }</span>
+
+<span class="hljs-class">.la-ball-fall</span><span class="hljs-class">.la-3x</span> &gt; <span class="hljs-tag">div</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">width</span>:<span class="hljs-value"> <span class="hljs-number">30px</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">height</span>:<span class="hljs-value"> <span class="hljs-number">30px</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">margin</span>:<span class="hljs-value"> <span class="hljs-number">12px</span></span></span>; }</span></div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>Animation</p></div></div><div class="code"><div class="wrapper"><span class="hljs-at_rule">@<span class="hljs-keyword">-webkit-keyframes</span> ball-fall </span>{
+  0% <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">opacity</span>:<span class="hljs-value"> <span class="hljs-number">0</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">-webkit-transform</span>:<span class="hljs-value"> <span class="hljs-function">translateY</span>(-<span class="hljs-number">145%</span>)</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">transform</span>:<span class="hljs-value"> <span class="hljs-function">translateY</span>(-<span class="hljs-number">145%</span>)</span></span>; }</span>
+  10% <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">opacity</span>:<span class="hljs-value"> .<span class="hljs-number">5</span></span></span>; }</span>
+  20% <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">opacity</span>:<span class="hljs-value"> <span class="hljs-number">1</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">-webkit-transform</span>:<span class="hljs-value"> <span class="hljs-function">translateY</span>(<span class="hljs-number">0</span>)</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">transform</span>:<span class="hljs-value"> <span class="hljs-function">translateY</span>(<span class="hljs-number">0</span>)</span></span>; }</span>
+  80% <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">opacity</span>:<span class="hljs-value"> <span class="hljs-number">1</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">-webkit-transform</span>:<span class="hljs-value"> <span class="hljs-function">translateY</span>(<span class="hljs-number">0</span>)</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">transform</span>:<span class="hljs-value"> <span class="hljs-function">translateY</span>(<span class="hljs-number">0</span>)</span></span>; }</span>
+  90% <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">opacity</span>:<span class="hljs-value"> .<span class="hljs-number">5</span></span></span>; }</span>
+  100% <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">opacity</span>:<span class="hljs-value"> <span class="hljs-number">0</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">-webkit-transform</span>:<span class="hljs-value"> <span class="hljs-function">translateY</span>(<span class="hljs-number">145%</span>)</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">transform</span>:<span class="hljs-value"> <span class="hljs-function">translateY</span>(<span class="hljs-number">145%</span>)</span></span>; }</span> }
+
+<span class="hljs-at_rule">@<span class="hljs-keyword">-moz-keyframes</span> ball-fall </span>{
+  0% <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">opacity</span>:<span class="hljs-value"> <span class="hljs-number">0</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">-moz-transform</span>:<span class="hljs-value"> <span class="hljs-function">translateY</span>(-<span class="hljs-number">145%</span>)</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">transform</span>:<span class="hljs-value"> <span class="hljs-function">translateY</span>(-<span class="hljs-number">145%</span>)</span></span>; }</span>
+  10% <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">opacity</span>:<span class="hljs-value"> .<span class="hljs-number">5</span></span></span>; }</span>
+  20% <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">opacity</span>:<span class="hljs-value"> <span class="hljs-number">1</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">-moz-transform</span>:<span class="hljs-value"> <span class="hljs-function">translateY</span>(<span class="hljs-number">0</span>)</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">transform</span>:<span class="hljs-value"> <span class="hljs-function">translateY</span>(<span class="hljs-number">0</span>)</span></span>; }</span>
+  80% <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">opacity</span>:<span class="hljs-value"> <span class="hljs-number">1</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">-moz-transform</span>:<span class="hljs-value"> <span class="hljs-function">translateY</span>(<span class="hljs-number">0</span>)</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">transform</span>:<span class="hljs-value"> <span class="hljs-function">translateY</span>(<span class="hljs-number">0</span>)</span></span>; }</span>
+  90% <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">opacity</span>:<span class="hljs-value"> .<span class="hljs-number">5</span></span></span>; }</span>
+  100% <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">opacity</span>:<span class="hljs-value"> <span class="hljs-number">0</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">-moz-transform</span>:<span class="hljs-value"> <span class="hljs-function">translateY</span>(<span class="hljs-number">145%</span>)</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">transform</span>:<span class="hljs-value"> <span class="hljs-function">translateY</span>(<span class="hljs-number">145%</span>)</span></span>; }</span> }
+
+<span class="hljs-at_rule">@<span class="hljs-keyword">-o-keyframes</span> ball-fall </span>{
+  0% <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">opacity</span>:<span class="hljs-value"> <span class="hljs-number">0</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">-o-transform</span>:<span class="hljs-value"> <span class="hljs-function">translateY</span>(-<span class="hljs-number">145%</span>)</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">transform</span>:<span class="hljs-value"> <span class="hljs-function">translateY</span>(-<span class="hljs-number">145%</span>)</span></span>; }</span>
+  10% <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">opacity</span>:<span class="hljs-value"> .<span class="hljs-number">5</span></span></span>; }</span>
+  20% <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">opacity</span>:<span class="hljs-value"> <span class="hljs-number">1</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">-o-transform</span>:<span class="hljs-value"> <span class="hljs-function">translateY</span>(<span class="hljs-number">0</span>)</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">transform</span>:<span class="hljs-value"> <span class="hljs-function">translateY</span>(<span class="hljs-number">0</span>)</span></span>; }</span>
+  80% <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">opacity</span>:<span class="hljs-value"> <span class="hljs-number">1</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">-o-transform</span>:<span class="hljs-value"> <span class="hljs-function">translateY</span>(<span class="hljs-number">0</span>)</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">transform</span>:<span class="hljs-value"> <span class="hljs-function">translateY</span>(<span class="hljs-number">0</span>)</span></span>; }</span>
+  90% <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">opacity</span>:<span class="hljs-value"> .<span class="hljs-number">5</span></span></span>; }</span>
+  100% <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">opacity</span>:<span class="hljs-value"> <span class="hljs-number">0</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">-o-transform</span>:<span class="hljs-value"> <span class="hljs-function">translateY</span>(<span class="hljs-number">145%</span>)</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">transform</span>:<span class="hljs-value"> <span class="hljs-function">translateY</span>(<span class="hljs-number">145%</span>)</span></span>; }</span> }
+
+<span class="hljs-at_rule">@<span class="hljs-keyword">keyframes</span> ball-fall </span>{
+  0% <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">opacity</span>:<span class="hljs-value"> <span class="hljs-number">0</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">-webkit-transform</span>:<span class="hljs-value"> <span class="hljs-function">translateY</span>(-<span class="hljs-number">145%</span>)</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">-moz-transform</span>:<span class="hljs-value"> <span class="hljs-function">translateY</span>(-<span class="hljs-number">145%</span>)</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">-o-transform</span>:<span class="hljs-value"> <span class="hljs-function">translateY</span>(-<span class="hljs-number">145%</span>)</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">transform</span>:<span class="hljs-value"> <span class="hljs-function">translateY</span>(-<span class="hljs-number">145%</span>)</span></span>; }</span>
+  10% <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">opacity</span>:<span class="hljs-value"> .<span class="hljs-number">5</span></span></span>; }</span>
+  20% <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">opacity</span>:<span class="hljs-value"> <span class="hljs-number">1</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">-webkit-transform</span>:<span class="hljs-value"> <span class="hljs-function">translateY</span>(<span class="hljs-number">0</span>)</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">-moz-transform</span>:<span class="hljs-value"> <span class="hljs-function">translateY</span>(<span class="hljs-number">0</span>)</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">-o-transform</span>:<span class="hljs-value"> <span class="hljs-function">translateY</span>(<span class="hljs-number">0</span>)</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">transform</span>:<span class="hljs-value"> <span class="hljs-function">translateY</span>(<span class="hljs-number">0</span>)</span></span>; }</span>
+  80% <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">opacity</span>:<span class="hljs-value"> <span class="hljs-number">1</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">-webkit-transform</span>:<span class="hljs-value"> <span class="hljs-function">translateY</span>(<span class="hljs-number">0</span>)</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">-moz-transform</span>:<span class="hljs-value"> <span class="hljs-function">translateY</span>(<span class="hljs-number">0</span>)</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">-o-transform</span>:<span class="hljs-value"> <span class="hljs-function">translateY</span>(<span class="hljs-number">0</span>)</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">transform</span>:<span class="hljs-value"> <span class="hljs-function">translateY</span>(<span class="hljs-number">0</span>)</span></span>; }</span>
+  90% <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">opacity</span>:<span class="hljs-value"> .<span class="hljs-number">5</span></span></span>; }</span>
+  100% <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">opacity</span>:<span class="hljs-value"> <span class="hljs-number">0</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">-webkit-transform</span>:<span class="hljs-value"> <span class="hljs-function">translateY</span>(<span class="hljs-number">145%</span>)</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">-moz-transform</span>:<span class="hljs-value"> <span class="hljs-function">translateY</span>(<span class="hljs-number">145%</span>)</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">-o-transform</span>:<span class="hljs-value"> <span class="hljs-function">translateY</span>(<span class="hljs-number">145%</span>)</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">transform</span>:<span class="hljs-value"> <span class="hljs-function">translateY</span>(<span class="hljs-number">145%</span>)</span></span>; }</span> }</div></div></div></div></body></html>

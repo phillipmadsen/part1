@@ -1,0 +1,38 @@
+<!DOCTYPE html><html lang="en"><head><title>resources/views/layouts/app.blade</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../../../"><meta name="groc-document-path" content="resources/views/layouts/app.blade"><meta name="groc-project-path" content="resources/views/layouts/app.blade.php"><meta name="groc-github-url" content="https://github.com/phillipmadsen/part1"><link rel="stylesheet" type="text/css" media="all" href="../../../assets/style.css"><script type="text/javascript" src="../../../assets/behavior.js"></script><body><div id="meta"><div class="file-path"><a href="https://github.com/phillipmadsen/part1/blob/master/resources/views/layouts/app.blade.php">resources/views/layouts/app.blade.php</a></div></div><div id="document"><div class="segment"><div class="code"><div class="wrapper">&lt;!DOCTYPE html&gt;
+&lt;html lang=<span class="hljs-string">"en"</span>&gt;
+&lt;head&gt;
+
+    @<span class="hljs-keyword">include</span>(<span class="hljs-string">'layouts.meta'</span>)
+
+    @<span class="hljs-keyword">yield</span>(<span class="hljs-string">'title'</span>)
+
+    @<span class="hljs-keyword">include</span>(<span class="hljs-string">'layouts.css'</span>)
+
+    @<span class="hljs-keyword">yield</span>(<span class="hljs-string">'css'</span>)
+
+    @<span class="hljs-keyword">include</span>(<span class="hljs-string">'layouts.shim'</span>)
+
+&lt;/head&gt;
+
+&lt;body role=<span class="hljs-string">"document"</span>&gt;
+
+
+    @<span class="hljs-keyword">include</span>(<span class="hljs-string">'layouts.nav'</span>)
+
+    &lt;div <span class="hljs-class"><span class="hljs-keyword">class</span>="<span class="hljs-title">container</span> <span class="hljs-title">theme</span>-<span class="hljs-title">showcase</span>" <span class="hljs-title">role</span>="<span class="hljs-title">main</span>"&gt;
+
+    @<span class="hljs-title">yield</span>('<span class="hljs-title">content</span>')
+
+    @<span class="hljs-title">include</span>('<span class="hljs-title">layouts</span>.<span class="hljs-title">bottom</span>')
+
+    &lt;/<span class="hljs-title">div</span>&gt; &lt;!-- /<span class="hljs-title">container</span> --&gt;
+
+    @<span class="hljs-title">include</span>('<span class="hljs-title">layouts</span>.<span class="hljs-title">scripts</span>')
+
+    @<span class="hljs-title">yield</span>('<span class="hljs-title">scripts</span>')
+
+    @<span class="hljs-title">include</span>('<span class="hljs-title">flash</span>')
+
+&lt;/<span class="hljs-title">body</span>&gt;
+&lt;/<span class="hljs-title">html</span>&gt;
+</span></div></div></div></div></body></html>

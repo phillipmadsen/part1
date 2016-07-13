@@ -1,0 +1,18 @@
+<!DOCTYPE html><html lang="en"><head><title>server</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content=""><meta name="groc-document-path" content="server"><meta name="groc-project-path" content="server.php"><meta name="groc-github-url" content="https://github.com/phillipmadsen/part1"><link rel="stylesheet" type="text/css" media="all" href="assets/style.css"><script type="text/javascript" src="assets/behavior.js"></script><body><div id="meta"><div class="file-path"><a href="https://github.com/phillipmadsen/part1/blob/master/server.php">server.php</a></div></div><div id="document"><div class="segment"><div class="code"><div class="wrapper"><span class="hljs-preprocessor">&lt;?php</span>
+
+<span class="hljs-comment">/**
+ * Laravel - A PHP Framework For Web Artisans
+ *
+ * <span class="hljs-doctag">@package</span>  Laravel
+ * <span class="hljs-doctag">@author</span>   Taylor Otwell &lt;taylorotwell<span class="hljs-doctag">@gmail</span>.com&gt;
+ */</span>
+
+<span class="hljs-variable">$uri</span> = urldecode(
+    parse_url(<span class="hljs-variable">$_SERVER</span>[<span class="hljs-string">'REQUEST_URI'</span>], PHP_URL_PATH)
+);</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>This file allows us to emulate Apache&#39;s &quot;mod_rewrite&quot; functionality from the
+built-in PHP web server. This provides a convenient way to test a Laravel
+application without having installed a &quot;real&quot; web server software here.</p></div></div><div class="code"><div class="wrapper"><span class="hljs-keyword">if</span> (<span class="hljs-variable">$uri</span> !== <span class="hljs-string">'/'</span> &amp;&amp; file_exists(<span class="hljs-keyword">__DIR__</span>.<span class="hljs-string">'/public'</span>.<span class="hljs-variable">$uri</span>)) {
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;
+}
+
+<span class="hljs-keyword">require_once</span> <span class="hljs-keyword">__DIR__</span>.<span class="hljs-string">'/public/index.php'</span>;</div></div></div></div></body></html>

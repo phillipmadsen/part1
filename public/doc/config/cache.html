@@ -1,0 +1,79 @@
+<!DOCTYPE html><html lang="en"><head><title>config/cache</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../"><meta name="groc-document-path" content="config/cache"><meta name="groc-project-path" content="config/cache.php"><meta name="groc-github-url" content="https://github.com/phillipmadsen/part1"><link rel="stylesheet" type="text/css" media="all" href="../assets/style.css"><script type="text/javascript" src="../assets/behavior.js"></script><body><div id="meta"><div class="file-path"><a href="https://github.com/phillipmadsen/part1/blob/master/config/cache.php">config/cache.php</a></div></div><div id="document"><div class="segment"><div class="code"><div class="wrapper"><span class="hljs-preprocessor">&lt;?php</span>
+
+<span class="hljs-keyword">return</span> [
+
+    <span class="hljs-comment">/*
+    |--------------------------------------------------------------------------
+    | Default Cache Store
+    |--------------------------------------------------------------------------
+    |
+    | This option controls the default cache connection that gets used while
+    | using this caching library. This connection is used when another is
+    | not explicitly specified when executing a given caching function.
+    |
+    */</span>
+
+    <span class="hljs-string">'default'</span> =&gt; env(<span class="hljs-string">'CACHE_DRIVER'</span>, <span class="hljs-string">'file'</span>),
+
+    <span class="hljs-comment">/*
+    |--------------------------------------------------------------------------
+    | Cache Stores
+    |--------------------------------------------------------------------------
+    |
+    | Here you may define all of the cache "stores" for your application as
+    | well as their drivers. You may even define multiple stores for the
+    | same cache driver to group types of items stored in your caches.
+    |
+    */</span>
+
+    <span class="hljs-string">'stores'</span> =&gt; [
+
+        <span class="hljs-string">'apc'</span> =&gt; [
+            <span class="hljs-string">'driver'</span> =&gt; <span class="hljs-string">'apc'</span>,
+        ],
+
+        <span class="hljs-string">'array'</span> =&gt; [
+            <span class="hljs-string">'driver'</span> =&gt; <span class="hljs-string">'array'</span>,
+        ],
+
+        <span class="hljs-string">'database'</span> =&gt; [
+            <span class="hljs-string">'driver'</span> =&gt; <span class="hljs-string">'database'</span>,
+            <span class="hljs-string">'table'</span>  =&gt; <span class="hljs-string">'cache'</span>,
+            <span class="hljs-string">'connection'</span> =&gt; <span class="hljs-keyword">null</span>,
+        ],
+
+        <span class="hljs-string">'file'</span> =&gt; [
+            <span class="hljs-string">'driver'</span> =&gt; <span class="hljs-string">'file'</span>,
+            <span class="hljs-string">'path'</span>   =&gt; storage_path(<span class="hljs-string">'framework/cache'</span>),
+        ],
+
+        <span class="hljs-string">'memcached'</span> =&gt; [
+            <span class="hljs-string">'driver'</span>  =&gt; <span class="hljs-string">'memcached'</span>,
+            <span class="hljs-string">'servers'</span> =&gt; [
+                [
+                    <span class="hljs-string">'host'</span> =&gt; <span class="hljs-string">'127.0.0.1'</span>, <span class="hljs-string">'port'</span> =&gt; <span class="hljs-number">11211</span>, <span class="hljs-string">'weight'</span> =&gt; <span class="hljs-number">100</span>,
+                ],
+            ],
+        ],
+
+        <span class="hljs-string">'redis'</span> =&gt; [
+            <span class="hljs-string">'driver'</span> =&gt; <span class="hljs-string">'redis'</span>,
+            <span class="hljs-string">'connection'</span> =&gt; <span class="hljs-string">'default'</span>,
+        ],
+
+    ],
+
+    <span class="hljs-comment">/*
+    |--------------------------------------------------------------------------
+    | Cache Key Prefix
+    |--------------------------------------------------------------------------
+    |
+    | When utilizing a RAM based store such as APC or Memcached, there might
+    | be other applications utilizing the same cache. So, we'll specify a
+    | value to get prefixed to all our keys so we can avoid collisions.
+    |
+    */</span>
+
+    <span class="hljs-string">'prefix'</span> =&gt; <span class="hljs-string">'laravel'</span>,
+
+];</div></div></div></div></body></html>

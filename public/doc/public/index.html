@@ -1,0 +1,58 @@
+<!DOCTYPE html><html lang="en"><head><title>public/index</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../"><meta name="groc-document-path" content="public/index"><meta name="groc-project-path" content="public/index.php"><meta name="groc-github-url" content="https://github.com/phillipmadsen/part1"><link rel="stylesheet" type="text/css" media="all" href="../assets/style.css"><script type="text/javascript" src="../assets/behavior.js"></script><body><div id="meta"><div class="file-path"><a href="https://github.com/phillipmadsen/part1/blob/master/public/index.php">public/index.php</a></div></div><div id="document"><div class="segment"><div class="code"><div class="wrapper"><span class="hljs-preprocessor">&lt;?php</span>
+
+<span class="hljs-comment">/**
+ * Laravel - A PHP Framework For Web Artisans
+ *
+ * <span class="hljs-doctag">@package</span>  Laravel
+ * <span class="hljs-doctag">@author</span>   Taylor Otwell &lt;taylorotwell<span class="hljs-doctag">@gmail</span>.com&gt;
+ */</span>
+
+<span class="hljs-comment">/*
+|--------------------------------------------------------------------------
+| Register The Auto Loader
+|--------------------------------------------------------------------------
+|
+| Composer provides a convenient, automatically generated class loader for
+| our application. We just need to utilize it! We'll simply require it
+| into the script here so that we don't have to worry about manual
+| loading any of our classes later on. It feels nice to relax.
+|
+*/</span>
+
+<span class="hljs-keyword">require</span> <span class="hljs-keyword">__DIR__</span>.<span class="hljs-string">'/../bootstrap/autoload.php'</span>;
+
+<span class="hljs-comment">/*
+|--------------------------------------------------------------------------
+| Turn On The Lights
+|--------------------------------------------------------------------------
+|
+| We need to illuminate PHP development, so let us turn on the lights.
+| This bootstraps the framework and gets it ready for use, then it
+| will load up this application so that we can run it and send
+| the responses back to the browser and delight our users.
+|
+*/</span>
+
+<span class="hljs-variable">$app</span> = <span class="hljs-keyword">require_once</span> <span class="hljs-keyword">__DIR__</span>.<span class="hljs-string">'/../bootstrap/app.php'</span>;
+
+<span class="hljs-comment">/*
+|--------------------------------------------------------------------------
+| Run The Application
+|--------------------------------------------------------------------------
+|
+| Once we have the application, we can handle the incoming request
+| through the kernel, and send the associated response back to
+| the client's browser allowing them to enjoy the creative
+| and wonderful application we have prepared for them.
+|
+*/</span>
+
+<span class="hljs-variable">$kernel</span> = <span class="hljs-variable">$app</span>-&gt;make(Illuminate\Contracts\Http\Kernel::class);
+
+<span class="hljs-variable">$response</span> = <span class="hljs-variable">$kernel</span>-&gt;handle(
+    <span class="hljs-variable">$request</span> = Illuminate\Http\Request::capture()
+);
+
+<span class="hljs-variable">$response</span>-&gt;send();
+
+<span class="hljs-variable">$kernel</span>-&gt;terminate(<span class="hljs-variable">$request</span>, <span class="hljs-variable">$response</span>);</div></div></div></div></body></html>

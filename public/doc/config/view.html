@@ -1,0 +1,33 @@
+<!DOCTYPE html><html lang="en"><head><title>config/view</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../"><meta name="groc-document-path" content="config/view"><meta name="groc-project-path" content="config/view.php"><meta name="groc-github-url" content="https://github.com/phillipmadsen/part1"><link rel="stylesheet" type="text/css" media="all" href="../assets/style.css"><script type="text/javascript" src="../assets/behavior.js"></script><body><div id="meta"><div class="file-path"><a href="https://github.com/phillipmadsen/part1/blob/master/config/view.php">config/view.php</a></div></div><div id="document"><div class="segment"><div class="code"><div class="wrapper"><span class="hljs-preprocessor">&lt;?php</span>
+
+<span class="hljs-keyword">return</span> [
+
+    <span class="hljs-comment">/*
+    |--------------------------------------------------------------------------
+    | View Storage Paths
+    |--------------------------------------------------------------------------
+    |
+    | Most templating systems load templates from disk. Here you may specify
+    | an array of paths that should be checked for your views. Of course
+    | the usual Laravel view path has already been registered for you.
+    |
+    */</span>
+
+    <span class="hljs-string">'paths'</span> =&gt; [
+        realpath(base_path(<span class="hljs-string">'resources/views'</span>)),
+    ],
+
+    <span class="hljs-comment">/*
+    |--------------------------------------------------------------------------
+    | Compiled View Path
+    |--------------------------------------------------------------------------
+    |
+    | This option determines where all the compiled Blade templates will be
+    | stored for your application. Typically, this is within the storage
+    | directory. However, as usual, you are free to change this value.
+    |
+    */</span>
+
+    <span class="hljs-string">'compiled'</span> =&gt; realpath(storage_path(<span class="hljs-string">'framework/views'</span>)),
+
+];</div></div></div></div></body></html>

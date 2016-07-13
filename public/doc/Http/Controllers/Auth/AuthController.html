@@ -1,0 +1,65 @@
+<!DOCTYPE html><html lang="en"><head><title>Http/Controllers/Auth/AuthController</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../../../"><meta name="groc-document-path" content="Http/Controllers/Auth/AuthController"><meta name="groc-project-path" content="app/Http/Controllers/Auth/AuthController.php"><meta name="groc-github-url" content="https://github.com/phillipmadsen/part1"><link rel="stylesheet" type="text/css" media="all" href="../../../assets/style.css"><script type="text/javascript" src="../../../assets/behavior.js"></script><body><div id="meta"><div class="file-path"><a href="https://github.com/phillipmadsen/part1/blob/master/app/Http/Controllers/Auth/AuthController.php">app/Http/Controllers/Auth/AuthController.php</a></div></div><div id="document"><div class="segment"><div class="code"><div class="wrapper"><span class="hljs-preprocessor">&lt;?php</span>
+
+<span class="hljs-keyword">namespace</span> <span class="hljs-title">App</span>\<span class="hljs-title">Http</span>\<span class="hljs-title">Controllers</span>\<span class="hljs-title">Auth</span>;
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">App</span>\<span class="hljs-title">User</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">Validator</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">App</span>\<span class="hljs-title">Http</span>\<span class="hljs-title">Controllers</span>\<span class="hljs-title">Controller</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">Illuminate</span>\<span class="hljs-title">Foundation</span>\<span class="hljs-title">Auth</span>\<span class="hljs-title">ThrottlesLogins</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">Illuminate</span>\<span class="hljs-title">Foundation</span>\<span class="hljs-title">Auth</span>\<span class="hljs-title">AuthenticatesAndRegistersUsers</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">AuthController</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Controller</span>
+</span>{
+    <span class="hljs-comment">/*
+    |--------------------------------------------------------------------------
+    | Registration &amp; Login Controller
+    |--------------------------------------------------------------------------
+    |
+    | This controller handles the registration of new users, as well as the
+    | authentication of existing users. By default, this controller uses
+    | a simple trait to add these behaviors. Why don't you explore it?
+    |
+    */</span>
+
+    <span class="hljs-keyword">use</span> <span class="hljs-title">AuthenticatesAndRegistersUsers</span>, <span class="hljs-title">ThrottlesLogins</span>;
+
+    <span class="hljs-comment">/**
+     * Create a new authentication controller instance.
+     *
+     * <span class="hljs-doctag">@return</span> void
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-variable">$this</span>-&gt;middleware(<span class="hljs-string">'guest'</span>, [<span class="hljs-string">'except'</span> =&gt; <span class="hljs-string">'getLogout'</span>]);
+    }
+
+    <span class="hljs-comment">/**
+     * Get a validator for an incoming registration request.
+     *
+     * <span class="hljs-doctag">@param</span>  array  $data
+     * <span class="hljs-doctag">@return</span> \Illuminate\Contracts\Validation\Validator
+     */</span>
+    <span class="hljs-keyword">protected</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">validator</span><span class="hljs-params">(array <span class="hljs-variable">$data</span>)</span>
+    </span>{
+        <span class="hljs-keyword">return</span> Validator::make(<span class="hljs-variable">$data</span>, [
+            <span class="hljs-string">'name'</span> =&gt; <span class="hljs-string">'required|max:255'</span>,
+            <span class="hljs-string">'email'</span> =&gt; <span class="hljs-string">'required|email|max:255|unique:users'</span>,
+            <span class="hljs-string">'password'</span> =&gt; <span class="hljs-string">'required|confirmed|min:6'</span>,
+        ]);
+    }
+
+    <span class="hljs-comment">/**
+     * Create a new user instance after a valid registration.
+     *
+     * <span class="hljs-doctag">@param</span>  array  $data
+     * <span class="hljs-doctag">@return</span> User
+     */</span>
+    <span class="hljs-keyword">protected</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">create</span><span class="hljs-params">(array <span class="hljs-variable">$data</span>)</span>
+    </span>{
+        <span class="hljs-keyword">return</span> User::create([
+            <span class="hljs-string">'name'</span> =&gt; <span class="hljs-variable">$data</span>[<span class="hljs-string">'name'</span>],
+            <span class="hljs-string">'email'</span> =&gt; <span class="hljs-variable">$data</span>[<span class="hljs-string">'email'</span>],
+            <span class="hljs-string">'password'</span> =&gt; bcrypt(<span class="hljs-variable">$data</span>[<span class="hljs-string">'password'</span>]),
+        ]);
+    }
+}</div></div></div></div></body></html>

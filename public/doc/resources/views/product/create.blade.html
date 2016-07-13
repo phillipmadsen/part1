@@ -1,0 +1,109 @@
+<!DOCTYPE html><html lang="en"><head><title>resources/views/product/create.blade</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../../../"><meta name="groc-document-path" content="resources/views/product/create.blade"><meta name="groc-project-path" content="resources/views/product/create.blade.php"><meta name="groc-github-url" content="https://github.com/phillipmadsen/part1"><link rel="stylesheet" type="text/css" media="all" href="../../../assets/style.css"><script type="text/javascript" src="../../../assets/behavior.js"></script><body><div id="meta"><div class="file-path"><a href="https://github.com/phillipmadsen/part1/blob/master/resources/views/product/create.blade.php">resources/views/product/create.blade.php</a></div></div><div id="document"><div class="segment"><div class="code"><div class="wrapper">@extends(<span class="hljs-string">'layouts.app'</span>)
+
+@section(<span class="hljs-string">'css'</span>)
+	{!! HTML::style(<span class="hljs-string">'/packages/dropzone/dropzone.css'</span>) !!}
+@endsection
+
+@section(<span class="hljs-string">'title'</span>)
+	&lt;title&gt;Create a Product&lt;/title&gt;
+@endsection
+@section(<span class="hljs-string">'content'</span>)
+	&lt;ol <span class="hljs-class"><span class="hljs-keyword">class</span>='<span class="hljs-title">breadcrumb</span>'&gt;
+		&lt;<span class="hljs-title">li</span>&gt;&lt;<span class="hljs-title">a</span> <span class="hljs-title">href</span>='/'&gt;<span class="hljs-title">Home</span>&lt;/<span class="hljs-title">a</span>&gt;&lt;/<span class="hljs-title">li</span>&gt;
+		&lt;<span class="hljs-title">li</span>&gt;&lt;<span class="hljs-title">a</span> <span class="hljs-title">href</span>='/<span class="hljs-title">product</span>'&gt;<span class="hljs-title">Products</span>&lt;/<span class="hljs-title">a</span>&gt;&lt;/<span class="hljs-title">li</span>&gt;
+		&lt;<span class="hljs-title">li</span> <span class="hljs-title">class</span>='<span class="hljs-title">active</span>'&gt;<span class="hljs-title">Create</span>&lt;/<span class="hljs-title">li</span>&gt;
+	&lt;/<span class="hljs-title">ol</span>&gt;
+	&lt;<span class="hljs-title">h2</span>&gt;<span class="hljs-title">Create</span> <span class="hljs-title">a</span> <span class="hljs-title">New</span> <span class="hljs-title">Product</span>&lt;/<span class="hljs-title">h2</span>&gt;
+	&lt;<span class="hljs-title">hr</span>/&gt;
+	&lt;<span class="hljs-title">form</span> <span class="hljs-title">class</span>="<span class="hljs-title">form</span>" <span class="hljs-title">role</span>="<span class="hljs-title">form</span>" <span class="hljs-title">method</span>="<span class="hljs-title">POST</span>" <span class="hljs-title">action</span>="</span>{{ url(<span class="hljs-string">'/product'</span>) }}<span class="hljs-string">" enctype="</span>multipart/form-data<span class="hljs-string">"&gt;
+		{!! csrf_field() !!}
+
+		@if(!empty($errors))
+			@if($errors-&gt;any())
+				&lt;ul class="</span>alert alert-danger<span class="hljs-string">" style="</span><span class="hljs-keyword">list</span>-style-type: none<span class="hljs-string">"&gt;
+					@foreach($errors-&gt;all() as $error)
+						&lt;li&gt;{!! $error !!}&lt;/li&gt;
+					@endforeach
+				&lt;/ul&gt;
+			@endif
+		@endif
+		&lt;div class="</span>row<span class="hljs-string">"&gt;
+			&lt;!-- Price Field --&gt;
+			&lt;div class="</span>form-group col-sm-<span class="hljs-number">2</span><span class="hljs-string">"&gt;
+				{!! Form::label('price', 'Price:') !!}
+				{!! Form::number('price', 2501235, ['class' =&gt; 'form-control' ]) !!}
+			&lt;/div&gt;
+			&lt;!-- Upc Field --&gt;
+			&lt;div class="</span>form-group col-sm-<span class="hljs-number">2</span><span class="hljs-string">"&gt;
+				{!! Form::label('upc', 'Upc:') !!}
+				{!! Form::text('upc', 145897591235, ['class' =&gt; 'form-control']) !!}
+			&lt;/div&gt;
+			&lt;!-- Sku Field --&gt;
+			&lt;div class="</span>form-group col-sm-<span class="hljs-number">2</span><span class="hljs-string">"&gt;
+			&lt;?php $sku = generateSku(); ?&gt;
+				{!! Form::label('sku', 'Sku:') !!}
+				{!! Form::text('sku', $sku, ['class' =&gt; 'form-control']) !!}
+			&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;div class="</span>row<span class="hljs-string">"&gt;
+			&lt;!-- product_name Form Input --&gt;
+			&lt;div class="</span>form-group col-sm-<span class="hljs-number">8</span> {{ <span class="hljs-variable">$errors</span>-&gt;has(<span class="hljs-string">'product_name'</span>) ? <span class="hljs-string">' has-error'</span> : <span class="hljs-string">''</span> }}<span class="hljs-string">"&gt;
+				&lt;label class="</span>control-label<span class="hljs-string">"&gt;Product Name&lt;/label&gt;
+				&lt;input type="</span>text<span class="hljs-string">" class="</span>form-control<span class="hljs-string">" name="</span>product_name<span class="hljs-string">" value="</span>{{ old(<span class="hljs-string">'product_name'</span>) }}<span class="hljs-string">"&gt;
+				@if ($errors-&gt;has('product_name'))
+					&lt;span class="</span>help-block<span class="hljs-string">"&gt;  &lt;strong&gt;{{ $errors-&gt;first('product_name') }}&lt;/strong&gt;  &lt;/span&gt;
+				@endif
+			&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;div class="</span>row<span class="hljs-string">"&gt;
+			&lt;!-- Description Field --&gt;
+			&lt;div class="</span>form-group col-sm-<span class="hljs-number">12</span> col-lg-<span class="hljs-number">12</span><span class="hljs-string">"&gt;
+				{!! Form::label('description', 'Description:') !!}
+				{!! Form::textarea('description', null, ['class' =&gt; 'form-control', 'rows' =&gt; '5']) !!}
+			&lt;/div&gt;
+		&lt;/div&gt;
+
+
+		{{--
+		&lt;div class="</span>form-group{{ <span class="hljs-variable">$errors</span>-&gt;has(<span class="hljs-string">'images'</span>) ? <span class="hljs-string">' has-error'</span> : <span class="hljs-string">''</span> }}<span class="hljs-string">"&gt;--}}
+		{{--&lt;label class="</span>control-label<span class="hljs-string">"&gt;images&lt;/label&gt;--}}
+		{{--&lt;input type="</span>file<span class="hljs-string">" class="</span>form-control<span class="hljs-string">" name="</span>images<span class="hljs-string">" value="</span>{{ old(<span class="hljs-string">'images'</span>) }}<span class="hljs-string">" multiple&gt;--}}
+		{{--@if ($errors-&gt;has('images'))--}}
+		{{--&lt;span class="</span>help-block<span class="hljs-string">"&gt; &lt;strong&gt;{{ $errors-&gt;first('images') }}&lt;/strong&gt;  &lt;/span&gt;--}}
+		{{--@endif--}}
+		{{--
+	&lt;/div&gt;
+	--}}
+		&lt;div class="</span>form-group<span class="hljs-string">"&gt;
+			&lt;button type="</span>submit<span class="hljs-string">" class="</span>btn btn-primary btn-lg<span class="hljs-string">"&gt;
+				Create
+			&lt;/button&gt;
+		&lt;/div&gt;
+	&lt;/form&gt;
+&lt;hr style="</span>clear:both<span class="hljs-string">" /&gt;
+
+
+
+{!! Form::open(['url' =&gt; route('productimage/upload'), 'method' =&gt; 'post', 'class' =&gt; 'dropzone', 'files'=&gt;true, 'id'=&gt;'addProductImagesForm']) !!}
+
+
+{!! Form::close() !!}
+
+	&lt;br style="</span>clear:both<span class="hljs-string">" /&gt;
+
+@endsection
+
+@section('scripts')
+	{!! HTML::script('/packages/dropzone/dropzone.js') !!}
+	{!! HTML::script('/assets/js/dropzone-config.js') !!}
+
+	&lt;script type="</span>text/javascript<span class="hljs-string">"&gt;
+		Dropzone.options.addProductImagesForm = {
+		{{-- 	paramName: 'image',
+			maxFileSize: 3,
+			acceptedFiles: '.jpg, .jpeg, .png, .bmp' --}}
+
+		}
+	&lt;/script&gt;
+@endsection
+</span></div></div></div></div></body></html>

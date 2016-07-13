@@ -1,0 +1,162 @@
+<!DOCTYPE html><html lang="en"><head><title>Logic/Image/ImageRepository</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../../"><meta name="groc-document-path" content="Logic/Image/ImageRepository"><meta name="groc-project-path" content="app/Logic/Image/ImageRepository.php"><meta name="groc-github-url" content="https://github.com/phillipmadsen/part1"><link rel="stylesheet" type="text/css" media="all" href="../../assets/style.css"><script type="text/javascript" src="../../assets/behavior.js"></script><body><div id="meta"><div class="file-path"><a href="https://github.com/phillipmadsen/part1/blob/master/app/Logic/Image/ImageRepository.php">app/Logic/Image/ImageRepository.php</a></div></div><div id="document"><div class="segment"><div class="code"><div class="wrapper"><span class="hljs-preprocessor">&lt;?php</span>
+
+<span class="hljs-keyword">namespace</span> <span class="hljs-title">App</span>\<span class="hljs-title">Logic</span>\<span class="hljs-title">Image</span>;
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">Illuminate</span>\<span class="hljs-title">Support</span>\<span class="hljs-title">Facades</span>\<span class="hljs-title">Validator</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">Illuminate</span>\<span class="hljs-title">Support</span>\<span class="hljs-title">Facades</span>\<span class="hljs-title">Response</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">Illuminate</span>\<span class="hljs-title">Support</span>\<span class="hljs-title">Facades</span>\<span class="hljs-title">Config</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">Illuminate</span>\<span class="hljs-title">Support</span>\<span class="hljs-title">Facades</span>\<span class="hljs-title">File</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">Intervention</span>\<span class="hljs-title">Image</span>\<span class="hljs-title">ImageManager</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">App</span>\<span class="hljs-title">Models</span>\<span class="hljs-title">Image</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">App</span>\<span class="hljs-title">Product</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ImageRepository</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">upload</span><span class="hljs-params">( <span class="hljs-variable">$form_data</span> )</span>
+    </span>{
+
+        <span class="hljs-variable">$validator</span> = Validator::make(<span class="hljs-variable">$form_data</span>, Image::<span class="hljs-variable">$rules</span>, Image::<span class="hljs-variable">$messages</span>);
+
+        <span class="hljs-keyword">if</span> (<span class="hljs-variable">$validator</span>-&gt;fails()) {
+
+            <span class="hljs-keyword">return</span> Response::json([
+                <span class="hljs-string">'error'</span> =&gt; <span class="hljs-keyword">true</span>,
+                <span class="hljs-string">'message'</span> =&gt; <span class="hljs-variable">$validator</span>-&gt;messages()-&gt;first(),
+                <span class="hljs-string">'code'</span> =&gt; <span class="hljs-number">400</span>
+            ], <span class="hljs-number">400</span>);
+
+        }
+
+        <span class="hljs-variable">$photo</span> = <span class="hljs-variable">$form_data</span>[<span class="hljs-string">'file'</span>];
+
+        <span class="hljs-variable">$originalName</span> = <span class="hljs-variable">$photo</span>-&gt;getClientOriginalName();
+        <span class="hljs-variable">$extension</span> = <span class="hljs-variable">$photo</span>-&gt;getClientOriginalExtension();
+        <span class="hljs-variable">$originalNameWithoutExt</span> = substr(<span class="hljs-variable">$originalName</span>, <span class="hljs-number">0</span>, strlen(<span class="hljs-variable">$originalName</span>) - strlen(<span class="hljs-variable">$extension</span>) - <span class="hljs-number">1</span>);
+
+        <span class="hljs-variable">$filename</span> = <span class="hljs-variable">$this</span>-&gt;sanitize(<span class="hljs-variable">$originalNameWithoutExt</span>);
+        <span class="hljs-variable">$allowed_filename</span> = <span class="hljs-variable">$this</span>-&gt;createUniqueFilename( <span class="hljs-variable">$filename</span>, <span class="hljs-variable">$extension</span> );
+
+        <span class="hljs-variable">$uploadSuccess1</span> = <span class="hljs-variable">$this</span>-&gt;original( <span class="hljs-variable">$photo</span>, <span class="hljs-variable">$allowed_filename</span> );
+
+        <span class="hljs-variable">$uploadSuccess2</span> = <span class="hljs-variable">$this</span>-&gt;icon( <span class="hljs-variable">$photo</span>, <span class="hljs-variable">$allowed_filename</span> );
+
+        <span class="hljs-keyword">if</span>( !<span class="hljs-variable">$uploadSuccess1</span> || !<span class="hljs-variable">$uploadSuccess2</span> ) {
+
+            <span class="hljs-keyword">return</span> Response::json([
+                <span class="hljs-string">'error'</span> =&gt; <span class="hljs-keyword">true</span>,
+                <span class="hljs-string">'message'</span> =&gt; <span class="hljs-string">'Server error while uploading'</span>,
+                <span class="hljs-string">'code'</span> =&gt; <span class="hljs-number">500</span>
+            ], <span class="hljs-number">500</span>);
+
+        }
+
+        <span class="hljs-variable">$sessionImage</span> = <span class="hljs-keyword">new</span> Image;
+        <span class="hljs-variable">$sessionImage</span>-&gt;filename      = <span class="hljs-variable">$allowed_filename</span>;
+        <span class="hljs-variable">$sessionImage</span>-&gt;original_name = <span class="hljs-variable">$originalName</span>;</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>$sessionImage-&gt;article_id = 3;</p></div></div><div class="code"><div class="wrapper">        <span class="hljs-variable">$sessionImage</span>-&gt;save();
+
+        <span class="hljs-keyword">return</span> Response::json([
+            <span class="hljs-string">'error'</span> =&gt; <span class="hljs-keyword">false</span>,
+            <span class="hljs-string">'code'</span>  =&gt; <span class="hljs-number">200</span>
+        ], <span class="hljs-number">200</span>);
+
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">createUniqueFilename</span><span class="hljs-params">( <span class="hljs-variable">$filename</span>, <span class="hljs-variable">$extension</span> )</span>
+    </span>{
+        <span class="hljs-variable">$full_size_dir</span> = Config::get(<span class="hljs-string">'images.full_size'</span>);
+        <span class="hljs-variable">$full_image_path</span> = <span class="hljs-variable">$full_size_dir</span> . <span class="hljs-variable">$filename</span> . <span class="hljs-string">'.'</span> . <span class="hljs-variable">$extension</span>;
+
+        <span class="hljs-keyword">if</span> ( File::exists( <span class="hljs-variable">$full_image_path</span> ) )
+        {</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>Generate token for image</p></div></div><div class="code"><div class="wrapper">            <span class="hljs-variable">$imageToken</span> = substr(sha1(mt_rand()), <span class="hljs-number">0</span>, <span class="hljs-number">5</span>);
+            <span class="hljs-keyword">return</span> <span class="hljs-variable">$filename</span> . <span class="hljs-string">'-'</span> . <span class="hljs-variable">$imageToken</span> . <span class="hljs-string">'.'</span> . <span class="hljs-variable">$extension</span>;
+        }
+
+        <span class="hljs-keyword">return</span> <span class="hljs-variable">$filename</span> . <span class="hljs-string">'.'</span> . <span class="hljs-variable">$extension</span>;
+    }
+
+    <span class="hljs-comment">/**
+     * Optimize Original Image
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">original</span><span class="hljs-params">( <span class="hljs-variable">$photo</span>, <span class="hljs-variable">$filename</span> )</span>
+    </span>{
+        <span class="hljs-variable">$manager</span> = <span class="hljs-keyword">new</span> ImageManager();
+        <span class="hljs-variable">$image</span> = <span class="hljs-variable">$manager</span>-&gt;make( <span class="hljs-variable">$photo</span> )-&gt;save(Config::get(<span class="hljs-string">'images.full_size'</span>) . <span class="hljs-variable">$filename</span> );
+
+        <span class="hljs-keyword">return</span> <span class="hljs-variable">$image</span>;
+    }
+
+    <span class="hljs-comment">/**
+     * Create Icon From Original
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">icon</span><span class="hljs-params">( <span class="hljs-variable">$photo</span>, <span class="hljs-variable">$filename</span> )</span>
+    </span>{
+        <span class="hljs-variable">$manager</span> = <span class="hljs-keyword">new</span> ImageManager();
+        <span class="hljs-variable">$image</span> = <span class="hljs-variable">$manager</span>-&gt;make( <span class="hljs-variable">$photo</span> )-&gt;resize(<span class="hljs-number">200</span>, <span class="hljs-keyword">null</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(<span class="hljs-variable">$constraint</span>)</span> </span>{
+            <span class="hljs-variable">$constraint</span>-&gt;aspectRatio();
+            })
+            -&gt;save( Config::get(<span class="hljs-string">'images.icon_size'</span>)  . <span class="hljs-variable">$filename</span> );
+
+        <span class="hljs-keyword">return</span> <span class="hljs-variable">$image</span>;
+    }
+
+    <span class="hljs-comment">/**
+     * Delete Image From Session folder, based on original filename
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">delete</span><span class="hljs-params">( <span class="hljs-variable">$originalFilename</span>)</span>
+    </span>{
+
+        <span class="hljs-variable">$full_size_dir</span> = Config::get(<span class="hljs-string">'images.full_size'</span>);
+        <span class="hljs-variable">$icon_size_dir</span> = Config::get(<span class="hljs-string">'images.icon_size'</span>);
+
+        <span class="hljs-variable">$sessionImage</span> = Image::where(<span class="hljs-string">'original_name'</span>, <span class="hljs-string">'like'</span>, <span class="hljs-variable">$originalFilename</span>)-&gt;first();
+
+
+        <span class="hljs-keyword">if</span>(<span class="hljs-keyword">empty</span>(<span class="hljs-variable">$sessionImage</span>))
+        {
+            <span class="hljs-keyword">return</span> Response::json([
+                <span class="hljs-string">'error'</span> =&gt; <span class="hljs-keyword">true</span>,
+                <span class="hljs-string">'code'</span>  =&gt; <span class="hljs-number">400</span>
+            ], <span class="hljs-number">400</span>);
+
+        }
+
+        <span class="hljs-variable">$full_path1</span> = <span class="hljs-variable">$full_size_dir</span> . <span class="hljs-variable">$sessionImage</span>-&gt;filename;
+        <span class="hljs-variable">$full_path2</span> = <span class="hljs-variable">$icon_size_dir</span> . <span class="hljs-variable">$sessionImage</span>-&gt;filename;
+
+        <span class="hljs-keyword">if</span> ( File::exists( <span class="hljs-variable">$full_path1</span> ) )
+        {
+            File::delete( <span class="hljs-variable">$full_path1</span> );
+        }
+
+        <span class="hljs-keyword">if</span> ( File::exists( <span class="hljs-variable">$full_path2</span> ) )
+        {
+            File::delete( <span class="hljs-variable">$full_path2</span> );
+        }
+
+        <span class="hljs-keyword">if</span>( !<span class="hljs-keyword">empty</span>(<span class="hljs-variable">$sessionImage</span>))
+        {
+            <span class="hljs-variable">$sessionImage</span>-&gt;delete();
+        }
+
+        <span class="hljs-keyword">return</span> Response::json([
+            <span class="hljs-string">'error'</span> =&gt; <span class="hljs-keyword">false</span>,
+            <span class="hljs-string">'code'</span>  =&gt; <span class="hljs-number">200</span>
+        ], <span class="hljs-number">200</span>);
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sanitize</span><span class="hljs-params">(<span class="hljs-variable">$string</span>, <span class="hljs-variable">$force_lowercase</span> = true, <span class="hljs-variable">$anal</span> = false)</span>
+    </span>{
+        <span class="hljs-variable">$strip</span> = <span class="hljs-keyword">array</span>(<span class="hljs-string">"~"</span>, <span class="hljs-string">"`"</span>, <span class="hljs-string">"!"</span>, <span class="hljs-string">"@"</span>, <span class="hljs-string">"#"</span>, <span class="hljs-string">"$"</span>, <span class="hljs-string">"%"</span>, <span class="hljs-string">"^"</span>, <span class="hljs-string">"&amp;"</span>, <span class="hljs-string">"*"</span>, <span class="hljs-string">"("</span>, <span class="hljs-string">")"</span>, <span class="hljs-string">"_"</span>, <span class="hljs-string">"="</span>, <span class="hljs-string">"+"</span>, <span class="hljs-string">"["</span>, <span class="hljs-string">"{"</span>, <span class="hljs-string">"]"</span>,
+            <span class="hljs-string">"}"</span>, <span class="hljs-string">"\\"</span>, <span class="hljs-string">"|"</span>, <span class="hljs-string">";"</span>, <span class="hljs-string">":"</span>, <span class="hljs-string">"\""</span>, <span class="hljs-string">"'"</span>, <span class="hljs-string">"&amp;#8216;"</span>, <span class="hljs-string">"&amp;#8217;"</span>, <span class="hljs-string">"&amp;#8220;"</span>, <span class="hljs-string">"&amp;#8221;"</span>, <span class="hljs-string">"&amp;#8211;"</span>, <span class="hljs-string">"&amp;#8212;"</span>,
+            <span class="hljs-string">"â€”"</span>, <span class="hljs-string">"â€“"</span>, <span class="hljs-string">","</span>, <span class="hljs-string">"&lt;"</span>, <span class="hljs-string">"."</span>, <span class="hljs-string">"&gt;"</span>, <span class="hljs-string">"/"</span>, <span class="hljs-string">"?"</span>);
+        <span class="hljs-variable">$clean</span> = trim(str_replace(<span class="hljs-variable">$strip</span>, <span class="hljs-string">""</span>, strip_tags(<span class="hljs-variable">$string</span>)));
+        <span class="hljs-variable">$clean</span> = preg_replace(<span class="hljs-string">'/\s+/'</span>, <span class="hljs-string">"-"</span>, <span class="hljs-variable">$clean</span>);
+        <span class="hljs-variable">$clean</span> = (<span class="hljs-variable">$anal</span>) ? preg_replace(<span class="hljs-string">"/[^a-zA-Z0-9]/"</span>, <span class="hljs-string">""</span>, <span class="hljs-variable">$clean</span>) : <span class="hljs-variable">$clean</span> ;
+
+        <span class="hljs-keyword">return</span> (<span class="hljs-variable">$force_lowercase</span>) ?
+            (function_exists(<span class="hljs-string">'mb_strtolower'</span>)) ?
+                mb_strtolower(<span class="hljs-variable">$clean</span>, <span class="hljs-string">'UTF-8'</span>) :
+                strtolower(<span class="hljs-variable">$clean</span>) :
+            <span class="hljs-variable">$clean</span>;
+    }
+}</div></div></div></div></body></html>

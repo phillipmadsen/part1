@@ -1,0 +1,30 @@
+<!DOCTYPE html><html lang="en"><head><title>Console/Kernel</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../"><meta name="groc-document-path" content="Console/Kernel"><meta name="groc-project-path" content="app/Console/Kernel.php"><meta name="groc-github-url" content="https://github.com/phillipmadsen/part1"><link rel="stylesheet" type="text/css" media="all" href="../assets/style.css"><script type="text/javascript" src="../assets/behavior.js"></script><body><div id="meta"><div class="file-path"><a href="https://github.com/phillipmadsen/part1/blob/master/app/Console/Kernel.php">app/Console/Kernel.php</a></div></div><div id="document"><div class="segment"><div class="code"><div class="wrapper"><span class="hljs-preprocessor">&lt;?php</span>
+
+<span class="hljs-keyword">namespace</span> <span class="hljs-title">App</span>\<span class="hljs-title">Console</span>;
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">Illuminate</span>\<span class="hljs-title">Console</span>\<span class="hljs-title">Scheduling</span>\<span class="hljs-title">Schedule</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">Illuminate</span>\<span class="hljs-title">Foundation</span>\<span class="hljs-title">Console</span>\<span class="hljs-title">Kernel</span> <span class="hljs-title">as</span> <span class="hljs-title">ConsoleKernel</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Kernel</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">ConsoleKernel</span>
+</span>{
+    <span class="hljs-comment">/**
+     * The Artisan commands provided by your application.
+     *
+     * <span class="hljs-doctag">@var</span> array
+     */</span>
+    <span class="hljs-keyword">protected</span> <span class="hljs-variable">$commands</span> = [
+        \App\Console\Commands\Inspire::class,
+    ];
+
+    <span class="hljs-comment">/**
+     * Define the application's command schedule.
+     *
+     * <span class="hljs-doctag">@param</span>  \Illuminate\Console\Scheduling\Schedule  $schedule
+     * <span class="hljs-doctag">@return</span> void
+     */</span>
+    <span class="hljs-keyword">protected</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">schedule</span><span class="hljs-params">(Schedule <span class="hljs-variable">$schedule</span>)</span>
+    </span>{
+        <span class="hljs-variable">$schedule</span>-&gt;command(<span class="hljs-string">'inspire'</span>)
+                 -&gt;hourly();
+    }
+}</div></div></div></div></body></html>

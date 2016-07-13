@@ -1,0 +1,98 @@
+<!DOCTYPE html><html lang="en"><head><title>public/doc/resources/views/product/show.blade</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../../../../../"><meta name="groc-document-path" content="public/doc/resources/views/product/show.blade"><meta name="groc-project-path" content="public/doc/resources/views/product/show.blade.html"><meta name="groc-github-url" content="https://github.com/phillipmadsen/part1"><link rel="stylesheet" type="text/css" media="all" href="../../../../../assets/style.css"><script type="text/javascript" src="../../../../../assets/behavior.js"></script><body><div id="meta"><div class="file-path"><a href="https://github.com/phillipmadsen/part1/blob/master/public/doc/resources/views/product/show.blade.html">public/doc/resources/views/product/show.blade.html</a></div></div><div id="document"><div class="segment"><div class="code"><div class="wrapper"><span class="hljs-doctype">&lt;!DOCTYPE html&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">html</span> <span class="hljs-attribute">lang</span>=<span class="hljs-value">"en"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">head</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">title</span>&gt;</span>resources/views/product/show.blade<span class="hljs-tag">&lt;/<span class="hljs-title">title</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">head</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">meta</span> <span class="hljs-attribute">http-equiv</span>=<span class="hljs-value">"Content-Type"</span> <span class="hljs-attribute">content</span>=<span class="hljs-value">"text/html; charset=utf-8"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">meta</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"viewport"</span> <span class="hljs-attribute">content</span>=<span class="hljs-value">"width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">meta</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"groc-relative-root"</span> <span class="hljs-attribute">content</span>=<span class="hljs-value">"../../../"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">meta</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"groc-document-path"</span> <span class="hljs-attribute">content</span>=<span class="hljs-value">"resources/views/product/show.blade"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">meta</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"groc-project-path"</span> <span class="hljs-attribute">content</span>=<span class="hljs-value">"resources/views/product/show.blade.php"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">meta</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"groc-github-url"</span> <span class="hljs-attribute">content</span>=<span class="hljs-value">"https://github.com/phillipmadsen/part1"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">link</span> <span class="hljs-attribute">rel</span>=<span class="hljs-value">"stylesheet"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text/css"</span> <span class="hljs-attribute">media</span>=<span class="hljs-value">"all"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"../../../assets/style.css"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text/javascript"</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"../../../assets/behavior.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">body</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"meta"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"file-path"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"https://github.com/phillipmadsen/part1/blob/master/resources/views/product/show.blade.php"</span>&gt;</span>resources/views/product/show.blade.php<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"document"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"segment"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"code"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"wrapper"</span>&gt;</span>@extends(<span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"hljs-string"</span>&gt;</span>'layouts.app'<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>)
+
+@section(<span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"hljs-string"</span>&gt;</span>'title'<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>)
+
+    &amp;lt;title&amp;gt;Product&amp;lt;/title&amp;gt;
+
+@endsection
+
+@section(<span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"hljs-string"</span>&gt;</span>'content'<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>)
+
+        &amp;lt;ol <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"hljs-class"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"hljs-keyword"</span>&gt;</span>class<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>='<span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"hljs-title"</span>&gt;</span>breadcrumb<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>'&amp;gt;
+        &amp;lt;<span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"hljs-title"</span>&gt;</span>li<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>&amp;gt;&amp;lt;<span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"hljs-title"</span>&gt;</span>a<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"hljs-title"</span>&gt;</span>href<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>='/'&amp;gt;<span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"hljs-title"</span>&gt;</span>Home<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>&amp;lt;/<span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"hljs-title"</span>&gt;</span>a<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>&amp;gt;&amp;lt;/<span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"hljs-title"</span>&gt;</span>li<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>&amp;gt;
+        &amp;lt;<span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"hljs-title"</span>&gt;</span>li<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>&amp;gt;&amp;lt;<span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"hljs-title"</span>&gt;</span>a<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"hljs-title"</span>&gt;</span>href<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>='/<span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"hljs-title"</span>&gt;</span>product<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>'&amp;gt;<span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"hljs-title"</span>&gt;</span>Products<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>&amp;lt;/<span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"hljs-title"</span>&gt;</span>a<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>&amp;gt;&amp;lt;/<span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"hljs-title"</span>&gt;</span>li<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>&amp;gt;
+        &amp;lt;<span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"hljs-title"</span>&gt;</span>li<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>&amp;gt;&amp;lt;<span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"hljs-title"</span>&gt;</span>a<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"hljs-title"</span>&gt;</span>href<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>='/<span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"hljs-title"</span>&gt;</span>product<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>/<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>{{ <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"hljs-variable"</span>&gt;</span>$product<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>-&amp;gt;id }}<span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"hljs-string"</span>&gt;</span>'&amp;gt;{{ $product-&amp;gt;product_name }}&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+        &amp;lt;/ol&amp;gt;
+
+        &amp;lt;h1&amp;gt;Product Details&amp;lt;/h1&amp;gt;
+
+        &amp;lt;hr/&amp;gt;
+&amp;lt;div class="row"&amp;gt;
+&amp;lt;!-- /.row --&amp;gt;
+&amp;lt;div class="col-md-3"&amp;gt;
+&amp;lt;!-- /.col-md-3 --&amp;gt;
+	&amp;lt;div class="id"&amp;gt;{!! $product-&amp;gt;id !!}&amp;lt;/div&amp;gt;
+	&amp;lt;!-- /.id --&amp;gt;
+&amp;lt;div class="description"&amp;gt;{!! nl2br($product-&amp;gt;description) !!}&amp;lt;/div&amp;gt;
+&amp;lt;h2 class="price"&amp;gt;{!! $product-&amp;gt;price !!}&amp;lt;/h2&amp;gt;
+&amp;lt;/div&amp;gt;
+
+&amp;lt;div class="col-md-9"&amp;gt;
+	@foreach($product-&amp;gt;images as $image)
+	&amp;lt;img src="{!! $image-&amp;gt;path !!}" alt="product-image"&amp;gt;
+	@endforeach
+
+&amp;lt;/div&amp;gt;
+&amp;lt;!-- /.col-md-9 --&amp;gt;
+&amp;lt;/div&amp;gt;
+        &amp;lt;hr /&amp;gt;
+
+        &amp;lt;div class="panel panel-default"&amp;gt;
+
+                &amp;lt;!-- Table --&amp;gt;
+                &amp;lt;table class="table table-striped"&amp;gt;
+                    &amp;lt;tr&amp;gt;
+
+                        &amp;lt;th&amp;gt;Id&amp;lt;/th&amp;gt;
+                        &amp;lt;th&amp;gt;Name&amp;lt;/th&amp;gt;
+                        &amp;lt;th&amp;gt;Date Created&amp;lt;/th&amp;gt;
+                        &amp;lt;th&amp;gt;Edit&amp;lt;/th&amp;gt;
+                        &amp;lt;th&amp;gt;Delete&amp;lt;/th&amp;gt;
+
+                    &amp;lt;/tr&amp;gt;
+
+                    &amp;lt;tr&amp;gt;
+                        &amp;lt;td&amp;gt;{{ $product-&amp;gt;id }} &amp;lt;/td&amp;gt;
+                        &amp;lt;td&amp;gt; &amp;lt;a href="/product/{{ $product-&amp;gt;id }}/edit"&amp;gt;
+                                {{ $product-&amp;gt;product_name }}&amp;lt;/a&amp;gt;&amp;lt;/td&amp;gt;
+                        &amp;lt;td&amp;gt;{{ $product-&amp;gt;created_at }}&amp;lt;/td&amp;gt;
+
+                        &amp;lt;td&amp;gt; &amp;lt;a href="/product/{{ $product-&amp;gt;id }}/edit"&amp;gt;
+
+                                &amp;lt;button type="button" class="btn btn-default"&amp;gt;Edit&amp;lt;/button&amp;gt;&amp;lt;/a&amp;gt;&amp;lt;/td&amp;gt;
+
+                        &amp;lt;td&amp;gt;
+
+                        &amp;lt;div class="form-group"&amp;gt;
+
+                       &amp;lt;form class="form" role="form" method="POST" action="{{ url('<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>/product/<span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"hljs-string"</span>&gt;</span>'. $product-&amp;gt;id) }}"&amp;gt;
+                       &amp;lt;input type="hidden" name="_method" value="delete"&amp;gt;
+                       {!! csrf_field() !!}
+
+                       &amp;lt;input class="btn btn-danger" Onclick="return ConfirmDelete();" type="submit" value="Delete"&amp;gt;
+
+                            &amp;lt;/form&amp;gt;
+                       &amp;lt;/div&amp;gt;
+                       &amp;lt;/td&amp;gt;
+
+                    &amp;lt;/tr&amp;gt;
+
+                &amp;lt;/table&amp;gt;
+
+
+        &amp;lt;/div&amp;gt;
+
+@endsection
+@section('<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>scripts<span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"hljs-string"</span>&gt;</span>')
+    &amp;lt;script&amp;gt;
+        function ConfirmDelete()
+        {
+            var x = confirm("Are you sure you want to delete?");
+            if (x)
+                return true;
+            else
+                return false;
+        }
+    &amp;lt;/script&amp;gt;
+@endsection
+<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">body</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">html</span>&gt;</span></div></div></div></div></body></html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html><html lang="en"><head><title>Http/Controllers/ImageController</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../../"><meta name="groc-document-path" content="Http/Controllers/ImageController"><meta name="groc-project-path" content="app/Http/Controllers/ImageController.php"><meta name="groc-github-url" content="https://github.com/phillipmadsen/part1"><link rel="stylesheet" type="text/css" media="all" href="../../assets/style.css"><script type="text/javascript" src="../../assets/behavior.js"></script><body><div id="meta"><div class="file-path"><a href="https://github.com/phillipmadsen/part1/blob/master/app/Http/Controllers/ImageController.php">app/Http/Controllers/ImageController.php</a></div></div><div id="document"><div class="segment"><div class="code"><div class="wrapper"><span class="hljs-preprocessor">&lt;?php</span>
+
+<span class="hljs-keyword">namespace</span> <span class="hljs-title">App</span>\<span class="hljs-title">Http</span>\<span class="hljs-title">Controllers</span>;
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">App</span>\<span class="hljs-title">Logic</span>\<span class="hljs-title">Image</span>\<span class="hljs-title">ImageRepository</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">Illuminate</span>\<span class="hljs-title">Support</span>\<span class="hljs-title">Facades</span>\<span class="hljs-title">File</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">Illuminate</span>\<span class="hljs-title">Support</span>\<span class="hljs-title">Facades</span>\<span class="hljs-title">Input</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">App</span>\<span class="hljs-title">Models</span>\<span class="hljs-title">Image</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">App</span>\<span class="hljs-title">Product</span>;
+
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ImageController</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Controller</span>
+</span>{
+    <span class="hljs-keyword">protected</span> <span class="hljs-variable">$image</span>;
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span><span class="hljs-params">(ImageRepository <span class="hljs-variable">$imageRepository</span>)</span>
+    </span>{
+        <span class="hljs-variable">$this</span>-&gt;image = <span class="hljs-variable">$imageRepository</span>;
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getUpload</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">return</span> view(<span class="hljs-string">'pages.upload'</span>);
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">postUpload</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-variable">$photo</span> = Input::all();
+        <span class="hljs-variable">$response</span> = <span class="hljs-variable">$this</span>-&gt;image-&gt;upload(<span class="hljs-variable">$photo</span>);
+        <span class="hljs-keyword">return</span> <span class="hljs-variable">$response</span>;
+
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">deleteUpload</span><span class="hljs-params">()</span>
+    </span>{
+
+        <span class="hljs-variable">$filename</span> = Input::get(<span class="hljs-string">'id'</span>);
+
+        <span class="hljs-keyword">if</span>(!<span class="hljs-variable">$filename</span>)
+        {
+            <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+        }
+
+        <span class="hljs-variable">$response</span> = <span class="hljs-variable">$this</span>-&gt;image-&gt;delete( <span class="hljs-variable">$filename</span> );
+
+        <span class="hljs-keyword">return</span> <span class="hljs-variable">$response</span>;
+    }
+
+    <span class="hljs-comment">/**
+     * Part 2 - Display already uploaded images in Dropzone
+     */</span>
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getServerImagesPage</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">return</span> view(<span class="hljs-string">'pages.upload-2'</span>);
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getServerImages</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-variable">$images</span> = Image::get([<span class="hljs-string">'original_name'</span>, <span class="hljs-string">'filename'</span>]);
+
+        <span class="hljs-variable">$imageAnswer</span> = [];
+
+        <span class="hljs-keyword">foreach</span> (<span class="hljs-variable">$images</span> <span class="hljs-keyword">as</span> <span class="hljs-variable">$image</span>) {
+            <span class="hljs-variable">$imageAnswer</span>[] = [
+                <span class="hljs-string">'original'</span> =&gt; <span class="hljs-variable">$image</span>-&gt;original_name,
+                <span class="hljs-string">'server'</span> =&gt; <span class="hljs-variable">$image</span>-&gt;filename,
+                <span class="hljs-string">'size'</span> =&gt; File::size(public_path(<span class="hljs-string">'images/full_size/'</span> . <span class="hljs-variable">$image</span>-&gt;filename))
+            ];
+        }
+
+        <span class="hljs-keyword">return</span> response()-&gt;json([
+            <span class="hljs-string">'images'</span> =&gt; <span class="hljs-variable">$imageAnswer</span>
+        ]);
+    }
+}</div></div></div></div></body></html>

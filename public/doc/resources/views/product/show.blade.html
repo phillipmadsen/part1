@@ -1,0 +1,98 @@
+<!DOCTYPE html><html lang="en"><head><title>resources/views/product/show.blade</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../../../"><meta name="groc-document-path" content="resources/views/product/show.blade"><meta name="groc-project-path" content="resources/views/product/show.blade.php"><meta name="groc-github-url" content="https://github.com/phillipmadsen/part1"><link rel="stylesheet" type="text/css" media="all" href="../../../assets/style.css"><script type="text/javascript" src="../../../assets/behavior.js"></script><body><div id="meta"><div class="file-path"><a href="https://github.com/phillipmadsen/part1/blob/master/resources/views/product/show.blade.php">resources/views/product/show.blade.php</a></div></div><div id="document"><div class="segment"><div class="code"><div class="wrapper">@extends(<span class="hljs-string">'layouts.app'</span>)
+
+@section(<span class="hljs-string">'title'</span>)
+
+    &lt;title&gt;Product&lt;/title&gt;
+
+@endsection
+
+@section(<span class="hljs-string">'content'</span>)
+
+        &lt;ol <span class="hljs-class"><span class="hljs-keyword">class</span>='<span class="hljs-title">breadcrumb</span>'&gt;
+        &lt;<span class="hljs-title">li</span>&gt;&lt;<span class="hljs-title">a</span> <span class="hljs-title">href</span>='/'&gt;<span class="hljs-title">Home</span>&lt;/<span class="hljs-title">a</span>&gt;&lt;/<span class="hljs-title">li</span>&gt;
+        &lt;<span class="hljs-title">li</span>&gt;&lt;<span class="hljs-title">a</span> <span class="hljs-title">href</span>='/<span class="hljs-title">product</span>'&gt;<span class="hljs-title">Products</span>&lt;/<span class="hljs-title">a</span>&gt;&lt;/<span class="hljs-title">li</span>&gt;
+        &lt;<span class="hljs-title">li</span>&gt;&lt;<span class="hljs-title">a</span> <span class="hljs-title">href</span>='/<span class="hljs-title">product</span>/</span>{{ <span class="hljs-variable">$product</span>-&gt;id }}<span class="hljs-string">'&gt;{{ $product-&gt;product_name }}&lt;/a&gt;&lt;/li&gt;
+        &lt;/ol&gt;
+
+        &lt;h1&gt;Product Details&lt;/h1&gt;
+
+        &lt;hr/&gt;
+&lt;div class="row"&gt;
+&lt;!-- /.row --&gt;
+&lt;div class="col-md-3"&gt;
+&lt;!-- /.col-md-3 --&gt;
+	&lt;div class="id"&gt;{!! $product-&gt;id !!}&lt;/div&gt;
+	&lt;!-- /.id --&gt;
+&lt;div class="description"&gt;{!! nl2br($product-&gt;description) !!}&lt;/div&gt;
+&lt;h2 class="price"&gt;{!! $product-&gt;price !!}&lt;/h2&gt;
+&lt;/div&gt;
+
+&lt;div class="col-md-9"&gt;
+	@foreach($product-&gt;images as $image)
+	&lt;img src="{!! $image-&gt;path !!}" alt="product-image"&gt;
+	@endforeach
+
+&lt;/div&gt;
+&lt;!-- /.col-md-9 --&gt;
+&lt;/div&gt;
+        &lt;hr /&gt;
+
+        &lt;div class="panel panel-default"&gt;
+
+                &lt;!-- Table --&gt;
+                &lt;table class="table table-striped"&gt;
+                    &lt;tr&gt;
+
+                        &lt;th&gt;Id&lt;/th&gt;
+                        &lt;th&gt;Name&lt;/th&gt;
+                        &lt;th&gt;Date Created&lt;/th&gt;
+                        &lt;th&gt;Edit&lt;/th&gt;
+                        &lt;th&gt;Delete&lt;/th&gt;
+
+                    &lt;/tr&gt;
+
+                    &lt;tr&gt;
+                        &lt;td&gt;{{ $product-&gt;id }} &lt;/td&gt;
+                        &lt;td&gt; &lt;a href="/product/{{ $product-&gt;id }}/edit"&gt;
+                                {{ $product-&gt;product_name }}&lt;/a&gt;&lt;/td&gt;
+                        &lt;td&gt;{{ $product-&gt;created_at }}&lt;/td&gt;
+
+                        &lt;td&gt; &lt;a href="/product/{{ $product-&gt;id }}/edit"&gt;
+
+                                &lt;button type="button" class="btn btn-default"&gt;Edit&lt;/button&gt;&lt;/a&gt;&lt;/td&gt;
+
+                        &lt;td&gt;
+
+                        &lt;div class="form-group"&gt;
+
+                       &lt;form class="form" role="form" method="POST" action="{{ url('</span>/product/<span class="hljs-string">'. $product-&gt;id) }}"&gt;
+                       &lt;input type="hidden" name="_method" value="delete"&gt;
+                       {!! csrf_field() !!}
+
+                       &lt;input class="btn btn-danger" Onclick="return ConfirmDelete();" type="submit" value="Delete"&gt;
+
+                            &lt;/form&gt;
+                       &lt;/div&gt;
+                       &lt;/td&gt;
+
+                    &lt;/tr&gt;
+
+                &lt;/table&gt;
+
+
+        &lt;/div&gt;
+
+@endsection
+@section('</span>scripts<span class="hljs-string">')
+    &lt;script&gt;
+        function ConfirmDelete()
+        {
+            var x = confirm("Are you sure you want to delete?");
+            if (x)
+                return true;
+            else
+                return false;
+        }
+    &lt;/script&gt;
+@endsection
+</span></div></div></div></div></body></html>

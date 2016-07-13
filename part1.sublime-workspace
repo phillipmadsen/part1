@@ -3,80 +3,117 @@
 	{
 		"selected_items":
 		[
+			[
+				"generate",
+				"generatePin\t(helpers.php)"
+			],
+			[
+				"Form",
+				"Form::open\tOpen a Form"
+			]
 		]
 	},
 	"buffers":
 	[
 		{
-			"file": ".env",
-			"settings":
-			{
-				"buffer_size": 406,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "resources/views/layouts/app.blade.php",
-			"settings":
-			{
-				"buffer_size": 471,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "resources/views/product/edit.blade.php",
-			"settings":
-			{
-				"buffer_size": 2295,
-				"line_ending": "Unix"
-			}
-		},
-		{
 			"file": "app/Http/Controllers/ProductController.php",
 			"settings":
 			{
-				"buffer_size": 3669,
+				"buffer_size": 3908,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "resources/views/product/show.blade.php",
+			"file": "ExampleTest.php",
 			"settings":
 			{
-				"buffer_size": 2532,
+				"buffer_size": 274,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": ".groc.json",
+			"settings":
+			{
+				"buffer_size": 860,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/c/users/sandbox/appdata/local/temp/rsub-lfx_6h/yomomma.md",
+			"settings":
+			{
+				"buffer_size": 250,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "resources/views/product/create.blade.php",
+			"file": "readme.md",
 			"settings":
 			{
-				"buffer_size": 2922,
+				"buffer_size": 963,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "temp/tinker.txt",
+			"file": "public/doc/Product.html",
 			"settings":
 			{
-				"buffer_size": 942,
+				"buffer_size": 3932,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "\n\n\n\n\n\n\n\n\nphp artisan infyom:api_scaffold User \n\t   --fieldsFile='User.json' \n\t   --multiPrefix=admin,all\n\t   --multiPrefix=backend,dashboard,showProfile,getData,editProfile,editAccount \n\t   --multiPrefix=frontend,profile,myAccount,SocialWall,Friends \n\t   --paginate=15\n\n\n|- app\npublic\\doc\\Http\n\n* |- [app](/app)\n\t* |- [Console] (/app/Console)\n\t* |- [Events] (/app/Events)\n\t* |- [Exceptions] (/app/Exceptions)\n\t* |- [Http] (/app/Http)\n\t* |- [Jobs] (/app/Jobs)\n\t* |- [Listeners] (/app/Listeners)\n\t* |- [Logic] (/app/Logic)\n\t* |- [Models] (/app/Models)\n\t* |- [Providers] (/app/Providers)\n\t* |- [Services] (/app/Services)\n\n\n\n```\n|- app\n\t|- Models\n\t\t|- admin\n\t\t\t |- layouts\n\t\t\t\t |- partials\n\t\t|- backend\n\t\t\t |- layouts\n\t\t\t\t |- partials\n\t\t|- frontend\n\t\t\t |- layouts\n\t\t\t\t |- partials\n```\n|- app\n\t|- Models\n\t\t|- admin\n\t\t\t |- layouts\n\t\t\t\t |- partials\n\t\t|- backend\n\t\t\t |- layouts\n\t\t\t\t |- partials\n\t\t|- frontend\n\t\t\t |- layouts\n\t\t\t\t |- partials\n\t|- Http\n\t\t|- Controllers\n\t\t\t |- {User}Controller\n\t\t\t\t|- {prefixGroup} Admin\n\t\t\t\t\t|- {$PUBLIC_FUNCTION$} index\n\t\t\t\t\t|- {$PUBLIC_FUNCTION$} create\n\t\t\t\t\t|- {$PUBLIC_FUNCTION$} edit\n\t\t\t\t\t|- {$PUBLIC_FUNCTION$} show\n\t\t\t\t\t|- {$PUBLIC_FUNCTION$} fields\n\t\t\t\t\t|- {$PUBLIC_FUNCTION$} show_fields\n\t\t\t\t\t|- {$PUBLIC_FUNCTION$} getData\n\t\t\t\t\t|- {$PUBLIC_FUNCTION$} dataTable\n\t\t\t\t\t|- {$PUBLIC_FUNCTION$} table\n\t\t\t\t|- {prefixGroup} Backend\n\t\t\t\t\t|- {$PUBLIC_FUNCTION$} dashboard\n\t\t\t\t\t|- {$PUBLIC_FUNCTION$} showProfile\n\t\t\t\t\t|- {$PUBLIC_FUNCTION$} getData\n\t\t\t\t\t|- {$PUBLIC_FUNCTION$} editProfile\n\t\t\t\t\t|- {$PUBLIC_FUNCTION$} editAccount\n\t\t\t\t|- {prefixGroup} FrontEnd\n\t\t\t\t\t|- {$PUBLIC_FUNCTION$} publicProfile\n\t\t\t\t\t|- {$PUBLIC_FUNCTION$} socialWall\n\t\t\t\t\t|- {$PUBLIC_FUNCTION$} listUsers\n\t\t\t\t\t|- {$PUBLIC_FUNCTION$} FollowingUsers\n\t\t\t\t\t|- {$PUBLIC_FUNCTION$} BlockingUsers\n\t\t|- Requests\n\t\t\t |- {HAVE NOT FIGURED THIS OUT YET}\n\t\t|- Routes\n\t\t\t |- {HAVE NOT FIGURED THIS OUT YET}             \n\t|- Repository /  UserRepository {handles all} {HAVE NOT FIGURED THIS OUT YET}\n|- views\n\t|- themes\n\t\t|- admin\n\t\t\t|- layouts\n\t\t\t\t|- partials\n\t\t\t\t|- includes\n\t\t\t\t|- app.blade.php\n\t\t\t|- users\n\t\t\t\t\t|- {view} index.blade.php\n\t\t\t\t\t|- {view} create.blade.php\n\t\t\t\t\t|- {view} edit.blade.php\n\t\t\t\t\t|- {view} show.blade.php\n\t\t\t\t\t|- {view} fields.blade.php\n\t\t\t\t\t|- {view} show_fields.blade.php\n\t\t\t\t\t|- {view} getdata.blade.php\n\t\t\t\t\t|- {view} dataTable.blade.php\n\t\t\t\t\t|- {view} table.blade.php\n\t\t|- backend\n\t\t\t|- layouts\n\t\t\t\t|- partials\n\t\t\t\t|- includes\n\t\t\t\t|- app.blade.php\n\t\t\t|- users\n\t\t\t\t\t|- {view} dashboard.blade.php\n\t\t\t\t\t|- {view} showprofile.blade.php\n\t\t\t\t\t|- {view} getdata.blade.php\n\t\t\t\t\t|- {view} editprofile.blade.php\n\t\t\t\t\t|- {view} editaccount.blade.php\n\t\t|- frontend\n\t\t\t|- layouts\n\t\t\t\t|- partials\n\t\t\t\t|- includes\n\t\t\t\t|- app.blade.php\n\t\t\t|- users\n\t\t\t\t\t|- {view} publicprofile.blade.php\n\t\t\t\t\t|- {view} socialwall.blade.php\n\t\t\t\t\t|- {view} listusers.blade.php\n\t\t\t\t\t|- {view} followingusers.blade.php\n\t\t\t\t\t|- {view} blockingusers.blade.php\n\t|- emails\n\t\t|- password.blade.php\n\t|- auth\n\t\t|- login.blade.php\n\t\t|- register.blade.php\n\t\t|- reset.blade.php\n\t\t|- password.blade.php\n\t|- common\n\t\t|- errors.blade.php\n\t\t|- paginate.blade.php",
+			"file": "/G/[affordable]/[code]/USERCRUDOUTPUT-EXAMPLE.txt",
+			"file_size": 3721,
+			"file_write_time": 131039983340025721,
+			"settings":
+			{
+				"buffer_size": 3125,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"contents": "UploadedFile {#179\n  -test: false\n  -originalName: \"slider_10.jpg\"\n  -mimeType: \"image/jpeg\"\n  -size: 169784\n  -error: 0\n  path: \"/tmp\"\n  filename: \"phpzXzTFh\"\n  basename: \"phpzXzTFh\"\n  pathname: \"/tmp/phpzXzTFh\"\n  extension: \"\"\n  realPath: \"/tmp/phpzXzTFh\"\n  aTime: 2016-07-12 03:54:18\n  mTime: 2016-07-12 03:54:18\n  cTime: 2016-07-12 03:54:18\n  inode: 2235464\n  size: 169784\n  perms: 0100600\n  owner: 900\n  group: 900\n  type: \"file\"\n  writable: true\n  readable: true\n  executable: false\n  file: true\n  dir: false\n  link: false\n}",
+			"contents": "\n\napplication markup outline tree\nMVC VIEW Table of Contents Macro\n\n    sandbox/\n    ├── app/                  ← directory with application\n    │   ├── config/           ← configuration files\n    │   │   ├── config.dev    ← main config file\n    │   │   └── config.local \n    │   │\n    │   ├── forms/            ← form classes\n    │   ├── model/            ← model layer and its classes\n    │   ├── presenters/       ← presenter classes\n    │   │   ├── HomepagePresenter.php  ← Homepage presenter class\n    │   │   └── templates/    ← templates directory\n    │   │       ├── @layout.latte ← template of shared layout\n    │   │       └── Homepage/     ← templates for Homepage presenter\n    │   │           └── default.latte  ← template for default action\n    │   ├── router/           ← router classes\n    │   │\n    │   └── bootstrap.php     ← application boot file\n    │\n    ├── log/                  ← contains logs, errors, etc.\n    ├── temp/                 ← for temporary files, cache, ...\n    │\n    ├── vendor/               ← directory with libraries (for example 3rd party)\n    │   ├── name/             ← all Name Framework libraries\n    │   │   └── name/name     ← Name Framework itself installed by Composer\n    │   ├── ...\n    │   │\n    │   └── autoload.php      ← script that handles autoloading of all classes from installed packages\n    │\n    └── www/                  ← public directory, document root of project\n        ├── .htaccess         ← rules for mod_rewrite\n        ├── index.php         ← triggers the application\n        └── images/           ← other directories, images, styles, ..\n\n┣ \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nd($var); // debug dump\n\nddd($var); // debug dump and die\n\ns($var); // simple print\n\nsd($var); // simple print and die\n\n\nls -R | grep \":$\" | sed -e 's/:$//' -e 's/[^-][^\\/]*\\//--/g' -e 's/^/   /' -e 's/-/|/'\n\n\n\nsudo apt-get install tree\n\ntree database\ndatabase\n├── factories\n├── migration\n└── seeds\n\ndatabase\n├── factories\n│   └── ModelFactory.php\n├── migrations\n│   ├── 2014_10_12_000000_create_users_table.php\n│   ├── 2014_10_12_100000_create_password_resets_table.php\n│   ├── 2016_03_29_194122_shop_setup_tables.php\n│   └── 2016_03_29_204706_create_products_table.php\n└── seeds\n    ├── DatabaseSeeder.php\n    └── LaravelShopSeeder.php\n\n\ndatabase\n├── database/factories\n│   └── database/factories/ModelFactory.php\n├── database/.gitignore\n├── database/migrations\n│   ├── database/migrations/2014_10_12_000000_create_users_table.php\n│   ├── database/migrations/2014_10_12_100000_create_password_resets_table.php\n│   ├── database/migrations/2016_03_29_194122_shop_setup_tables.php\n│   ├── database/migrations/2016_03_29_204706_create_products_table.php\n│   └── database/migrations/.gitkeep\n└── database/seeds\n    ├── database/seeds/DatabaseSeeder.php\n    ├── database/seeds/.gitkeep\n    └── database/seeds/LaravelShopSeeder.php\n\n\n\n\n$process = new Process('tree database');\n$process->run();\n\n// executes after the command finishes\nif (!$process->isSuccessful()) {\n    throw new ProcessFailedException($process);\n}\n\necho $process->getOutput();\n\n\n  function outputtree() {} return outputtree(); \n\n\n$process = new Process('tree -adC database');\n\ntry {\n    $process->mustRun();\n\n    echo $process->getOutput();\n} catch (ProcessFailedException $e) {\n    echo $e->getMessage();\n}\n\n\n\nRoute::get('/tree', function () {\n    function outputtree()\n    {\nuse Symfony\\Component\\Process\\Process;\nuse Symfony\\Component\\Process\\Exception\\ProcessFailedException;\n\n$process = new Process('ls -lsa');\n$process->run();\n\n// executes after the command finishes\nif (!$process->isSuccessful()) {\n    throw new ProcessFailedException($process);\n}\n\necho $process->getOutput();\n\n    }\n    return outputtree();\n});\n\n\nThat is a TreeListView. It contains a TreeView on the left side, and then an attached ListView on the left with one or more columns for showing data about each leaf or node in the TreeView.\n\n\n\n \nThe control you are talking about is often called a TreeView or TreeListView (depending on the programming language). Here is a good example of creating one in PHP:\n\nhttp://phpflow.com/php/how-to-create-dynamic-tree-view-menu/\n\nIn any case, you can't directly make the TreeView in PHP. You can however as shown above, make it using a CSS style file.\n\n\n\nsandbox/\n    app/                ← directory with application\n        AdminModule/    ← Admin module\n            presenters/ ← its presenters\n            templates/  ← its templates\n\n        FrontModule/    ← Front module\n            presenters/ ← its presenters\n            templates/  ← its templates\n\n\n\n\n\n\n\ndatabase\n├── database/factories\n│   └── database/factories/ModelFactory.php\n├── database/.gitignore\n├── database/migrations\n│   ├── database/migrations/2014_10_12_000000_create_users_table.php\n│   ├── database/migrations/2014_10_12_100000_create_password_resets_table.php\n│   ├── database/migrations/2016_03_29_194122_shop_setup_tables.php\n│   ├── database/migrations/2016_03_29_204706_create_products_table.php\n│   └── database/migrations/.gitkeep\n└── database/seeds\n    ├── database/seeds/DatabaseSeeder.php\n    ├── database/seeds/.gitkeep\n    └── database/seeds/LaravelShopSeeder.php\n\n\n\n\n\n\n\n $process = new Process('tree -Cd ./database');\n\n\n-a            All files are listed.\n-d            List directories only.\n-l            Follow symbolic links like directories.\n-f            Print the full path prefix for each file.\n-i            Don't print indentation lines.\n-q            Print non-printable characters as '?'.\n-N            Print non-printable characters as is.\n-p            Print the protections for each file.\n-u            Displays file owner or UID number.\n-g            Displays file group owner or GID number.\n-s            Print the size in bytes of each file.\n-h            Print the size in a more human readable way.\n-D            Print the date of last modification.\n-F            Appends '/', '=', '*', or '|' as per ls -F.\n-v            Sort files alphanumerically by version.\n-r            Sort files in reverse alphanumeric order.\n-t            Sort files by last modification time.\n-x            Stay on current filesystem only.\n-L level      Descend only level directories deep.\n-A            Print ANSI lines graphic indentation lines.\n-S            Print with ASCII graphics indentation lines.\n-n            Turn colorization off always (-C overrides).\n-C            Turn colorization on always.\n-P pattern    List only those files that match the pattern given.\n-I pattern    Do not list files that match the given pattern.\n-H baseHREF   Prints out HTML format with baseHREF as top directory.\n-T string     Replace the default HTML title and H1 header with string.\n-R            Rerun tree when max dir level reached.\n-o file       Output to file instead of stdout.\n--inodes      Print inode number of each file.\n--device      Print device ID number to which each file belongs.\n--noreport    Turn off file/directory count at end of tree listing.\n--nolinks     Turn off hyperlinks in HTML output.\n--dirsfirst   List directories before files.\n--charset X   Use charset X for HTML and indentation line output.\n--filelimit # Do not descend dirs with more than # files in them.\n\ntree -aClfHo database database.html\ntree -aClf  app-outline-summary.txt\n\ntree -aClf database\ntree -aClHo database.html database\n\n/home/vagrant/grace/local.test.cart/database/\n\nusage: tree [-acdfghilnpqrstuvxACDFQNSUX] [-H baseHREF] [-T title ] [-L level [-R]]\n        [-P pattern] [-I pattern] [-o filename] [--version] [--help] [--inodes]\n        [--device] [--noreport] [--nolinks] [--dirsfirst] [--charset charset]\n        [--filelimit[=]#] [--si] [--timefmt[=]<f>] [<directory list>]\n  ------- Listing options -------\n  -a            All files are listed.\n  -d            List directories only.\n  -l            Follow symbolic links like directories.\n  -f            Print the full path prefix for each file.\n  -x            Stay on current filesystem only.\n  -L level      Descend only level directories deep.\n  -R            Rerun tree when max dir level reached.\n  -P pattern    List only those files that match the pattern given.\n  -I pattern    Do not list files that match the given pattern.\n  --noreport    Turn off file/directory count at end of tree listing.\n  --charset X   Use charset X for terminal/HTML and indentation line output.\n  --filelimit # Do not descend dirs with more than # files in them.\n  --timefmt <f> Print and format time according to the format <f>.\n  -o filename   Output to file instead of stdout.\n  -------- File options ---------\n  -q            Print non-printable characters as '?'.\n  -N            Print non-printable characters as is.\n  -Q            Quote filenames with double quotes.\n  -p            Print the protections for each file.\n  -u            Displays file owner or UID number.\n  -g            Displays file group owner or GID number.\n  -s            Print the size in bytes of each file.\n  -h            Print the size in a more human readable way.\n  --si          Like -h, but use in SI units (powers of 1000).\n  -D            Print the date of last modification or (-c) status change.\n  -F            Appends '/', '=', '*', '@', '|' or '>' as per ls -F.\n  --inodes      Print inode number of each file.\n  --device      Print device ID number to which each file belongs.\n  ------- Sorting options -------\n  -v            Sort files alphanumerically by version.\n  -r            Sort files in reverse alphanumeric order.\n  -t            Sort files by last modification time.\n  -c            Sort files by last status change time.\n  -U            Leave files unsorted.\n  --dirsfirst   List directories before files (-U disables).\n  ------- Graphics options ------\n  -i            Don't print indentation lines.\n  -A            Print ANSI lines graphic indentation lines.\n  -S            Print with ASCII graphics indentation lines.\n  -n            Turn colorization off always (-C overrides).\n  -C            Turn colorization on always.\n  ------- XML/HTML options -------\n  -X            Prints out an XML representation of the tree.\n  -H baseHREF   Prints out HTML format with baseHREF as top directory.\n  -T string     Replace the default HTML title and H1 header with string.\n  --nolinks     Turn off hyperlinks in HTML output.\n  ---- Miscellaneous options ----\n  --version     Print version and exit.\n  --help        Print usage and this help message and exit.\n  \n  \n   sandbox/\n    ├── app/                  ← directory with application\n    │   ├── config/           ← configuration files\n    │   │   ├── config.dev    ← main config file\n    │   │   └── config.local \n    │   │\n    │   ├── forms/            ← form classes\n    │   ├── model/            ← model layer and its classes\n    │   ├── presenters/       ← presenter classes\n    │   │   ├── HomepagePresenter.php  ← Homepage presenter class\n    │   │   └── templates/    ← templates directory\n    │   │       ├── @layout.latte ← template of shared layout\n    │   │       └── Homepage/     ← templates for Homepage presenter\n    │   │           └── default.latte  ← template for default action\n    │   ├── router/           ← router classes\n    │   │\n    │   └── bootstrap.php     ← application boot file\n    │\n    *├── log/                  ← contains logs, errors, etc.\n    \n    ",
+			"file": "/G/[affordable]/[code]/treeview.txt",
+			"file_size": 11259,
+			"file_write_time": 131039982118401534,
 			"settings":
 			{
-				"buffer_size": 530,
-				"line_ending": "Windows",
-				"name": "UploadedFile {#179"
+				"buffer_size": 11280,
+				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "/G/Desktop/TEMPLATES/temprar/Rar$DRa0.054/resources/views/product_images.blade.php",
+			"file": "app/Services/UploadManager.php",
 			"settings":
 			{
-				"buffer_size": 334,
+				"buffer_size": 3132,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/Http/routes.php",
+			"settings":
+			{
+				"buffer_size": 3110,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/User.php",
+			"settings":
+			{
+				"buffer_size": 1455,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/Models/ProductImage.php",
+			"settings":
+			{
+				"buffer_size": 570,
 				"line_ending": "Unix"
 			}
 		}
@@ -94,7 +131,11 @@
 		[
 			[
 				"format",
-				"CodeFormatter: Format Code"
+				"CodeFormatter: Format as Javascript Syntax"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
 			],
 			[
 				"fold",
@@ -115,10 +156,6 @@
 			[
 				"tog",
 				"Toggle ScopeAlways"
-			],
-			[
-				"Package Control: ",
-				"Package Control: Remove Package"
 			],
 			[
 				"remove",
@@ -208,27 +245,58 @@
 		"/G/A_LOCAL/bbb/part1",
 		"/G/A_LOCAL/bbb/part1/app",
 		"/G/A_LOCAL/bbb/part1/app/Http",
-		"/G/A_LOCAL/bbb/part1/app/Models",
-		"/G/A_LOCAL/bbb/part1/database/factories",
-		"/G/A_LOCAL/bbb/part1/database/migrations",
+		"/G/A_LOCAL/bbb/part1/app/Http/Controllers",
+		"/G/A_LOCAL/bbb/part1/app/Logic/Image",
+		"/G/A_LOCAL/bbb/part1/public/assets/js",
+		"/G/A_LOCAL/bbb/part1/public/doc",
 		"/G/A_LOCAL/bbb/part1/resources",
 		"/G/A_LOCAL/bbb/part1/resources/views",
+		"/G/A_LOCAL/bbb/part1/resources/views/pages",
 		"/G/A_LOCAL/bbb/part1/resources/views/product",
-		"/G/A_LOCAL/bbb/part1/temp"
+		"/G/A_LOCAL/bbb/part1/storage/app",
+		"/G/A_LOCAL/bbb/part1/storage/framework/cache",
+		"/G/A_LOCAL/bbb/part1/storage/framework/sessions",
+		"/G/A_LOCAL/bbb/part1/storage/logs",
+		"/G/A_LOCAL/bbb/part1/tests"
 	],
 	"file_history":
 	[
+		"/G/A_LOCAL/grace/local.josh/.env",
+		"/G/A_LOCAL/bbb/part1/app/helpers.php",
+		"/G/A_LOCAL/bbb/part1/app/Product.php",
+		"/G/A_LOCAL/bbb/part1/public/assets/js/dropzone-config.js",
+		"/G/A_LOCAL/bbb/part1/config/app.php",
+		"/G/A_LOCAL/bbb/part1/resources/views/product/create.blade.php",
+		"/G/A_LOCAL/bbb/part1/resources/views/product/edit.blade.php",
+		"/G/A_LOCAL/bbb/part1/public/doc/index.html",
+		"/G/A_LOCAL/bbb/part1/.git/index",
+		"/G/A_LOCAL/bbb/part1/.git/groc-tmp/assets/behavior.js",
+		"/G/A_LOCAL/bbb/part1/.git/groc-tmp/assets/style.css",
+		"/G/A_LOCAL/bbb/part1/.gitignore",
+		"/c/users/sandbox/appdata/local/temp/rsub-nz7fkp/wp-config.php",
+		"/G/A_LOCAL/bbb/part1/.env",
+		"/C/Users/sandbox/.homestead/Homestead.yaml",
+		"/C/Windows/System32/drivers/etc/hosts",
+		"/c/users/sandbox/appdata/local/temp/rsub-r0doa4/wp-config.php",
+		"/C/Users/sandbox/AppData/Local/Temp/fz3temp-1/qniquequilter.com.conf",
+		"/G/A_LOCAL/bbb/part1/app/Http/Requests/ProductCreateRequest.php",
+		"/G/A_LOCAL/bbb/part1/resources/views/pages/upload.blade.php",
+		"/G/A_LOCAL/bbb/part1/app/Http/routes.php",
+		"/G/A_LOCAL/bbb/part1/storage/logs/laravel.log",
+		"/G/Desktop/TEMPLATES/temprar/Rar$DIa0.781/Product.php",
+		"/G/Desktop/TEMPLATES/temprar/Rar$DIa0.152/ProductImage.php",
+		"/G/Desktop/TEMPLATES/temprar/Rar$DRa0.054/resources/views/product_images.blade.php",
+		"/G/A_LOCAL/bbb/part1/temp/tinker.txt",
+		"/G/A_LOCAL/bbb/part1/resources/views/product/show.blade.php",
+		"/G/A_LOCAL/bbb/part1/app/Http/Controllers/ProductController.php",
+		"/G/A_LOCAL/bbb/part1/resources/views/layouts/app.blade.php",
 		"/G/A_LOCAL/bbb/part1/resources/views/product/datatable-script.blade.php",
 		"/G/A_LOCAL/bbb/part1/app/Http/flash.php",
 		"/G/A_LOCAL/bbb/part1/resources/views/flash.blade.php",
 		"/G/A_LOCAL/bbb/part1/resources/views/layouts/css.blade.php",
-		"/G/A_LOCAL/bbb/part1/app/Product.php",
 		"/G/Desktop/TEMPLATES/temprar/Rar$DRa0.177/app/Http/routes.php",
-		"/G/A_LOCAL/bbb/part1/temp/tinker.txt",
 		"/G/A_LOCAL/bbb/staged.grace/database/factories/ModelFactory.php",
 		"/G/A_LOCAL/bbb/part1/resources/views/layouts/scripts.blade.php",
-		"/G/A_LOCAL/bbb/part1/resources/views/product/create.blade.php",
-		"/G/A_LOCAL/bbb/part1/app/Http/routes.php",
 		"/G/Desktop/TEMPLATES/temprar/Rar$DRa0.726/database/migrations/2016_07_12_023129_create_product_images_table.php",
 		"/G/Desktop/TEMPLATES/temprar/Rar$DRa0.732/database/migrations/2016_07_12_023129_create_products_table.php",
 		"/G/Desktop/TEMPLATES/temprar/Rar$DRa0.255/database/migrations/2016_07_12_023139_create_foreign_keys.php",
@@ -240,7 +308,6 @@
 		"/G/A_LOCAL/bbb/part1/part1.sublime-project",
 		"/G/A_LOCAL/bbb/part1/composer.json",
 		"/G/A_LOCAL/bbb/part1/app/Providers/AppServiceProvider.php",
-		"/G/A_LOCAL/bbb/part1/config/app.php",
 		"/G/A_LOCAL/bbb/part1/app/User.php",
 		"/G/A_LOCAL/bbb/part1/gulpfile.js",
 		"/G/A_LOCAL/bbb/part1/resources/assets/sass/app.scss",
@@ -269,10 +336,7 @@
 		"/G/Desktop/requst.product.json",
 		"/G/[grace]/stage.repo/.env",
 		"/G/A_LOCAL/bbb/staged.grace/resources/views/backend/products/fields.blade.php",
-		"/G/A_LOCAL/bbb/part1/.gitignore",
-		"/C/Users/sandbox/.homestead/Homestead.yaml",
 		"/G/[grace]/stage.repo/.gitignore",
-		"/C/Windows/System32/drivers/etc/hosts",
 		"/G/A_LOCAL/bbb/staged.grace/app/Logic/Image/ImageRepository.php",
 		"/G/A_LOCAL/bbb/staged.grace/app/Models/Product-forhelp.php",
 		"/G/A_LOCAL/bbb/staged.grace/app/Models/ProductImage-for-help.php",
@@ -324,38 +388,18 @@
 		"/G/[affordable]/[code]/[Content]/[WEBCONTENTBROKER]/7-7-16/wood lap hoop.html",
 		"/G/[affordable]/[code]/[Content]/[WEBCONTENTBROKER]/7-7-16/Gracie Bee Quilting for all of your Creative Needs.html",
 		"/G/[grace]/OurContent/newpages/qnique-quilting-machine-features-and-functions.html",
-		"/G/[grace]/OurContent/newpages/quilting-industry-news-and-topics.html",
-		"/G/[grace]/OurContent/newpages/about-qnique.html",
-		"/G/[grace]/OurContent/newpages/the-block-rockit-sewing-machine.html",
-		"/G/[affordable]/[code]/[Content]/[HITTAIL]/About Qnique Quilter.html",
-		"/G/[grace]/OurContent/newpages/qnique-quilting-machine.html",
-		"/G/[affordable]/[code]/[Content]/[WEBCONTENTBROKER]/Grace Company Quilting Supplies.html",
-		"/G/[affordable]/[code]/[Content]/[WEBCONTENTBROKER]/7-7-16/need to make 2 product descriptions from this article.html",
-		"/G/[grace]/OurContent/proddesc/grace-company-quilting-supplies.html",
-		"/G/[affordable]/[code]/[Content]/[WEBCONTENTBROKER]/7-7-16/grace-company-quilting-supplies.html",
-		"/G/[affordable]/[code]/[Content]/[WEBCONTENTBROKER]/7-7-16/start-right-2-with-innovative-design.html",
-		"/G/[affordable]/[code]/[Content]/[WEBCONTENTBROKER]/7-7-16/the-great-graciebee-quilting-frame.html",
-		"/G/[grace]/OurContent/revdesc/Review- QniqueQuilter.rtf",
-		"/G/A_LOCAL/bbb/staged.grace/storage/logs/laravel-2016-07-06.log",
-		"/G/[grace]/pages/GraceCss/.gitignore",
-		"/G/A_LOCAL/bbb/staged.grace/storage/logs/laravel-2016-06-30.log",
-		"/G/A_LOCAL/bbb/staged.grace/database/migrations/2016_06_22_011452_create_images_table.php",
-		"/G/A_LOCAL/bbb/upload/database/migrations/2016_07_01_171341_create_product_images_table.php",
-		"/G/A_LOCAL/bbb/staged.grace/app/Models/User.php",
-		"/G/A_LOCAL/bbb/staged.grace/app/Transformers/UserPresenterTransformer.php",
-		"/G/Downloads/vue.js",
-		"/G/A_LOCAL/bbb/staged.grace/database/migrations/2013_10_24_111453_create_pages_table.php",
-		"/G/A_LOCAL/bbb/staged.grace/database/migrations/2013_11_29_083232_create_news_table.php"
+		"/G/[grace]/OurContent/newpages/quilting-industry-news-and-topics.html"
 	],
 	"find":
 	{
-		"height": 31.0
+		"height": 39.0
 	},
 	"find_in_files":
 	{
-		"height": 0.0,
+		"height": 105.0,
 		"where_history":
 		[
+			"G:\\A_LOCAL\\bbb\\part1"
 		]
 	},
 	"find_state":
@@ -363,6 +407,20 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"/**",
+			"Http]",
+			"Http",
+			"lib",
+			"Post",
+			" stage.repo",
+			"appfactory",
+			"image",
+			"true",
+			"kb_category_slug",
+			"$form_data",
+			"*$formdata*",
+			"$formdata",
+			"array(",
 			");\n",
 			"restrict",
 			"_name",
@@ -435,129 +493,24 @@
 	"groups":
 	[
 		{
-			"selected": 4,
+			"selected": 9,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": ".env",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 406,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								406,
-								406
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Text/Plain text.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 8,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "resources/views/layouts/app.blade.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 471,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								470,
-								470
-							]
-						],
-						"settings":
-						{
-							"auto_complete": false,
-							"is_xml": false,
-							"syntax": "Packages/User/laravel-blade.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "resources/views/product/edit.blade.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2295,
-						"regions":
-						{
-							"TagLint":
-							{
-								"flags": 2356,
-								"icon": "dot",
-								"regions":
-								[
-									[
-										2277,
-										2281
-									]
-								],
-								"scope": "variable.parameter"
-							}
-						},
-						"selection":
-						[
-							[
-								2295,
-								2295
-							]
-						],
-						"settings":
-						{
-							"auto_complete": false,
-							"is_xml": false,
-							"syntax": "Packages/User/laravel-blade.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 594.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
 					"file": "app/Http/Controllers/ProductController.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3669,
+						"buffer_size": 3908,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2654,
-								2654
+								2196,
+								2196
 							]
 						],
 						"settings":
@@ -569,130 +522,133 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1764.0,
+						"translation.y": 1260.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 6,
+					"stack_index": 8,
 					"type": "text"
 				},
 				{
-					"buffer": 4,
-					"file": "resources/views/product/show.blade.php",
+					"buffer": 1,
+					"file": "ExampleTest.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2532,
+						"buffer_size": 274,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1156,
-								1156
-							]
-						],
-						"settings":
-						{
-							"auto_complete": false,
-							"is_xml": false,
-							"syntax": "Packages/User/laravel-blade.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 702.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "resources/views/product/create.blade.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2922,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2558,
-								2558
-							]
-						],
-						"settings":
-						{
-							"auto_complete": false,
-							"is_xml": false,
-							"syntax": "Packages/User/laravel-blade.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 810.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "temp/tinker.txt",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 942,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								146,
-								84
+								274,
+								274
 							]
 						],
 						"settings":
 						{
 							"is_xml": false,
-							"syntax": "Packages/Text/Plain text.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/PHP/PHP.sublime-syntax"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 9,
 					"type": "text"
 				},
 				{
-					"buffer": 7,
+					"buffer": 2,
+					"file": ".groc.json",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 530,
+						"buffer_size": 860,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								530,
-								530
+								730,
+								735
 							]
 						],
 						"settings":
 						{
-							"auto_name": "UploadedFile {#179",
-							"default_dir": "G:\\A_LOCAL\\bbb\\part1",
+							"auto_complete": true,
+							"syntax": "Packages/JavaScript/JSON.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 300.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/c/users/sandbox/appdata/local/temp/rsub-lfx_6h/yomomma.md",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 250,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								250,
+								250
+							]
+						],
+						"settings":
+						{
+							"editorconfig": true,
+							"ensure_newline_at_eof_on_save": false,
 							"is_xml": false,
-							"syntax": "Packages/Text/Plain text.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
+							"rsub":
+							{
+								"data-on-save": "yes",
+								"display-name": "homestead:yomomma.md",
+								"re-activate": "yes",
+								"real-path": "/home/vagrant/bbb/part2/yomomma.md",
+								"token": "yomomma.md"
+							},
+							"syntax": "Packages/MarkdownEditing/Markdown.tmLanguage",
+							"translate_tabs_to_spaces": false,
+							"trim_trailing_white_space_on_save": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "readme.md",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 963,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								962,
+								962
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"is_xml": false,
+							"syntax": "Packages/Markdown Extended/Syntaxes/Markdown Extended.sublime-syntax"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -702,33 +658,234 @@
 					"type": "text"
 				},
 				{
-					"buffer": 8,
-					"file": "/G/Desktop/TEMPLATES/temprar/Rar$DRa0.054/resources/views/product_images.blade.php",
+					"buffer": 5,
+					"file": "public/doc/Product.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 334,
+						"buffer_size": 3932,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								256,
-								187
+								3012,
+								3012
 							]
 						],
 						"settings":
 						{
+							"auto_complete": false,
 							"is_xml": false,
-							"syntax": "Packages/User/laravel-blade.tmLanguage",
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "/G/[affordable]/[code]/USERCRUDOUTPUT-EXAMPLE.txt",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3125,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								617,
+								295
+							]
+						],
+						"settings":
+						{
+							"is_xml": false,
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 205.0,
+						"zoom_level": 1.0
+					},
 					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "/G/[affordable]/[code]/treeview.txt",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 11280,
+						"regions":
+						{
+							"TagLint":
+							{
+								"flags": 2356,
+								"icon": "dot",
+								"regions":
+								[
+									[
+										7647,
+										7648
+									]
+								],
+								"scope": "variable.parameter"
+							}
+						},
+						"selection":
+						[
+							[
+								10478,
+								10478
+							]
+						],
+						"settings":
+						{
+							"is_xml": false,
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 6762.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 10,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "app/Services/UploadManager.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3132,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								452,
+								452
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"is_xml": false,
+							"open_with_edit": true,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1764.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "app/Http/routes.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3110,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1925,
+								1925
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"is_xml": false,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 693.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "app/User.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1455,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1143,
+								1143
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"is_xml": false,
+							"syntax": "Packages/PHP/PHP.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 756.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "app/Models/ProductImage.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 570,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								570,
+								570
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"is_xml": false,
+							"syntax": "Packages/PHP/PHP.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 11,
 					"type": "text"
 				}
 			]

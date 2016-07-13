@@ -1,0 +1,143 @@
+<!DOCTYPE html><html lang="en"><head><title>Services/UploadManager</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../"><meta name="groc-document-path" content="Services/UploadManager"><meta name="groc-project-path" content="app/Services/UploadManager.php"><meta name="groc-github-url" content="https://github.com/phillipmadsen/part1"><link rel="stylesheet" type="text/css" media="all" href="../assets/style.css"><script type="text/javascript" src="../assets/behavior.js"></script><body><div id="meta"><div class="file-path"><a href="https://github.com/phillipmadsen/part1/blob/master/app/Services/UploadManager.php">app/Services/UploadManager.php</a></div></div><div id="document"><div class="segment"><div class="code"><div class="wrapper"><span class="hljs-preprocessor">&lt;?php</span>
+<span class="hljs-keyword">namespace</span> <span class="hljs-title">App</span>\<span class="hljs-title">Services</span>;
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">Carbon</span>\<span class="hljs-title">Carbon</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">Dflydev</span>\<span class="hljs-title">ApacheMimeTypes</span>\<span class="hljs-title">PhpRepository</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">Illuminate</span>\<span class="hljs-title">Support</span>\<span class="hljs-title">Facades</span>\<span class="hljs-title">Storage</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">UploadsManager</span>
+</span>{
+  <span class="hljs-keyword">protected</span> <span class="hljs-variable">$disk</span>;
+  <span class="hljs-keyword">protected</span> <span class="hljs-variable">$mimeDetect</span>;
+
+  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span><span class="hljs-params">(PhpRepository <span class="hljs-variable">$mimeDetect</span>)</span>
+  </span>{
+    <span class="hljs-variable">$this</span>-&gt;disk = Storage::disk(config(<span class="hljs-string">'uploads.storage'</span>));
+    <span class="hljs-variable">$this</span>-&gt;mimeDetect = <span class="hljs-variable">$mimeDetect</span>;
+  }
+
+  <span class="hljs-comment">/**
+   * Return files and directories within a folder
+   *
+   * <span class="hljs-doctag">@param</span> string $folder
+   * <span class="hljs-doctag">@return</span> array of [
+   *    'folder' =&gt; 'path to current folder',
+   *    'folderName' =&gt; 'name of just current folder',
+   *    'breadCrumbs' =&gt; breadcrumb array of [ $path =&gt; $foldername ]
+   *    'folders' =&gt; array of [ $path =&gt; $foldername] of each subfolder
+   *    'files' =&gt; array of file details on each file in folder
+   * ]
+   */</span>
+  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">folderInfo</span><span class="hljs-params">(<span class="hljs-variable">$folder</span>)</span>
+  </span>{
+    <span class="hljs-variable">$folder</span> = <span class="hljs-variable">$this</span>-&gt;cleanFolder(<span class="hljs-variable">$folder</span>);
+
+    <span class="hljs-variable">$breadcrumbs</span> = <span class="hljs-variable">$this</span>-&gt;breadcrumbs(<span class="hljs-variable">$folder</span>);
+    <span class="hljs-variable">$slice</span> = array_slice(<span class="hljs-variable">$breadcrumbs</span>, -<span class="hljs-number">1</span>);
+    <span class="hljs-variable">$folderName</span> = current(<span class="hljs-variable">$slice</span>);
+    <span class="hljs-variable">$breadcrumbs</span> = array_slice(<span class="hljs-variable">$breadcrumbs</span>, <span class="hljs-number">0</span>, -<span class="hljs-number">1</span>);
+
+    <span class="hljs-variable">$subfolders</span> = [];
+    <span class="hljs-keyword">foreach</span> (array_unique(<span class="hljs-variable">$this</span>-&gt;disk-&gt;directories(<span class="hljs-variable">$folder</span>)) <span class="hljs-keyword">as</span> <span class="hljs-variable">$subfolder</span>) {
+      <span class="hljs-variable">$subfolders</span>[<span class="hljs-string">"/$subfolder"</span>] = basename(<span class="hljs-variable">$subfolder</span>);
+    }
+
+    <span class="hljs-variable">$files</span> = [];
+    <span class="hljs-keyword">foreach</span> (<span class="hljs-variable">$this</span>-&gt;disk-&gt;files(<span class="hljs-variable">$folder</span>) <span class="hljs-keyword">as</span> <span class="hljs-variable">$path</span>) {
+        <span class="hljs-variable">$files</span>[] = <span class="hljs-variable">$this</span>-&gt;fileDetails(<span class="hljs-variable">$path</span>);
+    }
+
+    <span class="hljs-keyword">return</span> compact(
+      <span class="hljs-string">'folder'</span>,
+      <span class="hljs-string">'folderName'</span>,
+      <span class="hljs-string">'breadcrumbs'</span>,
+      <span class="hljs-string">'subfolders'</span>,
+      <span class="hljs-string">'files'</span>
+    );
+  }
+
+  <span class="hljs-comment">/**
+   * Sanitize the folder name
+   */</span>
+  <span class="hljs-keyword">protected</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">cleanFolder</span><span class="hljs-params">(<span class="hljs-variable">$folder</span>)</span>
+  </span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-string">'/'</span> . trim(str_replace(<span class="hljs-string">'..'</span>, <span class="hljs-string">''</span>, <span class="hljs-variable">$folder</span>), <span class="hljs-string">'/'</span>);
+  }
+
+  <span class="hljs-comment">/**
+   * Return breadcrumbs to current folder
+   */</span>
+  <span class="hljs-keyword">protected</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">breadcrumbs</span><span class="hljs-params">(<span class="hljs-variable">$folder</span>)</span>
+  </span>{
+    <span class="hljs-variable">$folder</span> = trim(<span class="hljs-variable">$folder</span>, <span class="hljs-string">'/'</span>);
+    <span class="hljs-variable">$crumbs</span> = [<span class="hljs-string">'/'</span> =&gt; <span class="hljs-string">'root'</span>];
+
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">empty</span>(<span class="hljs-variable">$folder</span>)) {
+      <span class="hljs-keyword">return</span> <span class="hljs-variable">$crumbs</span>;
+    }
+
+    <span class="hljs-variable">$folders</span> = explode(<span class="hljs-string">'/'</span>, <span class="hljs-variable">$folder</span>);
+    <span class="hljs-variable">$build</span> = <span class="hljs-string">''</span>;
+    <span class="hljs-keyword">foreach</span> (<span class="hljs-variable">$folders</span> <span class="hljs-keyword">as</span> <span class="hljs-variable">$folder</span>) {
+      <span class="hljs-variable">$build</span> .= <span class="hljs-string">'/'</span>.<span class="hljs-variable">$folder</span>;
+      <span class="hljs-variable">$crumbs</span>[<span class="hljs-variable">$build</span>] = <span class="hljs-variable">$folder</span>;
+    }
+
+    <span class="hljs-keyword">return</span> <span class="hljs-variable">$crumbs</span>;
+  }
+
+  <span class="hljs-comment">/**
+   * Return an array of file details for a file
+   */</span>
+  <span class="hljs-keyword">protected</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">fileDetails</span><span class="hljs-params">(<span class="hljs-variable">$path</span>)</span>
+  </span>{
+    <span class="hljs-variable">$path</span> = <span class="hljs-string">'/'</span> . ltrim(<span class="hljs-variable">$path</span>, <span class="hljs-string">'/'</span>);
+
+    <span class="hljs-keyword">return</span> [
+      <span class="hljs-string">'name'</span> =&gt; basename(<span class="hljs-variable">$path</span>),
+      <span class="hljs-string">'fullPath'</span> =&gt; <span class="hljs-variable">$path</span>,
+      <span class="hljs-string">'webPath'</span> =&gt; <span class="hljs-variable">$this</span>-&gt;fileWebpath(<span class="hljs-variable">$path</span>),
+      <span class="hljs-string">'mimeType'</span> =&gt; <span class="hljs-variable">$this</span>-&gt;fileMimeType(<span class="hljs-variable">$path</span>),
+      <span class="hljs-string">'size'</span> =&gt; <span class="hljs-variable">$this</span>-&gt;fileSize(<span class="hljs-variable">$path</span>),
+      <span class="hljs-string">'modified'</span> =&gt; <span class="hljs-variable">$this</span>-&gt;fileModified(<span class="hljs-variable">$path</span>),
+    ];
+  }
+
+  <span class="hljs-comment">/**
+   * Return the full web path to a file
+   */</span>
+  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">fileWebpath</span><span class="hljs-params">(<span class="hljs-variable">$path</span>)</span>
+  </span>{
+    <span class="hljs-variable">$path</span> = rtrim(config(<span class="hljs-string">'blog.uploads.webpath'</span>), <span class="hljs-string">'/'</span>) . <span class="hljs-string">'/'</span> .
+        ltrim(<span class="hljs-variable">$path</span>, <span class="hljs-string">'/'</span>);
+    <span class="hljs-keyword">return</span> url(<span class="hljs-variable">$path</span>);
+  }
+
+  <span class="hljs-comment">/**
+   * Return the mime type
+   */</span>
+  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">fileMimeType</span><span class="hljs-params">(<span class="hljs-variable">$path</span>)</span>
+  </span>{
+      <span class="hljs-keyword">return</span> <span class="hljs-variable">$this</span>-&gt;mimeDetect-&gt;findType(
+        pathinfo(<span class="hljs-variable">$path</span>, PATHINFO_EXTENSION)
+      );
+  }
+
+  <span class="hljs-comment">/**
+   * Return the file size
+   */</span>
+  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">fileSize</span><span class="hljs-params">(<span class="hljs-variable">$path</span>)</span>
+  </span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-variable">$this</span>-&gt;disk-&gt;size(<span class="hljs-variable">$path</span>);
+  }
+
+  <span class="hljs-comment">/**
+   * Return the last modified time
+   */</span>
+  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">fileModified</span><span class="hljs-params">(<span class="hljs-variable">$path</span>)</span>
+  </span>{
+    <span class="hljs-keyword">return</span> Carbon::createFromTimestamp(
+      <span class="hljs-variable">$this</span>-&gt;disk-&gt;lastModified(<span class="hljs-variable">$path</span>)
+    );
+  }
+}</div></div></div></div></body></html>

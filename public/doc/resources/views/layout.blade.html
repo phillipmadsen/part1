@@ -1,0 +1,45 @@
+<!DOCTYPE html><html lang="en"><head><title>resources/views/layout.blade</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../../"><meta name="groc-document-path" content="resources/views/layout.blade"><meta name="groc-project-path" content="resources/views/layout.blade.php"><meta name="groc-github-url" content="https://github.com/phillipmadsen/part1"><link rel="stylesheet" type="text/css" media="all" href="../../assets/style.css"><script type="text/javascript" src="../../assets/behavior.js"></script><body><div id="meta"><div class="file-path"><a href="https://github.com/phillipmadsen/part1/blob/master/resources/views/layout.blade.php">resources/views/layout.blade.php</a></div></div><div id="document"><div class="segment"><div class="code"><div class="wrapper">&lt;!DOCTYPE html&gt;
+&lt;html lang=<span class="hljs-string">"en"</span>&gt;
+&lt;head&gt;
+    &lt;meta charset=<span class="hljs-string">"utf-8"</span>&gt;
+    &lt;title&gt;Image upload in Laravel <span class="hljs-number">5.2</span> with Dropzone.js&lt;/title&gt;
+    &lt;meta name=<span class="hljs-string">"viewport"</span> content=<span class="hljs-string">"width=device-width, initial-scale=1.0"</span>&gt;
+
+    {!! HTML::style(<span class="hljs-string">'/packages/bootstrap/css/bootstrap.min.css'</span>) !!}
+    {!! HTML::style(<span class="hljs-string">'/assets/css/style.css'</span>) !!}
+    {!! HTML::script(<span class="hljs-string">'https://code.jquery.com/jquery-2.1.4.min.js'</span>) !!}
+
+    @<span class="hljs-keyword">yield</span>(<span class="hljs-string">'head'</span>)
+
+&lt;/head&gt;
+
+&lt;body&gt;
+
+&lt;div <span class="hljs-class"><span class="hljs-keyword">class</span>="<span class="hljs-title">container</span>"&gt;
+
+    &lt;<span class="hljs-title">div</span> <span class="hljs-title">class</span>="<span class="hljs-title">navbar</span> <span class="hljs-title">navbar</span>-<span class="hljs-title">default</span>"&gt;
+        &lt;<span class="hljs-title">div</span> <span class="hljs-title">class</span>="<span class="hljs-title">navbar</span>-<span class="hljs-title">header</span>"&gt;
+            &lt;<span class="hljs-title">button</span> <span class="hljs-title">type</span>="<span class="hljs-title">button</span>" <span class="hljs-title">class</span>="<span class="hljs-title">navbar</span>-<span class="hljs-title">toggle</span>" <span class="hljs-title">data</span>-<span class="hljs-title">toggle</span>="<span class="hljs-title">collapse</span>" <span class="hljs-title">data</span>-<span class="hljs-title">target</span>=".<span class="hljs-title">navbar</span>-<span class="hljs-title">collapse</span>"&gt;
+                &lt;<span class="hljs-title">span</span> <span class="hljs-title">class</span>="<span class="hljs-title">icon</span>-<span class="hljs-title">bar</span>"&gt;&lt;/<span class="hljs-title">span</span>&gt;
+                &lt;<span class="hljs-title">span</span> <span class="hljs-title">class</span>="<span class="hljs-title">icon</span>-<span class="hljs-title">bar</span>"&gt;&lt;/<span class="hljs-title">span</span>&gt;
+                &lt;<span class="hljs-title">span</span> <span class="hljs-title">class</span>="<span class="hljs-title">icon</span>-<span class="hljs-title">bar</span>"&gt;&lt;/<span class="hljs-title">span</span>&gt;
+            &lt;/<span class="hljs-title">button</span>&gt;
+            &lt;<span class="hljs-title">a</span> <span class="hljs-title">class</span>="<span class="hljs-title">navbar</span>-<span class="hljs-title">brand</span>" <span class="hljs-title">href</span>="/"&gt;<span class="hljs-title">Dropzone</span> + <span class="hljs-title">Laravel</span>&lt;/<span class="hljs-title">a</span>&gt;
+        &lt;/<span class="hljs-title">div</span>&gt;
+        &lt;<span class="hljs-title">div</span> <span class="hljs-title">class</span>="<span class="hljs-title">navbar</span>-<span class="hljs-title">collapse</span> <span class="hljs-title">collapse</span>"&gt;
+            &lt;<span class="hljs-title">ul</span> <span class="hljs-title">class</span>="<span class="hljs-title">nav</span> <span class="hljs-title">navbar</span>-<span class="hljs-title">nav</span>"&gt;
+                &lt;<span class="hljs-title">li</span>&gt;&lt;<span class="hljs-title">a</span> <span class="hljs-title">href</span>="/"&gt;<span class="hljs-title">Upload</span>&lt;/<span class="hljs-title">a</span>&gt;&lt;/<span class="hljs-title">li</span>&gt;
+                &lt;<span class="hljs-title">li</span>&gt;&lt;<span class="hljs-title">a</span> <span class="hljs-title">href</span>="/<span class="hljs-title">example</span>-2"&gt;<span class="hljs-title">Upload</span>-2&lt;/<span class="hljs-title">a</span>&gt;&lt;/<span class="hljs-title">li</span>&gt;
+            &lt;/<span class="hljs-title">ul</span>&gt;
+        &lt;/<span class="hljs-title">div</span>&gt;
+    &lt;/<span class="hljs-title">div</span>&gt;
+
+    &lt;<span class="hljs-title">br</span>&gt;&lt;<span class="hljs-title">br</span>&gt;
+
+@<span class="hljs-title">yield</span>('<span class="hljs-title">content</span>')
+
+&lt;/<span class="hljs-title">div</span>&gt;
+&lt;/<span class="hljs-title">body</span>&gt;
+
+@<span class="hljs-title">yield</span>('<span class="hljs-title">footer</span>')
+&lt;/<span class="hljs-title">html</span>&gt;</span></div></div></div></div></body></html>

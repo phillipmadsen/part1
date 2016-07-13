@@ -1,8 +1,8 @@
 # Laravel 5.2 and Dropzone.js auto image uploads with removal links
 
-This project is related to tutorial from [Codingo Tuts].
+This project is a development ecommerce manager suite
 
-What is covered in this project:
+Whats featured in this project:
 
     - Auto image upload
     - Remove images directly from Dropzone preview with AJAX request
@@ -13,6 +13,21 @@ What is covered in this project:
     - Unique file names for images on server side
     - Displaying already uploaded images in Dropzone
 
-    
+* |- [app](/app)
+    * |- [Console] (/app/Console)
+    * |- [Events] (/app/Events)
+    * |- [Exceptions] (/app/Exceptions)
+    * |- [Http] (/app/Http)
+    * |- [Jobs] (/app/Jobs)
+    * |- [Listeners] (/app/Listeners)
+    * |- [Logic] (/app/Logic)
+    * |- [Models] (/app/Models)
+    * |- [Providers] (/app/Providers)
+    * |- [Services] (/app/Services)
 
-[Codingo Tuts]:https://tuts.codingo.me/laravel-5-1-and-dropzone-js-auto-image-uploads-with-removal-links/
+![Alt text][id]
+
+
+ potoato
+<?php
+echo	"willow bark"

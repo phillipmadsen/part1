@@ -1,0 +1,68 @@
+<!DOCTYPE html><html lang="en"><head><title>Http/Controllers/ApiController</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../../"><meta name="groc-document-path" content="Http/Controllers/ApiController"><meta name="groc-project-path" content="app/Http/Controllers/ApiController.php"><meta name="groc-github-url" content="https://github.com/phillipmadsen/part1"><link rel="stylesheet" type="text/css" media="all" href="../../assets/style.css"><script type="text/javascript" src="../../assets/behavior.js"></script><body><div id="meta"><div class="file-path"><a href="https://github.com/phillipmadsen/part1/blob/master/app/Http/Controllers/ApiController.php">app/Http/Controllers/ApiController.php</a></div></div><div id="document"><div class="segment"><div class="code"><div class="wrapper"><span class="hljs-preprocessor">&lt;?php</span>
+
+<span class="hljs-keyword">namespace</span> <span class="hljs-title">App</span>\<span class="hljs-title">Http</span>\<span class="hljs-title">Controllers</span>;
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">Illuminate</span>\<span class="hljs-title">Http</span>\<span class="hljs-title">Request</span>;
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">App</span>\<span class="hljs-title">Http</span>\<span class="hljs-title">Requests</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">DB</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ApiController</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Controller</span>
+</span>{</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>Begin Product Api Methods</p></div></div><div class="code"><div class="wrapper">    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">productData</span><span class="hljs-params">()</span></span>{
+
+        <span class="hljs-variable">$result</span>[<span class="hljs-string">'data'</span>] = DB::table(<span class="hljs-string">'products'</span>)
+                         -&gt;select(<span class="hljs-string">'id as Id'</span>,
+                                  <span class="hljs-string">'product_name as Name'</span>,
+                                  <span class="hljs-string">'created_at as Created'</span>)
+                         -&gt;get();
+
+        <span class="hljs-keyword">return</span> json_encode(<span class="hljs-variable">$result</span>);
+
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">productVueData</span><span class="hljs-params">(Request <span class="hljs-variable">$request</span>)</span></span>{
+
+        <span class="hljs-variable">$column</span> = <span class="hljs-string">'id'</span>;
+        <span class="hljs-variable">$direction</span> = <span class="hljs-string">'asc'</span>;
+
+        <span class="hljs-keyword">if</span> (<span class="hljs-variable">$request</span>-&gt;has(<span class="hljs-string">'column'</span>)){
+
+            <span class="hljs-variable">$column</span> = <span class="hljs-variable">$request</span>-&gt;get(<span class="hljs-string">'column'</span>);
+            <span class="hljs-keyword">if</span> (<span class="hljs-variable">$column</span> == <span class="hljs-string">'Id'</span>){
+                <span class="hljs-variable">$direction</span> = <span class="hljs-variable">$request</span>-&gt;get(<span class="hljs-string">'direction'</span>) == <span class="hljs-number">1</span> ? <span class="hljs-string">'asc'</span> : <span class="hljs-string">'desc'</span>;
+            } <span class="hljs-keyword">else</span> {
+
+                <span class="hljs-variable">$direction</span> = <span class="hljs-variable">$request</span>-&gt;get(<span class="hljs-string">'direction'</span>) == <span class="hljs-number">1</span> ? <span class="hljs-string">'desc'</span> : <span class="hljs-string">'asc'</span>;
+            }
+
+
+        }
+
+        <span class="hljs-keyword">if</span> (<span class="hljs-variable">$request</span>-&gt;has(<span class="hljs-string">'keyword'</span>)){
+
+            <span class="hljs-variable">$keyword</span> = <span class="hljs-variable">$request</span>-&gt;get(<span class="hljs-string">'keyword'</span>);
+
+            <span class="hljs-variable">$products</span> = DB::table(<span class="hljs-string">'products'</span>)
+                -&gt;select(<span class="hljs-string">'id as Id'</span>,
+                    <span class="hljs-string">'product_name as Name'</span>,
+                    <span class="hljs-string">'created_at as Created'</span>)
+                -&gt;where(<span class="hljs-string">'product_name'</span>, <span class="hljs-string">'like'</span>, <span class="hljs-string">'%'</span> . <span class="hljs-variable">$keyword</span> . <span class="hljs-string">'%'</span>)
+                -&gt;orderBy(<span class="hljs-variable">$column</span>, <span class="hljs-variable">$direction</span>)
+                -&gt;paginate(<span class="hljs-number">10</span>);
+
+            <span class="hljs-keyword">return</span> response()-&gt;json(<span class="hljs-variable">$products</span>);
+
+
+
+        }
+
+        <span class="hljs-variable">$products</span> = DB::table(<span class="hljs-string">'products'</span>)
+                             -&gt;select(<span class="hljs-string">'id as Id'</span>,
+                                      <span class="hljs-string">'product_name as Name'</span>,
+                                      <span class="hljs-string">'created_at as Created'</span>)
+                             -&gt;orderBy(<span class="hljs-variable">$column</span>, <span class="hljs-variable">$direction</span>)
+                             -&gt;paginate(<span class="hljs-number">10</span>);
+
+        <span class="hljs-keyword">return</span> response()-&gt;json(<span class="hljs-variable">$products</span>);
+
+    }</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>End Product Api Methods</p></div></div><div class="code"><div class="wrapper">}</div></div></div></div></body></html>

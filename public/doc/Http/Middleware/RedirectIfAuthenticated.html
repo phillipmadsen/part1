@@ -1,0 +1,43 @@
+<!DOCTYPE html><html lang="en"><head><title>Http/Middleware/RedirectIfAuthenticated</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../../"><meta name="groc-document-path" content="Http/Middleware/RedirectIfAuthenticated"><meta name="groc-project-path" content="app/Http/Middleware/RedirectIfAuthenticated.php"><meta name="groc-github-url" content="https://github.com/phillipmadsen/part1"><link rel="stylesheet" type="text/css" media="all" href="../../assets/style.css"><script type="text/javascript" src="../../assets/behavior.js"></script><body><div id="meta"><div class="file-path"><a href="https://github.com/phillipmadsen/part1/blob/master/app/Http/Middleware/RedirectIfAuthenticated.php">app/Http/Middleware/RedirectIfAuthenticated.php</a></div></div><div id="document"><div class="segment"><div class="code"><div class="wrapper"><span class="hljs-preprocessor">&lt;?php</span>
+
+<span class="hljs-keyword">namespace</span> <span class="hljs-title">App</span>\<span class="hljs-title">Http</span>\<span class="hljs-title">Middleware</span>;
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">Closure</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">Illuminate</span>\<span class="hljs-title">Contracts</span>\<span class="hljs-title">Auth</span>\<span class="hljs-title">Guard</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">RedirectIfAuthenticated</span>
+</span>{
+    <span class="hljs-comment">/**
+     * The Guard implementation.
+     *
+     * <span class="hljs-doctag">@var</span> Guard
+     */</span>
+    <span class="hljs-keyword">protected</span> <span class="hljs-variable">$auth</span>;
+
+    <span class="hljs-comment">/**
+     * Create a new filter instance.
+     *
+     * <span class="hljs-doctag">@param</span>  Guard  $auth
+     * <span class="hljs-doctag">@return</span> void
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span><span class="hljs-params">(Guard <span class="hljs-variable">$auth</span>)</span>
+    </span>{
+        <span class="hljs-variable">$this</span>-&gt;auth = <span class="hljs-variable">$auth</span>;
+    }
+
+    <span class="hljs-comment">/**
+     * Handle an incoming request.
+     *
+     * <span class="hljs-doctag">@param</span>  \Illuminate\Http\Request  $request
+     * <span class="hljs-doctag">@param</span>  \Closure  $next
+     * <span class="hljs-doctag">@return</span> mixed
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">handle</span><span class="hljs-params">(<span class="hljs-variable">$request</span>, Closure <span class="hljs-variable">$next</span>)</span>
+    </span>{
+        <span class="hljs-keyword">if</span> (<span class="hljs-variable">$this</span>-&gt;auth-&gt;check()) {
+            <span class="hljs-keyword">return</span> redirect(<span class="hljs-string">'/home'</span>);
+        }
+
+        <span class="hljs-keyword">return</span> <span class="hljs-variable">$next</span>(<span class="hljs-variable">$request</span>);
+    }
+}</div></div></div></div></body></html>
