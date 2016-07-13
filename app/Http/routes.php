@@ -123,4 +123,4 @@ Route::get('product/{product}', function ($id) {
 Route::get('users/{user}', function(App\User $user){
 	return	$user;
 	// $user = App\User::findOrFail($userID);
-})
+});
